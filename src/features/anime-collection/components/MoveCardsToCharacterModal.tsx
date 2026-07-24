@@ -2,7 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { AnimeImage } from "@/features/anime-collection/components/AnimeImage";
-import { resolveCharacterPortraitUrl } from "@/features/anime-collection/utils/resolve-character-portrait";
+import {
+  isWideCharacterPortrait,
+  resolveCharacterPortraitUrl,
+} from "@/features/anime-collection/utils/resolve-character-portrait";
 import { getCharacterInitials, type AnimeCharacter } from "@/features/anime-collection/types";
 import { Modal } from "@/components/shared/Modal";
 import { Button } from "@/components/ui/button";
@@ -94,6 +97,7 @@ export function MoveCardsToCharacterModal({
                 character.name,
                 character.imageUrl
               );
+              const wide = isWideCharacterPortrait(portrait);
               const picked = pickedId === character.id;
               return (
                 <li key={character.id}>
@@ -108,7 +112,10 @@ export function MoveCardsToCharacterModal({
                     )}
                   >
                     <span
-                      className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border/60"
+                      className={cn(
+                        "relative shrink-0 overflow-hidden border border-border/60",
+                        wide ? "h-10 w-16 rounded-lg" : "h-10 w-10 rounded-full"
+                      )}
                       style={
                         !portrait && character.accentColor
                           ? {
@@ -122,7 +129,7 @@ export function MoveCardsToCharacterModal({
                           src={portrait}
                           alt={character.name}
                           fill
-                          className="object-cover"
+                          className="object-cover object-center"
                         />
                       ) : (
                         <span className="flex h-full w-full items-center justify-center text-xs font-semibold text-white/90">

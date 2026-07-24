@@ -12,7 +12,10 @@ import {
   isValidImageUrl,
   readImageFileAsDataUrl,
 } from "@/features/anime-collection/utils/image";
-import { resolveCharacterPortraitUrl } from "@/features/anime-collection/utils/resolve-character-portrait";
+import {
+  isWideCharacterPortrait,
+  resolveCharacterPortraitUrl,
+} from "@/features/anime-collection/utils/resolve-character-portrait";
 import { useT } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -48,6 +51,7 @@ export function EditCharacterModal({
   const displayPreview =
     previewUrl?.trim() ||
     resolveCharacterPortraitUrl(seriesSlug, seriesName, name, currentImageUrl);
+  const wide = isWideCharacterPortrait(displayPreview);
   const initials = getCharacterInitials(name);
 
   const resetForm = () => {
@@ -139,7 +143,8 @@ export function EditCharacterModal({
         <div className="flex justify-center">
           <div
             className={cn(
-              "relative h-28 w-28 overflow-hidden rounded-full border-4 border-border/80"
+              "relative overflow-hidden border-4 border-border/80",
+              wide ? "h-28 w-48 rounded-2xl" : "h-28 w-28 rounded-full"
             )}
             style={
               !displayPreview && accentColor
@@ -154,7 +159,7 @@ export function EditCharacterModal({
                 src={displayPreview}
                 alt={name}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
             ) : (
               <span className="flex h-full w-full items-center justify-center text-2xl font-semibold text-white/90">

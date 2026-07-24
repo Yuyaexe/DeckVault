@@ -12,7 +12,10 @@ import {
   isValidImageUrl,
   readImageFileAsDataUrl,
 } from "@/features/anime-collection/utils/image";
-import { resolveCharacterPortraitUrl } from "@/features/anime-collection/utils/resolve-character-portrait";
+import {
+  isWideCharacterPortrait,
+  resolveCharacterPortraitUrl,
+} from "@/features/anime-collection/utils/resolve-character-portrait";
 import { useT } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
@@ -48,6 +51,7 @@ export function EditCharacterPhotoModal({
   const displayPreview =
     previewUrl?.trim() ||
     resolveCharacterPortraitUrl(seriesSlug, seriesName, characterName, currentImageUrl);
+  const widePreview = isWideCharacterPortrait(displayPreview);
 
   const resetForm = () => {
     setImageUrl(currentImageUrl ?? "");
@@ -125,7 +129,8 @@ export function EditCharacterPhotoModal({
         <div className="flex justify-center">
           <div
             className={cn(
-              "relative h-28 w-28 overflow-hidden rounded-full border-4 border-border/80"
+              "relative overflow-hidden border-4 border-border/80",
+              widePreview ? "h-28 w-48 rounded-2xl" : "h-28 w-28 rounded-full"
             )}
             style={
               !displayPreview && accentColor
@@ -140,8 +145,8 @@ export function EditCharacterPhotoModal({
                 src={displayPreview}
                 alt={characterName}
                 fill
-                sizes="112px"
-                className="object-cover"
+                sizes={widePreview ? "192px" : "112px"}
+                className="object-cover object-center"
               />
             ) : (
               <span className="flex h-full w-full items-center justify-center text-2xl font-semibold text-white/90">
@@ -223,8 +228,15 @@ export function CharacterAvatar({
     name,
     imageUrl
   );
+  const wide = isWideCharacterPortrait(displayImageUrl);
   const initials = getCharacterInitials(name);
-  const sizeClass = size === "lg" ? "h-40 w-40" : "h-[88px] w-[88px]";
+  const sizeClass = wide
+    ? size === "lg"
+      ? "h-40 w-64"
+      : "h-[72px] w-[128px]"
+    : size === "lg"
+      ? "h-40 w-40"
+      : "h-[88px] w-[88px]";
   const textClass = size === "lg" ? "text-4xl" : "text-lg";
 
   const inner = (
@@ -234,8 +246,8 @@ export function CharacterAvatar({
           src={displayImageUrl}
           alt={name}
           fill
-          sizes={size === "lg" ? "160px" : "88px"}
-          className="object-cover"
+          sizes={wide ? (size === "lg" ? "256px" : "128px") : size === "lg" ? "160px" : "88px"}
+          className="object-cover object-center"
         />
       ) : (
         <span
@@ -256,7 +268,8 @@ export function CharacterAvatar({
   );
 
   const className = cn(
-    "group relative overflow-hidden rounded-full border-4 border-border/80 shadow-lg",
+    "group relative overflow-hidden border-4 border-border/80 shadow-lg",
+    wide ? "rounded-2xl" : "rounded-full",
     sizeClass
   );
 

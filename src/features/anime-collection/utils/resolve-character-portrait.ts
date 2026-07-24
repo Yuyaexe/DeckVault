@@ -22,6 +22,14 @@ function resolveBundledPortraitPath(
   return `${config.basePath}/${portraitSlug}.png`;
 }
 
+/** Landscape group shots (e.g. Team Unicorn) need a wider frame than circular portraits. */
+export function isWideCharacterPortrait(imageUrl: string | null | undefined): boolean {
+  if (!imageUrl) return false;
+  const path = imageUrl.split("?")[0]?.toLowerCase() ?? "";
+  const file = path.slice(path.lastIndexOf("/") + 1);
+  return file.startsWith("team-");
+}
+
 /** User override first, then bundled local portrait for supported series. */
 export function resolveCharacterPortraitUrl(
   seriesSlug: string | undefined,

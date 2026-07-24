@@ -3,6 +3,10 @@
  * Downloads bundled anime series covers + character portraits.
  * Source: Yu-Gi-Oh! Wiki (Fandom) pageimages API.
  *
+ * Name → photo mapping (what the app shows) lives in:
+ *   src/features/anime-collection/data/character-portraits.catalog.ts
+ * This script only downloads files; edit the catalog to wire names to PNGs.
+ *
  * Usage:
  *   node scripts/download-anime-assets.mjs
  *   node scripts/download-anime-assets.mjs --force paradox-brothers

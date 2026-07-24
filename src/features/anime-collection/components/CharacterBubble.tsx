@@ -4,7 +4,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { getCharacterInitials } from "@/features/anime-collection/types";
 import { AnimeImage } from "@/features/anime-collection/components/AnimeImage";
-import { resolveCharacterPortraitUrl } from "@/features/anime-collection/utils/resolve-character-portrait";
+import {
+  isWideCharacterPortrait,
+  resolveCharacterPortraitUrl,
+} from "@/features/anime-collection/utils/resolve-character-portrait";
 
 export interface CharacterBubbleProps {
   name: string;
@@ -37,10 +40,18 @@ export function CharacterBubble({
     name,
     imageUrl
   );
+  const wide = isWideCharacterPortrait(displayImageUrl);
   const initials = getCharacterInitials(name);
   const reduceMotion = useReducedMotion();
   const isWheel = variant === "wheel";
-  const sizeClass = isWheel ? "h-[72px] w-[72px]" : "h-[88px] w-[88px]";
+  const sizeClass = wide
+    ? isWheel
+      ? "h-[64px] w-[120px]"
+      : "h-[80px] w-[144px]"
+    : isWheel
+      ? "h-[72px] w-[72px]"
+      : "h-[88px] w-[88px]";
+  const shapeClass = wide ? "rounded-2xl" : "rounded-full";
   const initialsClass = isWheel ? "text-base" : "text-lg";
 
   return (
@@ -54,14 +65,16 @@ export function CharacterBubble({
       onClick={onClick}
       className={cn(
         "group flex flex-col items-center gap-2 p-1",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full"
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        shapeClass
       )}
       aria-label={`Open ${name}`}
       aria-current={selected ? "true" : undefined}
     >
       <div
         className={cn(
-          "relative overflow-hidden rounded-full border-2 transition-[border-color,box-shadow] duration-200",
+          "relative overflow-hidden border-2 transition-[border-color,box-shadow] duration-200",
+          shapeClass,
           sizeClass,
           selected && isWheel
             ? "border-primary shadow-[0_0_16px_hsla(221,83%,53%,0.45)]"
@@ -78,7 +91,7 @@ export function CharacterBubble({
             src={displayImageUrl}
             alt={name}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             onErrorFallback={
               <span
                 className={cn(
@@ -102,7 +115,12 @@ export function CharacterBubble({
         )}
       </div>
       {showName && (
-        <span className="max-w-[96px] text-center text-xs leading-tight text-muted-foreground group-hover:text-foreground">
+        <span
+          className={cn(
+            "text-center text-xs leading-tight text-muted-foreground group-hover:text-foreground",
+            wide ? "max-w-[144px]" : "max-w-[96px]"
+          )}
+        >
           {name}
         </span>
       )}
