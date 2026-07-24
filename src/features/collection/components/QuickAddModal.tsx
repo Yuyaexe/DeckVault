@@ -181,7 +181,7 @@ export function QuickAddModal({
       searchLocale,
       advancedSearchNonce,
     ],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       setSearchErrorDetail(null);
       const res = await fetch("/api/cards/yugioh/advanced-search", {
         method: "POST",
@@ -190,6 +190,7 @@ export function QuickAddModal({
           ...ygoAdvancedFilters,
           locale: searchLocale,
         }),
+        signal,
       });
       const json = (await res.json()) as {
         results?: CardSearchResult[];
@@ -197,7 +198,10 @@ export function QuickAddModal({
         message?: string;
       };
       if (!res.ok) {
-        const detail = json.message ?? json.error ?? t("quickAdd.advancedSearchFailed");
+        const raw = json.message ?? json.error ?? "";
+        const detail = /timed out|timeout/i.test(raw)
+          ? t("quickAdd.searchTimedOut")
+          : raw || t("quickAdd.advancedSearchFailed");
         setSearchErrorDetail(detail);
         throw new Error(detail);
       }
@@ -209,17 +213,19 @@ export function QuickAddModal({
       advancedSearchNonce > 0 &&
       hasActiveYgoAdvancedFilters(ygoAdvancedFilters),
     staleTime: 5 * 60 * 1000,
+    retry: false,
     placeholderData: (previousData: CardSearchResult[] | undefined) => previousData,
   });
 
   const { data, isLoading, isError, isFetching, error } = useQuery<CardSearchResult[]>({
     queryKey: ["card-search", debouncedQuery, game.slug, profile.currency, searchLocale],
-    queryFn: async () => {
+    queryFn: async ({ signal }) => {
       setSearchErrorDetail(null);
       const localeParam =
         game.slug === "yugioh" && searchLocale === "pt" ? "&locale=pt" : "";
       const res = await fetch(
-        `/api/cards/search?q=${encodeURIComponent(debouncedQuery)}&game=${game.slug}&currency=${profile.currency}&quick=1${localeParam}`
+        `/api/cards/search?q=${encodeURIComponent(debouncedQuery)}&game=${game.slug}&currency=${profile.currency}&quick=1${localeParam}`,
+        { signal }
       );
       const json = (await res.json()) as {
         results?: CardSearchResult[];
@@ -227,7 +233,10 @@ export function QuickAddModal({
         message?: string;
       };
       if (!res.ok) {
-        const detail = json.message ?? json.error ?? t("quickAdd.searchFailed");
+        const raw = json.message ?? json.error ?? "";
+        const detail = /timed out|timeout/i.test(raw)
+          ? t("quickAdd.searchTimedOut")
+          : raw || t("quickAdd.searchFailed");
         setSearchErrorDetail(detail);
         throw new Error(detail);
       }
@@ -238,6 +247,7 @@ export function QuickAddModal({
       debouncedQuery.length >= 2 &&
       isQuickAddSupported(game.slug),
     staleTime: 5 * 60 * 1000,
+    retry: false,
     placeholderData: (previousData: CardSearchResult[] | undefined) => previousData,
   });
 

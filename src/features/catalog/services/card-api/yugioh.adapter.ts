@@ -15,8 +15,19 @@ import {
 const API = "https://db.ygoprodeck.com/api/v7";
 const HEADERS = { Accept: "application/json", "User-Agent": "DeckVault/0.2" };
 const YGO_RESULT_CAP = 80;
+/** Fail fast — YGOPRODeck is usually <1s; hanging forever freezes Quick Add. */
+const YGO_FETCH_TIMEOUT_MS = 6_000;
 
 interface YgoCard extends YgoRawCard {}
+
+function isTimeoutError(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+  return (
+    error.name === "TimeoutError" ||
+    error.name === "AbortError" ||
+    /aborted|timeout/i.test(error.message)
+  );
+}
 
 function mapYgoCard(card: YgoCard, preferredSetCode?: string | null): CardSearchResult {
   const preferred = preferredSetCode?.toUpperCase();
@@ -53,10 +64,22 @@ function mapYgoCard(card: YgoCard, preferredSetCode?: string | null): CardSearch
 }
 
 async function fetchYgoCards(params: string): Promise<YgoCard[]> {
-  const res = await fetch(`${API}/cardinfo.php?${params}`, { headers: HEADERS });
-  if (!res.ok) return [];
-  const data = await res.json();
-  return Array.isArray(data.data) ? (data.data as YgoCard[]) : [];
+  try {
+    const res = await fetch(`${API}/cardinfo.php?${params}`, {
+      headers: HEADERS,
+      signal: AbortSignal.timeout(YGO_FETCH_TIMEOUT_MS),
+      // Cache successful catalog hits across Quick Add searches.
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Array.isArray(data.data) ? (data.data as YgoCard[]) : [];
+  } catch (error) {
+    if (isTimeoutError(error)) {
+      throw new Error("Yu-Gi-Oh search timed out. Check your connection and try again.");
+    }
+    throw error;
+  }
 }
 
 async function fetchYgoAdvancedCards(
@@ -121,33 +144,43 @@ export const yugiohAdapter: YugiohCardApiAdapter = {
     if (!trimmed) return [];
 
     const localePt = options?.locale === "pt";
+    const queries = buildYugiohSearchQueries(trimmed);
 
-    for (const fname of buildYugiohSearchQueries(trimmed)) {
-      const params = new URLSearchParams();
-      params.set("fname", fname);
-      if (localePt) params.set("language", "pt");
+    try {
+      for (const fname of queries) {
+        const params = new URLSearchParams();
+        params.set("fname", fname);
+        if (localePt) params.set("language", "pt");
 
-      const cards = await fetchYgoCards(params.toString());
-      if (cards.length === 0) continue;
+        const cards = await fetchYgoCards(params.toString());
+        if (cards.length === 0) continue;
 
-      const mapped = cards.map((card) => mapYgoCard(card));
-      return rankSearchResults(trimmed, mapped).slice(0, YGO_RESULT_CAP);
-    }
-
-    // Archetype fallback (e.g. "B.E.S." cards that share the archetype name)
-    const archetype = normalizeYugiohSearchQuery(trimmed);
-    if (archetype) {
-      const params = new URLSearchParams();
-      params.set("archetype", archetype);
-      if (localePt) params.set("language", "pt");
-      const cards = await fetchYgoCards(params.toString());
-      if (cards.length > 0) {
         const mapped = cards.map((card) => mapYgoCard(card));
         return rankSearchResults(trimmed, mapped).slice(0, YGO_RESULT_CAP);
       }
-    }
 
-    return [];
+      // Archetype fallback (e.g. "B.E.S." cards that share the archetype name)
+      const archetype = normalizeYugiohSearchQuery(trimmed);
+      if (archetype) {
+        const params = new URLSearchParams();
+        params.set("archetype", archetype);
+        if (localePt) params.set("language", "pt");
+        const cards = await fetchYgoCards(params.toString());
+        if (cards.length > 0) {
+          const mapped = cards.map((card) => mapYgoCard(card));
+          return rankSearchResults(trimmed, mapped).slice(0, YGO_RESULT_CAP);
+        }
+      }
+
+      return [];
+    } catch (error) {
+      if (isTimeoutError(error) || (error instanceof Error && /timed out/i.test(error.message))) {
+        throw error instanceof Error
+          ? error
+          : new Error("Yu-Gi-Oh search timed out. Check your connection and try again.");
+      }
+      throw error;
+    }
   },
 
   async advancedSearch(
@@ -164,11 +197,19 @@ export const yugiohAdapter: YugiohCardApiAdapter = {
   },
 
   async getById(externalId: string): Promise<CardDetail | null> {
-    const res = await fetch(`${API}/cardinfo.php?id=${externalId}`, { headers: HEADERS });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const card = data.data?.[0] as YgoCard | undefined;
-    if (!card) return null;
-    return { ...mapYgoCard(card), gameSlug: "yugioh" };
+    try {
+      const res = await fetch(`${API}/cardinfo.php?id=${externalId}`, {
+        headers: HEADERS,
+        signal: AbortSignal.timeout(YGO_FETCH_TIMEOUT_MS),
+        next: { revalidate: 600 },
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      const card = data.data?.[0] as YgoCard | undefined;
+      if (!card) return null;
+      return { ...mapYgoCard(card), gameSlug: "yugioh" };
+    } catch {
+      return null;
+    }
   },
 };

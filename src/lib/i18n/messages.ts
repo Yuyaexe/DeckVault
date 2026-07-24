@@ -158,6 +158,8 @@ export const messages = {
     "quickAdd.configureFilters": "Configure filters",
     "quickAdd.configureFiltersHint": "Select attributes, types, or sets and click Search",
     "quickAdd.searchFailed": "Search failed",
+    "quickAdd.searchTimedOut":
+      "Search took too long. Check your connection and try again.",
     "quickAdd.advancedSearchFailed": "Advanced search failed",
     "quickAdd.noCardsFound": "No cards found",
     "quickAdd.noCardsWithFilters": "No cards found with these filters",
@@ -459,6 +461,8 @@ export const messages = {
     "quickAdd.configureFilters": "Configure os filtros",
     "quickAdd.configureFiltersHint": "Selecione atributos, tipos ou edições e clique em Buscar",
     "quickAdd.searchFailed": "Falha na busca",
+    "quickAdd.searchTimedOut":
+      "A busca demorou demais. Verifique a conexão e tente de novo.",
     "quickAdd.advancedSearchFailed": "Falha na busca avançada",
     "quickAdd.noCardsFound": "Nenhuma carta encontrada",
     "quickAdd.noCardsWithFilters": "Nenhuma carta encontrada com esses filtros",
