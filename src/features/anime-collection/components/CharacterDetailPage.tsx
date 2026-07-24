@@ -81,7 +81,7 @@ export function CharacterDetailPage({
   const clearSelection = useAnimeCharacterUIStore((s) => s.clearSelection);
   const draggedCardIds = useAnimeCharacterUIStore((s) => s.draggedCardIds);
   const setDraggedCardIds = useAnimeCharacterUIStore((s) => s.setDraggedCardIds);
-  const triggerSync = useAnimeShareSyncStore((s) => s.triggerSync);
+  const triggerPriorityPush = useAnimeShareSyncStore((s) => s.triggerPriorityPush);
   const isShared = useAnimeShareSyncStore((s) => s.isShared);
 
   const series = getSeriesBySlug(seriesSlug);
@@ -217,10 +217,11 @@ export function CharacterDetailPage({
     setSetAllToOneOpen(false);
     if (changed > 0) {
       toast.success(t("anime.setAllToOneDone", { count: changed }));
+      if (isShared) triggerPriorityPush();
     } else {
       toast.message(t("anime.setAllToOneNone"));
     }
-  }, [character, setAnimeCharacterCardsQuantityToOne, t]);
+  }, [character, isShared, setAnimeCharacterCardsQuantityToOne, t, triggerPriorityPush]);
 
   useEffect(() => {
     clearSelection();
@@ -349,6 +350,7 @@ export function CharacterDetailPage({
     deleteAnimeCharacter(character.id);
     setDeleteOpen(false);
     toast.success(t("anime.characterDeleted"));
+    if (isShared) triggerPriorityPush();
     router.push(`/anime-collection/${seriesSlug}`);
   };
 
@@ -373,13 +375,13 @@ export function CharacterDetailPage({
     removeAnimeCharacterCard(pendingDeleteCardId);
     toast.success(t("anime.cardRemoved"));
     if (inspectCardId === pendingDeleteCardId) setInspectCardId(null);
-    if (isShared) triggerSync();
+    if (isShared) triggerPriorityPush();
     setPendingDeleteCardId(null);
   };
 
   const removeCardsAndSync = (ids: string[]) => {
     ids.forEach((id) => removeAnimeCharacterCard(id));
-    if (ids.length > 0 && isShared) triggerSync();
+    if (ids.length > 0 && isShared) triggerPriorityPush();
   };
 
   return (

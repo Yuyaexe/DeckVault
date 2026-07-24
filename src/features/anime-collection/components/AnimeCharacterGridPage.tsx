@@ -13,6 +13,7 @@ import { AnimeCollectionBreadcrumb } from "@/features/anime-collection/component
 import { CharacterBubbleGrid } from "@/features/anime-collection/components/CharacterBubbleGrid";
 import { EditCharacterModal } from "@/features/anime-collection/components/EditCharacterModal";
 import { useAnimeCollection } from "@/features/anime-collection/hooks/useAnimeCollection";
+import { useAnimeShareSyncStore } from "@/features/anime-collection/stores/anime-share-sync.store";
 import { parseCharacterList } from "@/features/anime-collection/utils/parse-character-list";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import type { AnimeCharacter } from "@/features/anime-collection/types";
@@ -30,6 +31,8 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
   const t = useT();
   const router = useRouter();
   const isTouchDevice = useMediaQuery("(hover: none) and (pointer: coarse)");
+  const triggerPriorityPush = useAnimeShareSyncStore((s) => s.triggerPriorityPush);
+  const isShared = useAnimeShareSyncStore((s) => s.isShared);
   const {
     getSeriesBySlug,
     getCharactersForSeries,
@@ -152,6 +155,7 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
     setDeleteOpen(false);
     setDeleteTarget(null);
     toast.success(t("anime.characterDeleted"));
+    if (isShared) triggerPriorityPush();
   };
 
   return (

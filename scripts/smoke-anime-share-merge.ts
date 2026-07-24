@@ -6,6 +6,7 @@ import {
   animeCardSyncKey,
   animeCharacterSyncKey,
   animeSeriesSyncKey,
+  hasPendingCardDeletes,
   threeWayMergeAnimeState,
   type AnimeWorkspaceSnapshotState,
 } from "../src/lib/data/anime-share-merge";
@@ -123,7 +124,29 @@ const base = snapshot({ animeCharacterCards: [baseCard] });
   );
 }
 
-// 3) Sync keys stay stable for fixtures
+// 3) Card tombstone beats cloud card even if cloud lastTouchedAt is newer
+{
+  const tombAt = "2026-06-01T00:00:00.000Z";
+  const cloudNewer = card(1);
+  cloudNewer.lastTouchedAt = "2026-07-01T00:00:00.000Z";
+  const cloud = snapshot({ animeCharacterCards: [cloudNewer] });
+  const local = snapshot({
+    animeCharacterCards: [],
+    animeCardTombstones: [{ key: animeCardSyncKey(baseCard), deletedAt: tombAt }],
+  });
+  const merged = threeWayMergeAnimeState(base, cloud, local);
+  assert(
+    "card tombstone wins over newer cloud touch",
+    merged.animeCharacterCards.length === 0,
+    `cards=${merged.animeCharacterCards.length}`
+  );
+  assert(
+    "hasPendingCardDeletes detects remote still has card",
+    hasPendingCardDeletes(local, cloud) === true
+  );
+}
+
+// 4) Sync keys stay stable for fixtures
 {
   assert(
     "series sync key",

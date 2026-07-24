@@ -51,6 +51,7 @@ export function AnimeSeriesPage() {
   const isShared = useAnimeShareSyncStore((s) => s.isShared);
   const syncProgress = useAnimeShareSyncStore((s) => s.progress);
   const triggerSync = useAnimeShareSyncStore((s) => s.triggerSync);
+  const triggerPriorityPush = useAnimeShareSyncStore((s) => s.triggerPriorityPush);
   const awaitingManualSync = useRef(false);
 
   const [createOpen, setCreateOpen] = useState(false);
@@ -115,6 +116,7 @@ export function AnimeSeriesPage() {
     setDeleteOpen(false);
     setDeleteTarget(null);
     toast.success(t("anime.seriesDeleted"));
+    if (isShared) triggerPriorityPush();
   };
 
   const handlePullShared = () => {

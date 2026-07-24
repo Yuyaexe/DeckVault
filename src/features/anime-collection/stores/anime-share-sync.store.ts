@@ -31,7 +31,11 @@ interface AnimeShareSyncState {
   ) => void;
   setProgress: (progress: number | null) => void;
   requestSync: number;
+  /** Incremented to force an immediate push (confirmed deletes) without pull-first. */
+  requestPriorityPush: number;
   triggerSync: () => void;
+  /** Push local tombstones/deletes ASAP — prefer over triggerSync after confirmed deletes. */
+  triggerPriorityPush: () => void;
 }
 
 export const useAnimeShareSyncStore = create<AnimeShareSyncState>((set) => ({
@@ -43,7 +47,9 @@ export const useAnimeShareSyncStore = create<AnimeShareSyncState>((set) => ({
   lastSyncedAt: null,
   progress: null,
   requestSync: 0,
+  requestPriorityPush: 0,
   setStatus: (status, patch) => set({ status, ...patch }),
   setProgress: (progress) => set({ progress }),
   triggerSync: () => set((s) => ({ requestSync: s.requestSync + 1 })),
+  triggerPriorityPush: () => set((s) => ({ requestPriorityPush: s.requestPriorityPush + 1 })),
 }));

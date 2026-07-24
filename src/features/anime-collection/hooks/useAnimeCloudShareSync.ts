@@ -7,7 +7,7 @@ import {
   animeCardSyncKey,
   emptyAnimeSnapshot,
   hasLocalOnlyAnimeContent,
-  hasPendingCharacterDeletes,
+  hasPendingConfirmedDeletes,
   normalizeAnimeSnapshot,
   threeWayMergeAnimeState,
   unionLocalOnlyAnimeOnto,
@@ -304,6 +304,7 @@ export function useAnimeCloudShareSync() {
   const animeCharacterTombstones = useDemoStore((s) => s.animeCharacterTombstones);
   const animeSeriesTombstones = useDemoStore((s) => s.animeSeriesTombstones);
   const requestSync = useAnimeShareSyncStore((s) => s.requestSync);
+  const requestPriorityPush = useAnimeShareSyncStore((s) => s.requestPriorityPush);
   const setStatus = useAnimeShareSyncStore((s) => s.setStatus);
   const setProgress = useAnimeShareSyncStore((s) => s.setProgress);
 
@@ -485,7 +486,7 @@ export function useAnimeCloudShareSync() {
         fingerprint(fixed) !== remoteFp &&
         (repaired ||
           hasLocalOnlyAnimeContent(fixed, remote) ||
-          hasPendingCharacterDeletes(fixed, remote)) &&
+          hasPendingConfirmedDeletes(fixed, remote)) &&
         !wouldWipeRemoteCards(fixed, remote);
 
       if (shouldUpload) {
@@ -563,7 +564,7 @@ export function useAnimeCloudShareSync() {
         const shouldUpload =
           repaired ||
           hasLocalOnlyAnimeContent(fixed, remote) ||
-          hasPendingCharacterDeletes(fixed, remote);
+          hasPendingConfirmedDeletes(fixed, remote);
         if (shouldUpload && canEdit.current && fingerprint(fixed) !== remoteFp) {
           setProgress(75);
           const pushed = await pushAnimeState(fixed, remoteUpdatedAt);
@@ -762,6 +763,42 @@ export function useAnimeCloudShareSync() {
     void runSync("manual");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [requestSync, isSupabaseMode]);
+
+  // Confirmed deletes: push tombstones immediately (do NOT pull-first — that used to skip push).
+  useEffect(() => {
+    if (!isSupabaseMode || requestPriorityPush === 0) return;
+    if (!sharingActive.current || !canEdit.current) return;
+
+    if (pushTimer.current) {
+      clearTimeout(pushTimer.current);
+      pushTimer.current = null;
+    }
+    skipNextPush.current = false;
+
+    const local = readLocalAnimeState();
+    setStatus("syncing", { error: null, progress: 40, isShared: true });
+    void pushMerged(local)
+      .then(() => {
+        setStatus(isSharedMember.current ? "shared" : "owner", {
+          error: null,
+          isShared: true,
+          lastSyncedAt: Date.now(),
+          progress: 100,
+        });
+        window.setTimeout(() => {
+          useAnimeShareSyncStore.getState().setProgress(null);
+        }, 600);
+        lastPushedFp.current = fingerprint(readLocalAnimeState());
+      })
+      .catch((err) => {
+        setStatus("error", {
+          error: err instanceof Error ? err.message : "Failed to push anime delete",
+          lastSyncedAt: Date.now(),
+          progress: null,
+        });
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestPriorityPush, isSupabaseMode]);
 
   useEffect(() => {
     if (!isSupabaseMode || !sharingActive.current || !readyToPush.current) return;

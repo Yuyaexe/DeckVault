@@ -442,6 +442,30 @@ export function hasPendingCharacterDeletes(
   return false;
 }
 
+/** True when local card tombstones still match cards present on remote. */
+export function hasPendingCardDeletes(
+  localInput: AnimeWorkspaceSnapshotState,
+  remoteInput: AnimeWorkspaceSnapshotState
+): boolean {
+  const remote = normalizeAnimeSnapshot(remoteInput);
+  const local = normalizeAnimeSnapshot(localInput);
+  const tombs = local.animeCardTombstones ?? [];
+  if (tombs.length === 0) return false;
+  const remoteKeys = new Set(remote.animeCharacterCards.map((c) => animeCardSyncKey(c)));
+  return tombs.some((t) => remoteKeys.has(t.key));
+}
+
+/** Any confirmed delete (card / character / series) still pending against remote. */
+export function hasPendingConfirmedDeletes(
+  localInput: AnimeWorkspaceSnapshotState,
+  remoteInput: AnimeWorkspaceSnapshotState
+): boolean {
+  return (
+    hasPendingCardDeletes(localInput, remoteInput) ||
+    hasPendingCharacterDeletes(localInput, remoteInput)
+  );
+}
+
 /** Classic 3-way presence for entities keyed by id. */
 function threeWayEntities<T extends { id: string }>(
   base: T[],
@@ -669,16 +693,14 @@ function threeWayCards(
       keep = l;
     }
 
-    // Tombstone: blocks stale presence.
-    // Re-add wins only when the card was touched after the tombstone.
+    // Tombstone = confirmed delete. Wins over cloud/base presence.
+    // Only a LOCAL re-add (card still present locally, touched after the tomb) revives it.
     if (tomb) {
-      const touched = keep?.lastTouchedAt;
-      if (keep && touched && touched > tomb.deletedAt) {
-        // intentional re-add / edit after delete
-      } else if (keep) {
-        keep = null;
-        removedKeys.push(key);
+      const localTouched = l?.lastTouchedAt;
+      if (l && localTouched && localTouched > tomb.deletedAt) {
+        keep = keep ?? l;
       } else {
+        keep = null;
         removedKeys.push(key);
       }
     }
