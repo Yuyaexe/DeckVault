@@ -750,7 +750,7 @@ export function useAnimeCloudShareSync() {
     // Cheap meta poll — full pull only when shared and updatedAt changes.
     pollTimer.current = setInterval(() => {
       void runSync("poll");
-    }, 20_000);
+    }, 60_000);
 
     return () => {
       if (pollTimer.current) clearInterval(pollTimer.current);
