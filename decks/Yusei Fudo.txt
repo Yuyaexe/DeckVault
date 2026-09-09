@@ -1,0 +1,859 @@
+Yusei Fudo
+==========
+
+=== Past Deck ===
+
+#main
+1 Speed Warrior
+
+#extra
+1 Junk Warrior
+1 Stardust Dragon
+
+=== Fortune Cup ===
+
+#main
+1 Shield Warrior
+1 Sonic Chick
+1 Speed Warrior
+1 Turret Warrior
+1 Card Rotator
+1 Domino Effect
+1 Double Summon
+1 Fighting Spirit
+1 Junk Barrage
+1 Prevention Star
+1 Card Defense
+1 Cosmic Blast
+1 Equip Shot
+1 Give and Take
+1 Graceful Revival
+1 Harmonia Mirror
+1 Scrap-Iron Scarecrow
+1 Spirit Force
+1 Urgent Tuning
+
+#extra
+1 Junk Warrior
+1 Nitro Warrior
+1 Stardust Dragon
+1 Turbo Warrior
+
+=== Facility ===
+
+#main
+1 The Bewitching Phantom Thief
+1 Tri-Horned Dragon
+1 Yaranzo
+1 Chaosrider Gustaph
+1 Chopman the Desperate Outlaw
+1 Exiled Force
+1 Goe Goe the Gallant Ninja
+1 Great Phantom Thief
+1 Karate Man
+1 Magical Merchant
+1 Mataza the Zapper
+1 Muka Muka
+1 Rubble King
+1 Sand Gambler
+1 The Kick Man
+1 The Unhappy Maiden
+1 White Magical Hat
+1 Axe of Despair
+1 Dark Room of Nightmare
+1 Goblin Thief
+1 Nightmare's Steelcage
+1 Poison of the Old Man
+1 Reversal Quiz
+1 Stim-Pack
+1 The Secret of the Bandit
+1 United We Stand
+1 Backfire
+1 Backup Soldier
+1 Battle Mania
+1 Blasting the Ruins
+1 Call of the Haunted
+1 Dust Tornado
+1 Gamble
+1 Graverobber
+1 Jar of Greed
+1 Nutrient Z
+1 Reverse Trap
+1 Seven Tools of the Bandit
+1 Shadow Spell
+1 Taunt
+
+=== =Owned cards ===
+
+#main
+1 Giant Ushi Oni
+1 Totem Pole
+
+=== Dark Signer ===
+
+#main
+1 Healing Wave Generator
+1 Level Eater
+1 Quillbolt Hedgehog
+1 Shield Warrior
+1 Shield Wing
+1 Sonic Chick
+1 Speed Warrior
+1 Tuning Supporter
+1 Turbo Booster
+1 Turret Warrior
+1 Zero Gardna
+1 Advance Draw
+1 Battle Waltz
+1 Half Shut
+1 Junk Barrage
+1 One for One
+1 Release Restraint Wave
+1 Silver Wing
+1 Tuning
+1 Defense Draw
+1 Descending Lost Star
+1 Equip Shot
+1 Graceful Revival
+1 Iron Resolve
+1 Realize Defense
+1 Reinforce Truth
+1 Shooting Star
+1 Spirit Force
+1 Stardust Flash
+1 Starlight Road
+1 Synchro Barrier
+1 Synchro Ring
+
+#extra
+1 Junk Warrior
+1 Nitro Warrior
+1 Road Warrior
+1 Stardust Dragon
+
+=== Pre-World Racing Grand Prix ===
+
+#main
+1 Bicular
+1 Boost Warrior
+1 Card Breaker
+1 Earthquake Giant
+1 Gauntlet Warrior
+1 Justice Bringer
+1 Level Eater
+1 Max Warrior
+1 Quillbolt Hedgehog
+1 Second Booster
+1 Sonic Chick
+1 Speed Warrior
+1 Tricular
+1 Turret Warrior
+1 Blind Spot Strike
+1 Cards of Consonance
+1 Double Cyclone
+1 Fighting Spirit
+1 Junk Barrage
+1 One for One
+1 Synchro Gift
+1 Variety Comes Out
+1 Graceful Revival
+1 Half Shield
+1 Limiter Break
+1 Panic Wave
+1 Power Frame
+1 Skill Twist
+1 Space Jump
+1 Synchro Blast
+1 Synchro Overlimit
+1 Tuner's Barrier
+1 Tuner's Explosion
+
+#extra
+1 Armory Arm
+1 Junk Warrior
+1 Nitro Warrior
+1 Stardust Dragon
+
+=== World Racing Grand Prix ===
+
+#main
+1 Max Warrior
+1 Sonic Chick
+1 Prevention Star
+1 Release Restraint Wave
+1 Future Battle
+1 Scrap-Iron Scarecrow
+
+#extra
+1 Stardust Dragon
+
+=== 3D Bonds Beyond Time ===
+
+#main
+1 Quillbolt Hedgehog
+1 Sonic Chick
+1 Speed Warrior
+1 Reincarnation of Hope
+1 Miracle's Wake
+1 Stardust Mirage
+
+#extra
+1 Junk Gardna
+
+=== =Preview cards ===
+
+#main
+1 Sonic Chick
+1 Speed Warrior
+1 Stardust Xiaolong
+1 Tuning Supporter
+
+#extra
+1 Junk Warrior
+1 Nitro Warrior
+1 Road Warrior
+1 Stardust Dragon
+1 Turbo Warrior
+
+=== Fortune Cup ===
+
+#main
+1 Ghost Gardna
+1 Healing Wave Generator
+1 Massive Warrior
+1 Quillbolt Hedgehog
+1 Shield Warrior
+1 Shield Wing
+1 Sonic Chick
+1 Speed Warrior
+1 Tuning Supporter
+1 Turbo Booster
+1 Speed Spell - Dash Pilfer
+1 Speed Spell - Gap Storm
+1 Speed Spell - Final Attack
+1 Speed Spell - Reactor Pod
+1 Speed Spell - Shift Down
+1 Speed Spell - Silver Contrails
+1 Speed Spell - Summon Speeder
+1 Speed Spell - Synchro Return
+1 Speed Spell - Vision Wind
+1 Speed Spell - Zero Reverse
+1 Speed World
+1 Backup Soldier
+1 Confusion Chaff
+1 Counterattack Beacon
+1 Crossline Counter
+1 Defense Draw
+1 Descending Lost Star
+1 Equip Shot
+1 Give and Take
+1 Graceful Revival
+1 Harmonia Mirror
+1 Limiter Break
+1 Meteor Stream
+1 Remote Revenge
+1 Scrap-Iron Scarecrow
+1 Shining Silver Force
+1 Slip Stream
+1 Synchro Blast
+1 Synchro Spirits
+1 Synchro Strike
+1 Urgent Tuning
+1 Wasteland Tornado
+
+#extra
+1 Armory Arm
+1 Junk Warrior
+1 Nitro Warrior
+1 Stardust Dragon
+1 Turbo Warrior
+
+=== Dark Signers ===
+
+#main
+1 Ghost Gardna
+1 Max Warrior
+1 Level Warrior
+1 Rockstone Warrior
+1 Shield Warrior
+1 Sonic Chick
+1 Speed Warrior
+1 Stardust Xiaolong
+1 Turret Warrior
+1 Speed Spell - Angel Baton
+1 Speed Spell - Final Attack
+1 Speed World
+1 Baton of the Hero
+1 Burst Synchro Summon
+1 Card of Sacrifice
+1 Joint Future
+1 Limiter Break
+1 Miracle Locus
+1 Revival Ticket
+1 Rising Rush
+1 Scrap-Iron Scarecrow
+1 Scrubbed Raid
+1 Shard of Hope
+1 Slip Summon
+1 Superior Protector
+1 Synchro Baton
+1 Synchro Destructor
+1 Synchro Striker Unit
+
+#extra
+1 Junk Archer
+1 Junk Warrior
+1 Majestic Star Dragon
+1 Stardust Dragon
+1 Turbo Warrior
+
+=== Pre-World Racing Grand Prix ===
+
+#main
+1 Unicycular
+1 A/D Changer
+1 Backup Warrior
+1 Bicular
+1 Card Breaker
+1 Damage Eater
+1 Dash Warrior
+1 Gauntlet Warrior
+1 Ghost Gardna
+1 Junk Collector
+1 Level Warrior
+1 Massive Warrior
+1 Max Warrior
+1 Quillbolt Hedgehog
+1 Rapid Warrior
+1 Shield Warrior
+1 Shield Wing
+1 Sonic Chick
+1 Speed Warrior
+1 Stardust Xiaolong
+1 Synchron Explorer
+1 Tricular
+1 Turbo Booster
+1 Turret Warrior
+1 Zero Gardna
+1 Speed Spell - Accelerate Draw
+2 Speed Spell - Angel Baton
+1 Speed Spell - Dash Pilfer
+1 Speed Spell - Fallen Synchron
+1 Speed Spell - Final Attack
+1 Speed Spell - High Speed Crash
+1 Speed Spell - Overspeed
+1 Speed Spell - Speed Energy
+1 Speed Spell - Speed Fusion
+1 Speed Spell - Synchro Defuse
+1 Speed Spell - Synchro Return
+1 Speed Spell - Vision Wind
+1 Speed Spell - Zero Reverse
+1 Speed World 2
+1 Chain Arrow
+1 Cosmic Blast
+1 Descending Lost Star
+1 Desperate Tag
+1 Harmony Crystal
+1 Meteor Wave
+1 Miracle's Wake
+1 Reflect Barrier
+1 Reinforce Truth
+1 Return Marker
+1 Scrap-Iron Scarecrow
+1 Scrubbed Raid
+1 Shield Coat
+1 Shining Silver Force
+1 Shock Reborn
+1 Starlight Road
+1 Summon Tax
+1 Synchro Barrier
+1 Synchro Deception
+1 Synchro Material
+1 Synchro Out
+1 Synchro Spirits
+1 Synchro Strike
+1 Urgent Tuning
+1 Wave Force
+
+#extra
+1 Dragon Knight Draco-Equiste
+1 Drill Warrior
+1 Junk Archer
+1 Junk Destroyer
+1 Junk Warrior
+1 Majestic Star Dragon
+1 Nitro Warrior
+1 Stardust Dragon
+1 Road Warrior
+1 Turbo Warrior
+
+=== World Racing Grand Prix ===
+
+#main
+1 Unicycular
+1 Arbitrator
+1 Backup Warrior
+1 Bicular
+1 Big One Warrior
+1 Cosmic Compass
+1 Doppelwarrior
+1 Earthquake Giant
+1 Life Gardna
+1 Mirror Ladybug
+1 Necro Linker
+1 Needle Soldier
+1 Quillbolt Hedgehog
+1 Reed Butterfly
+1 Rescue Warrior
+1 Sonic Chick
+1 Speed Warrior
+1 Stardust Phantom
+1 Stronghold Guardian
+1 Swift Scarecrow
+1 Tuning Supporter
+1 Turret Warrior
+1 Speed Spell - Angel Baton
+1 Speed Spell - Overtune
+1 Speed Spell - Star Force
+1 Speed World 2
+1 D2 Shield
+1 Emerging Awakening
+1 Explosive Breakout
+1 Graceful Revival
+1 Hope for Escape
+1 Monster Chain
+1 Power Shift
+1 Scrap-Iron Scarecrow
+1 Star Shift
+1 Stay Force
+1 Synchro Prominence
+1 Trick Mirror
+1 Urgent Tuning
+1 Wave Rebound
+1 Zero Force
+
+#extra
+1 Formula Synchron
+1 Majestic Star Dragon
+1 Road Warrior
+1 Shooting Star Dragon
+1 Stardust Dragon
+
+=== Ark Cradle ===
+
+#main
+1 Balance Blaster
+1 Bright Star Dragon
+1 Clear Effector
+1 Devoted Gardna
+1 Doppelwarrior
+1 Double Delta Warrior
+1 Fake Gardna
+1 Guard Master
+1 Junk Servant
+1 Max Warrior
+1 Mystic Piper
+1 Necro Defender
+1 Quillbolt Hedgehog
+1 Regen Warrior
+1 Salvagent
+1 Salvage Warrior
+1 Scouting Warrior
+1 Shield Wing
+1 Sneak Giant
+1 Sonic Chick
+1 Sonic Warrior
+1 Speed Warrior
+1 Stardust Xiaolong
+1 Synchron Believer
+1 Synchron Keeper
+1 Triangle Warrior
+1 Wave Wall
+1 Wild Heart
+2 Speed Spell - Angel Baton
+1 Speed Spell - Defense Buster
+1 Speed Spell - Synchro Panic
+1 Speed World 2
+1 Crush Star
+1 Dimension Voyage
+1 Enduring Soul
+1 Converging Wishes
+1 Ghoul Summoner
+1 Graceful Revival
+1 Hardship
+1 High and Low
+1 Revenge Return
+1 Scramble Egg
+1 Scrap-Iron Scarecrow
+1 Star Excursion
+1 Starlight Road
+1 Synchro Barrier Force
+1 Synchro Striker Unit
+1 Talisman of Reversal
+1 Trust Chain
+1 Wasteland Tornado
+
+#extra
+1 Ancient Fairy Dragon
+1 Black Rose Dragon
+1 Black-Winged Dragon
+1 Formula Synchron
+1 Junk Berserker
+1 Junk Warrior
+1 Life Stream Dragon
+1 Nitro Warrior
+1 Power Tool Dragon
+1 Red Dragon Archfiend
+1 Shooting Star Dragon
+1 Shooting Quasar Dragon
+1 Stardust Dragon
+1 Turbo Warrior
+
+=== Original Timeline ===
+
+#main
+1 Quillbolt Hedgehog
+1 Sonic Chick
+1 Speed Warrior
+1 Tuning Supporter
+1 Speed World 2
+1 Graceful Revival
+1 Scrap-Iron Scarecrow
+1 Urgent Tuning
+
+#extra
+1 Cosmic Blazar Dragon
+1 Formula Synchron
+1 Junk Warrior
+1 Nitro Warrior
+1 Shooting Star Dragon
+1 Stardust Dragon
+
+=== Evolving Duel ===
+
+#main
+1 Quillbolt Hedgehog
+1 Shield Wing
+1 Stardust Dragon/Assault Mode
+1 Speed Spell - Angel Baton
+1 Speed Spell - Speed Energy
+1 Speed World
+1 Assault Mode Activate
+1 Jump Guard
+1 Skill Successor
+1 Synchro Destructor
+1 Trick Battle
+1 Urgent Tuning
+
+#extra
+1 Stardust Dragon
+
+=== 3D Bonds Beyond Time ===
+
+#main
+1 Speed World 2
+
+#extra
+1 Junk Warrior
+1 Stardust Dragon
+
+=== North American WCQ 2011 Special: Yugi vs. Yusei ===
+
+#main
+1 Boost Warrior
+1 Damage Eater
+1 Quillbolt Hedgehog
+1 Salvage Warrior
+1 Speed Warrior
+1 Battle Waltz
+1 Double Cyclone
+1 One for One
+1 Defense Draw
+1 Limiter Overload
+1 Miracle's Wake
+1 Miracle Locus
+1 Scrap-Iron Scarecrow
+
+#extra
+1 Formula Synchron
+1 Junk Warrior
+1 Shooting Star Dragon
+1 Stardust Dragon
+
+=== YCS Providence 2012 Special: Yusei vs. Akiza ===
+
+#main
+1 Boost Warrior
+1 Quillbolt Hedgehog
+1 Shield Warrior
+1 Speed Warrior
+1 Swift Scarecrow
+1 Tuningware
+1 One for One
+1 Card of Sacrifice
+1 Descending Lost Star
+1 Give and Take
+1 Scrap-Iron Scarecrow
+
+#extra
+1 Armory Arm
+1 Junk Destroyer
+1 Junk Warrior
+1 Stardust Dragon
+1 Shooting Quasar Dragon
+1 Shooting Star Dragon
+
+=== North American WCQ 2016 Special: Yusei vs. Yuya ===
+
+#main
+1 Quillbolt Hedgehog
+1 Rush Warrior
+1 Swift Scarecrow
+1 Synchron Carrier
+1 Tuningware
+1 Fighting Spirit
+1 Limit Overdrive
+1 One for One
+1 Pot of Desires
+1 Tuning
+1 United We Stand
+1 Defense Draw
+1 Graceful Revival
+1 Scrap-Iron Scarecrow
+1 Stardust Re-Spark
+
+#extra
+1 Accel Synchron
+1 Armory Arm
+1 Stardust Charge Warrior
+1 Stardust Dragon
+1 Stardust Sifr Divine Dragon
+
+=== Jump Festa 2020: Yusei Fudo vs. Jack Atlas ===
+
+#main
+1 Junk Converter
+1 Speed Warrior
+1 Tuningware
+1 Clashing Souls
+1 Tuning
+1 Limiter Overload
+1 Miracle's Wake
+1 Scrap-Iron Signal
+1 Skill Successor
+1 Stardust Flash
+1 Synchro Strike
+
+#extra
+1 Formula Synchron
+1 Junk Warrior
+1 Shooting Star Dragon T.G. EX
+1 Stardust Dragon
+
+=== The Legend of Duelist Quarter Century 2024: Yusei Fudo vs. Jack Atlas ===
+
+#main
+1 Salvage Warrior
+1 Stardust Wurm
+1 Synchron Carrier
+1 Arrive in Light
+1 Synchro Over Top
+1 Scrap-Iron Scarecrow
+1 Stardust Flash
+1 Totem Pole
+
+#extra
+1 Formula Synchron
+1 Junk Warrior
+1 Majestic Star Dragon
+1 Stardust Dragon
+1 Shooting Riser Dragon
+
+=== Yusei Fudo vs. Jack Atlas: The Clashing Souls Once More ===
+
+#main
+1 Anchorbolt Hedgehog
+1 Assault Sonic Warrior
+2 Full-Speed Warrior
+1 Junk Forward
+1 Junk Meister
+1 Stardust Dragon/Assault Mode
+1 Stardust Trail
+1 Swift Scarecrow
+1 Junk Signal
+1 One for One
+1 Scrap Fist
+1 Stardust Illumination
+1 Synchro Fellowship
+1 Assault Mode Activate
+1 Scrap-Iron Scarecrow
+
+#extra
+1 Jet Warrior
+1 Junk Archer
+1 Junk Speeder
+1 Junk Warrior
+1 Junk Warrior Extreme
+1 Nightwinged Cleric
+1 Scrap Warrior
+1 Stardust Dragon
+
+=== Yu-Gi-Oh! 5D's Decade Duels ===
+
+#main
+3 Giant Germ
+3 Junk Synchron
+3 Nimble Momonga
+3 Quillbolt Hedgehog
+3 Ryko, Lightsworn Hunter
+3 The Calculator
+1 Card of Safe Return
+1 Giant Trunade
+1 Heavy Storm
+3 Inferno Reckless Summon
+1 Mage Power
+1 Magical Stone Excavation
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 Swords of Revealing Light
+3 The Warrior Returning Alive
+1 United We Stand
+2 Bottomless Trap Hole
+1 Mirror Force
+2 Solemn Judgment
+1 Torrential Tribute
+
+#extra
+3 Junk Warrior
+3 Stardust Dragon
+
+=== Duel Transer ===
+
+#main
+1 Card Breaker
+1 Dash Warrior
+2 Debris Dragon
+1 Fortress Warrior
+2 Junk Synchron
+2 Quickdraw Synchron
+1 Level Eater
+1 Majestic Dragon
+1 Max Warrior
+1 Sonic Chick
+2 Speed Warrior
+1 Stronghold Guardian
+1 Swift Scarecrow
+1 Turbo Booster
+2 Turret Warrior
+2 Quillbolt Hedgehog
+1 Fighting Spirit
+1 Miracle Synchro Fusion
+1 Mystical Space Typhoon
+1 One for One
+1 Reinforcement of the Army
+3 Tuning
+1 Call of the Haunted
+2 Graceful Revival
+1 Limiter Overload
+1 Miracle Locus
+2 Power Frame
+2 Scrap-Iron Scarecrow
+1 Scrubbed Raid
+
+#extra
+1 Dragon Knight Draco-Equiste
+1 Armory Arm
+1 Drill Warrior
+1 Junk Archer
+1 Junk Destroyer
+2 Junk Warrior
+1 Lightning Warrior
+1 Majestic Star Dragon
+1 Nitro Warrior
+1 Road Warrior
+1 Seven Swords Warrior
+2 Stardust Dragon
+1 Turbo Warrior
+
+=== Duel Transer ===
+
+#main
+2 Dandylion
+2 Debris Dragon
+2 Effect Veiler
+3 Junk Synchron
+3 Quickdraw Synchron
+2 Quillbolt Hedgehog
+2 Shield Wing
+3 Synchron Explorer
+2 Tuningware
+1 Foolish Burial
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 One for One
+3 Tuning
+2 Bottomless Trap Hole
+1 Call of the Haunted
+2 Graceful Revival
+2 Limit Reverse
+2 Scrap-Iron Scarecrow
+2 Starlight Road
+1 Torrential Tribute
+
+#extra
+1 Armory Arm
+1 Drill Warrior
+1 Formula Synchron
+1 Junk Archer
+3 Junk Destroyer
+2 Junk Warrior
+1 Nitro Warrior
+1 Road Warrior
+2 Stardust Dragon
+1 Shooting Star Dragon
+1 Turbo Warrior
+
+=== V-Jump Magazine ===
+
+#main
+1 Dandylion
+1 Debris Dragon
+3 Junk Synchron
+2 Level Eater
+2 Mist Valley Falcon
+3 Quickdraw Synchron
+2 Quillbolt Hedgehog
+1 Sangan
+2 Synchron Explorer
+3 Tuningware
+2 De-Synchro
+1 Foolish Burial
+1 Heavy Storm
+2 Inferno Reckless Summon
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 One for One
+1 Pot of Avarice
+1 Swords of Revealing Light
+3 Tuning
+2 Call of the Haunted
+1 Mirror Force
+1 Torrential Tribute
+2 Trap Stun
+
+#extra
+1 Ally of Justice Catastor
+1 Armory Arm
+1 Black Rose Dragon
+1 Brionac, Dragon of the Ice Barrier
+1 Drill Warrior
+1 Junk Archer
+2 Junk Destroyer
+1 Junk Warrior
+2 Nitro Warrior
+1 Road Warrior
+1 Stardust Dragon
+1 T.G. Hyper Librarian
+1 Trishula, Dragon of the Ice Barrier
+1 Lightning Warrior

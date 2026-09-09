@@ -1,0 +1,502 @@
+Reginald Kastle
+===============
+
+=== Ancient Deck ===
+
+#main
+1 Eagle Shark
+2 Gazer Shark
+1 Mermaid Shark
+1 Panther Shark
+1 Saber Shark
+2 Silent Angler
+1 Spear Shark
+2 Edict of Atlantis
+1 Sea Lord's Amulet
+1 Shark Lair
+1 Overlay Wedge
+2 Zeus' Breath
+
+#extra
+1 Number 73: Abyss Splash
+
+=== Past Deck ===
+
+#main
+1 Big Jaws
+1 Drill Barnacle
+1 Skull Kraken
+1 Book of Moon
+
+=== Pre-World Duel Carnival ===
+
+#main
+1 Big Jaws
+1 Drill Barnacle
+1 Friller Shark
+1 Jawsman
+1 Needle Sunfish
+1 Shark Stickers
+1 Shocktopus
+1 Skull Kraken
+1 Armored Xyz
+1 Aqua Jet
+1 Mystical Space Typhoon
+1 Salvage
+1 Shark Lair
+1 Surface
+1 Xyz Gift
+1 Booming Urchin
+1 Final Offering
+1 Fish Rain
+1 Icy Crevasse
+1 Life Regeneration
+1 Splash Capture
+1 Zeus' Breath
+
+#extra
+1 Black Ray Lancer
+1 Number 17: Leviathan Dragon
+1 Submersible Carrier Aero Shark
+
+=== World Duel Carnival Preliminaries ===
+
+#main
+1 Big Jaws
+1 Drill Barnacle
+1 Hammer Shark
+1 Jawsman
+1 Skull Kraken
+1 Falling Current
+1 Plate Salvage
+1 Extreme Pressure Power
+1 Sea King's Verdict
+
+#extra
+1 Black Ray Lancer
+1 Number 32: Shark Drake
+1 Submersible Carrier Aero Shark
+
+=== World Duel Carnival Finals ===
+
+#main
+1 Big Jaws
+1 Deep Sweeper
+1 Double Shark
+1 Hammer Shark
+2 Hyper-Ancient Shark Megalodon
+1 Jawsman
+1 Shark Stickers
+1 Shocktopus
+1 Spear Shark
+1 Tripod Fish
+1 Xyz Remora
+1 Aqua Jet
+1 Deep Sea Attack
+1 Different Dimension Deepsea Trench
+1 Plate Salvage
+1 Shark Spark
+1 Shield Fin
+1 Underwater Snow Prison
+1 Upswell
+1 Adapt to Adversity
+1 Bubble Bringer
+1 Escape Lure
+1 Heraldry Catastrophe
+1 Xyz Dimension Splash
+1 Zeus' Breath
+
+#extra
+1 Black Ray Lancer
+1 Number 32: Shark Drake
+1 Number C32: Shark Drake Veiss
+1 Submersible Carrier Aero Shark
+
+=== Barian Invasion ===
+
+#main
+1 Big Jaws
+1 Big Whale
+1 Deep Sweeper
+1 Double Fin Shark
+1 Double Shark
+1 Drill Barnacle
+1 Eagle Shark
+1 Hammer Shark
+1 Panther Shark
+1 Shark Stickers
+1 Sharkraken
+1 Shocktopus
+1 Silent Angler
+1 Spear Shark
+3 Starfish
+1 Aqua Gate
+1 Break Stream
+1 Fish Spawn
+1 Sharkify
+1 Surging Erosion
+1 Tri-Slice
+1 Xyz Crown
+1 Full Armored Xyz
+1 Ghost Salvage
+1 Shark Splash
+1 Torrential Reborn
+1 Zeus' Breath
+
+#extra
+1 Black Ray Lancer
+1 Number 32: Shark Drake
+1 Number C32: Shark Drake Veiss
+1 Shark Caesar
+1 Shark Fortress
+1 Submersible Carrier Aero Shark
+
+=== Legendary Number War ===
+
+#main
+1 Big Jaws
+1 Depth Shark
+1 Panther Shark
+1 Saber Shark
+1 Shark Stickers
+1 Skull Kraken
+1 Aqua Mirage
+1 Cascade Barrier
+1 Edict of Atlantis
+1 Freezing Point
+1 Monster Reborn
+1 Sea Lord's Amulet
+1 Deep Current
+1 Full Armored Xyz
+1 Hide and Shark
+
+#extra
+1 Black Ray Lancer
+1 Number 73: Abyss Splash
+1 Number 94: Crystalzero
+
+=== Barian Emperor Onslaught ===
+
+#main
+1 Big Jaws
+1 Boom Shark
+1 Cutter Shark
+1 Depth Biter
+1 Doppelganger Shark
+1 Dream Shark
+1 Friller Rabca
+1 Panther Shark
+1 Saber Shark
+1 Silent Angler
+1 Silent Wobby
+1 Skull Kraken
+1 Aqua Jet
+1 Card of Ascension
+1 Chaos Barrier
+1 Chaos Tempest Draw
+1 Cross Draw of Destiny
+1 Depth Eruption
+1 Glory of the Seven Emperors
+1 Hundred Summon
+1 Infinity Tooth
+1 Power Stream
+1 Rank-Up-Magic Quick Chaos
+1 Rank-Up-Magic - The Seventh One
+1 Rank-Up Rising
+1 Split Defender
+1 Surface
+1 Xyz Treasure
+1 Chaos Hundred Universe
+1 Depth Gardna
+1 Draw of Fate
+1 Duo of the Seven Emperors
+1 Overlay Award
+1 Overlay Connection
+1 Overlay Menace
+1 Rebirth of the Seven Emperors
+1 Reincarnation of the Seven Emperors
+1 Tidal Advantage
+1 Xyz Charge Up
+1 Xyz Trip
+1 Zeus' Breath
+
+#extra
+1 Black Ray Lancer
+1 CXyz Barian Hope
+1 Number 73: Abyss Splash
+1 Number 101: Silent Honor ARK
+1 Number C73: Abyss Supra Splash
+1 Number C101: Silent Honor DARK
+1 Number C102: Archfiend Seraph
+1 Number C103: Ragnafinity
+1 Number C104: Umbral Horror Masquerade
+1 Number C105: Battlin' Boxer Comet Cestus
+1 Number C106: Giant Red Hand
+1 Number C107: Neo Galaxy-Eyes Tachyon Dragon
+1 Submersible Carrier Aero Shark
+
+=== Xyz Startup!! ===
+
+#main
+1 Drill Barnacle
+1 Big Jaws
+1 Jawsman
+3 Snowman Eater
+1 Surface
+1 Water Hazard
+1 Call of the Haunted
+1 Poseidon Wave
+
+#extra
+1 Number 17: Leviathan Dragon
+1 Submersible Carrier Aero Shark
+
+=== Xyz Startup!! ===
+
+#main
+3 Big Jaws
+3 Drill Barnacle
+1 Salvage
+1 Surface
+1 Forgotten Temple of the Deep
+1 Poseidon Wave
+
+#extra
+1 Number 17: Leviathan Dragon
+1 Submersible Carrier Aero Shark
+
+=== Sacred Star Knights!! ===
+
+#main
+1 Big Jaws
+1 Drill Barnacle
+1 Friller Rabca
+1 Needle Sunfish
+1 Shark Stickers
+1 Aqua Jet
+1 Surface
+1 Aegis of the Ocean Dragon Lord
+1 Explosive Urchin
+1 Gravity Bind
+1 Poseidon Wave
+
+#extra
+1 Black Ray Lancer
+1 Submersible Carrier Aero Shark
+
+=== Sacred Star Knights!! ===
+
+#main
+1 Big Jaws
+1 Drill Barnacle
+1 Friller Rabca
+1 Needle Sunfish
+2 Shark Stickers
+3 Aqua Jet
+1 Surface
+1 Water Hazard
+1 Xyz Effect
+
+#extra
+1 Black Ray Lancer
+1 Number 17: Leviathan Dragon
+1 Submersible Carrier Aero Shark
+
+=== Ouroboros, Wicked Dragon of Destruction!! ===
+
+#main
+1 Big Jaws
+2 Drill Barnacle
+1 Friller Rabca
+1 Needle Sunfish
+1 Shark Stickers
+1 Aqua Jet
+1 Surface
+1 Explosive Urchin
+1 Gravity Bind
+1 Poseidon Wave
+
+#extra
+1 Black Ray Lancer
+1 Submersible Carrier Aero Shark
+
+=== Ouroboros, Wicked Dragon of Destruction!! ===
+
+#main
+1 Drill Barnacle
+1 Friller Rabca
+1 Jawsman
+1 Needle Sunfish
+2 Shark Stickers
+1 Aqua Jet
+1 Surface
+1 Water Hazard
+1 Splash Capture
+1 Xyz Reborn
+
+#extra
+1 Black Ray Lancer
+1 Number 17: Leviathan Dragon
+1 Submersible Carrier Aero Shark
+
+=== V Jump Magazine ===
+
+#main
+1 Abyss Soldier
+1 Flame Tiger
+1 Friller Rabca
+1 Gishki Avance
+3 Gishki Beast
+2 Hammer Shark
+3 Mother Grizzly
+1 Needle Sunfish
+2 Nimble Sunfish
+2 Shark Stickers
+1 Shocktopus
+1 Book of Moon
+3 Creature Swap
+1 Heavy Storm
+1 Monster Reborn
+2 Mystical Space Typhoon
+3 Surface
+3 Aquamirror Cycle
+3 Call of the Haunted
+2 Embodiment of Apophis
+
+#extra
+1 Black Ray Lancer
+1 Evigishki Merrowgeist
+1 Evilswarm Ouroboros
+1 Gem-Knight Pearl
+1 Lavalval Chain
+1 Leviair the Sea Dragon
+1 Number 17: Leviathan Dragon
+1 Number 32: Shark Drake
+1 Submersible Carrier Aero Shark
+
+=== December 2013 ===
+
+#main
+1 Big Whale
+3 Double Shark
+1 Fishborg Archer
+3 Friller Rabca
+3 Hammer Shark
+3 Mermail Abysspike
+3 Needle Sunfish
+3 Shark Stickers
+2 Aqua Jet
+2 Falling Current
+1 Heavy Storm
+1 Monster Reborn
+3 Mystical Space Typhoon
+2 Salvage
+3 Surface
+1 Xyz Energy
+1 Xyz Gift
+1 Solemn Judgment
+1 Splash Capture
+2 Torrential Tribute
+
+#extra
+1 Black Ray Lancer
+1 Full Armored Black Ray Lancer
+1 Mermail Abysstrite
+1 Number 17: Leviathan Dragon
+1 Number 30: Acid Golem of Destruction
+1 Submersible Carrier Aero Shark
+
+=== December 2013 ===
+
+#main
+3 Depth Shark
+3 Double-Fin Shark
+2 Eagle Shark
+2 Panther Shark
+3 Saber Shark
+3 Silent Angler
+1 Wind-Up Shark
+2 Xyz Remora
+1 Heavy Storm
+2 Lemuria, the Forgotten City
+3 Mystical Space Typhoon
+1 Monster Reborn
+3 Salvage
+3 Sea Lord's Amulet
+3 Transmodify
+1 Fish Depth Charge
+1 Solemn Judgment
+2 Torrential Reborn
+2 Torrential Tribute
+
+#extra
+1 Abyss Dweller
+1 Full Armored Crystalzero Lancer
+1 Number 32: Shark Drake
+1 Number 73: Abyss Splash
+1 Number 94: Crystalzero
+1 Number C32: Shark Drake Veiss
+1 Shark Fortress
+1 Snowdust Giant
+
+=== Numbers Guide 1 ===
+
+#main
+1 Big Jaws
+1 Friller Rabca
+3 Hammer Shark
+3 Mother Grizzly
+2 Needle Sunfish
+3 Nimble Sunfish
+1 Sangan
+3 Shark Stickers
+1 Shocktopus
+1 Skull Kraken
+1 Heavy Storm
+1 Monster Reborn
+2 Mystical Space Typhoon
+3 Star Changer
+3 Surface
+2 Xyz Unit
+3 Aquamirror Cycle
+3 Call of the Haunted
+1 Mirror Force
+2 Xyz Reborn
+
+#extra
+1 Black Ray Lancer
+1 Number 17: Leviathan Dragon
+1 Number 30: Acid Golem of Destruction
+1 Number 32: Shark Drake
+1 Leviair the Sea Dragon
+
+=== Numbers Guide 2 ===
+
+#main
+3 Hammer Shark
+3 Mermail Abyssnose
+2 Needle Sunfish
+2 Shark Stickers
+3 Spear Shark
+3 Starfish
+3 Xyz Remora
+2 Aqua Jet
+1 Dark Hole
+3 Generation Force
+1 Heavy Storm
+1 Monster Reborn
+3 Mystical Space Typhoon
+2 Salvage
+2 Surface
+2 Bubble Bringer
+2 Call of the Haunted
+2 Torrential Tribute
+
+#extra
+2 Bahamut Shark
+1 Number 17: Leviathan Dragon
+2 Number 32: Shark Drake
+1 Number 47: Nightmare Shark
+1 Number C32: Shark Drake Veiss
+1 Shark Fortress
+1 Shark Caesar

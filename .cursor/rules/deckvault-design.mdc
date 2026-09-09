@@ -1,0 +1,25 @@
+---
+description: DeckVault design language and visual references
+globs: src/**/*.tsx,src/**/*.css
+alwaysApply: false
+---
+
+# Design Language
+
+Modern SaaS — minimal, fast, premium.
+
+## References (inspiration, not copy)
+- Layout: Linear
+- Sidebar: Discord / Notion
+- Table: CardTrader
+- Dashboard: Vercel
+- Animations: Arc Browser (150ms transitions, hover everywhere)
+- Theme: Obsidian dark default (#1e1e1e range, blue accent)
+
+## Rules
+- Rounded corners, soft shadows, large spacing, neutral colors
+- Glassmorphism only where appropriate
+- No ugly HTML tables — use virtualized div rows
+- Premium empty states with icon + headline + CTA
+- Desktop first, responsive, accessibility compliant
+- Respect `prefers-reduced-motion`

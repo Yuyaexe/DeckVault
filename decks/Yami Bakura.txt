@@ -1,0 +1,265 @@
+Yami Bakura
+===========
+
+=== Disruption ===
+
+#main
+1 Lady of Faith
+1 Electric Lizard
+1 Man-Eater Bug
+2 Morphing Jar
+1 White Magical Hat
+1 Chain Energy
+1 Change of Heart
+1 Just Desserts
+
+=== Tarot ===
+
+#main
+1 Doma The Angel of Silence
+1 Happy Lover
+1 Mask of Darkness
+
+=== Battle City ===
+
+#main
+1 Earthbound Spirit
+1 Gernia
+1 Goblin Zombie
+1 Headless Knight
+1 Souls of the Forgotten
+1 The Earl of Demise
+1 The Gross Ghost of Fled Dreams
+1 The Portrait's Secret
+1 Dark Necrofear
+1 Dark Ruler Ha Des
+1 Jowgen the Spiritualist
+1 Puppet Master
+1 Sangan
+1 Dark Designator
+1 Dark Sanctuary
+1 Ectoplasmer
+1 Exchange
+1 Monster Reborn
+1 Premature Burial
+1 Spirit Message "A"
+1 Spirit Message "I"
+1 Spirit Message "L"
+1 Spirit Message "N"
+1 Spiritualistic Medium
+1 The Dark Door
+1 The Shallow Grave
+2 Dark Spirit of the Silent
+1 Destiny Board
+1 Fearful Earthbound
+1 Multiple Destruction
+
+=== Diabound ===
+
+#main
+1 Headless Knight
+1 The Earl of Demise
+1 Diabound Kernel
+1 Grief Tablet
+1 Polymerization
+1 Pot of Greed
+1 Spirit Illusion
+1 Mirror Tablet
+1 Rebirth Tablet
+1 Spirit Shield
+
+#extra
+1 The Duke of Demise
+
+=== Undead Lockdown ===
+
+#main
+1 Doomcaliber Knight
+3 Necro Mannequin
+1 Disgraced Mage
+1 Necro Jar
+3 Necro Soldier
+1 Necro Wall
+1 Counterbalance
+1 Cursed Twin Dolls
+1 Negate Defense
+1 Pot of Greed
+1 Spirit Sword of Sealing
+1 Call of the Earthbound
+1 Narrow Corridor
+1 Necro Cycle
+1 Zoma the Spirit
+
+=== Yu-Gi-Oh! Duelist ===
+
+#main
+1 Earthbound Spirit
+1 Gelnia
+1 Goblin Zombie
+1 Headless Knight
+1 The Earl of Demise
+1 The Gross Ghost of Fled Dreams
+1 The Portrait's Secret
+1 Dark Necrofear
+1 Puppet Master, Controller of the Dead
+1 Dark Designator
+1 Deja Vu
+1 Ectoplasmer
+1 The Dark Door
+1 Dark Spirit of the Silent
+1 Destiny Board
+1 Fearful Earthbound
+1 Multiple Destruction
+
+=== Yu-Gi-Oh! Millennium World ===
+
+#main
+1 Death Knight Deathcalibur
+1 Necroface
+1 Necromannequin
+3 Necrosoldier
+1 All Killing Death Card
+1 Accursed Necrotwins
+1 Multiply
+1 Trap Charm
+1 Death Spirit Zoma
+1 Ghost Beckoning
+1 Narrow Corridor
+
+=== Yu-Gi-Oh! Championship Series Providence 2012 ===
+
+#main
+1 The Earl of Demise
+1 Dark Necrofear
+1 Dark Ruler Ha Des
+1 Jowgen the Spiritualist
+1 Man-Eater Bug
+1 White Magical Hat
+1 Change of Heart
+1 Pot of Greed
+1 The Dark Door
+1 Dark Spirit of the Silent
+
+=== Dark Duel Stories ===
+
+#main
+3 Aqua Dragon
+3 B. Dragon Jungle King
+3 Big Shield Gardna
+3 Dark Elf
+2 Meteor B. Dragon
+3 Darkfire Dragon
+2 Hyozanryu
+3 Jirai Gumo
+3 Koumori Dragon
+3 Castle of Dark Magic
+1 Brain Control
+3 Change of Heart
+1 Megamorph
+3 Raigeki
+3 Swords of Revealing Light
+
+=== The Eternal Duelist Soul ===
+
+#main
+3 Gemini Elf
+1 Giant Soldier of Stone
+2 Summoned Skull
+3 Vorse Raider
+2 Dimensional Warrior
+1 Dream Clown
+2 Kuriboh
+3 Magician of Faith
+2 Man-Eater Bug
+1 Masked Sorcerer
+1 Penguin Soldier
+1 Sinister Serpent
+2 Wall of Illusion
+2 Witch of the Black Forest
+1 Change of Heart
+1 Dark Hole
+2 Graceful Charity
+1 Harpie's Feather Duster
+2 Heavy Storm
+1 Monster Reborn
+1 Pot of Greed
+1 Raigeki
+1 Swords of Revealing Light
+1 Kunai with Chain
+1 Magic Jammer
+1 Mirror Force
+
+=== The Sacred Cards ===
+
+#main
+2 Air Marmot of Nefariousness
+3 Bite Shoes
+1 Bone Mouse
+3 Candle of Fate
+2 Jinzo 7
+2 Mech Mole Zombie
+2 Mystery Hand
+2 Pot the Trick
+2 Shadow Specter
+3 Spear Cretin
+3 Tomozaurus
+2 Wretched Ghost of the Attic
+1 Spirit Message "A"
+1 Spirit Message "I"
+1 Spirit Message "L"
+1 Spirit Message "N"
+1 Destiny Board
+
+=== The Dawn of Destiny ===
+
+#main
+2 Aqua Madoor
+2 Gemini Elf
+2 La Jinn the Mystical Genie of the Lamp
+3 The Portrait's Secret
+2 Summoned Skull
+1 Dark Hole
+2 Gravekeeper's Servant
+1 Mage Power
+1 Monster Reborn
+2 Mystical Space Typhoon
+1 Pot of Greed
+1 Premature Burial
+1 Raigeki
+1 Spirit Message "A"
+1 Spirit Message "I"
+1 Spirit Message "L"
+1 Spirit Message "N"
+2 Tribute to the Doomed
+1 United We Stand
+1 Aqua Chorus
+1 Destiny Board
+1 Life Absorbing Machine
+1 Magic Cylinder
+1 Mirror Force
+2 Negate Attack
+1 Ring of Destruction
+2 Solemn Wishes
+2 Widespread Ruin
+
+=== Reshef of Destruction ===
+
+#main
+1 Earthbound Spirit
+3 Headless Knight
+1 The Earl of Demise
+1 The Gross Ghost of Fled Dreams
+1 The Portrait's Secret
+3 Dark Elf
+1 Dark Necrofear
+3 Flash Assailant
+1 Gernia
+1 Nuvia the Wicked
+3 Change of Heart
+3 Harpie's Feather Duster
+3 Megamorph
+3 Monster Reborn
+3 Pot of Greed
+3 Swords of Revealing Light
+3 Destiny Board
+1 Torrential Tribute

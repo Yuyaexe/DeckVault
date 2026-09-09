@@ -1,0 +1,119 @@
+﻿node.exe : npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm 
+help npmrc` for supported config options.
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...config options.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Unused files (2)
+scripts/verify-backup-import-runner.ts
+src/components/ui/skeleton.tsx        
+Unused devDependencies (4)
+@tauri-apps/api     package.json:55:6
+eslint              package.json:62:6
+eslint-config-next  package.json:63:6
+tsx                 package.json:66:6
+Unlisted dependencies (1)
+postcss-load-config  postcss.config.mjs:1:10
+Unused exports (86)
+AvatarImage                                   src/components/ui/avatar.tsx:29:18                                     
+badgeVariants                                 src/components/ui/badge.tsx:28:17                                      
+buttonVariants                                src/components/ui/button.tsx:45:18                                     
+DialogPortal                                  src/components/ui/dialog.tsx:105:11                                    
+DialogOverlay                                 src/components/ui/dialog.tsx:105:25                                    
+DialogTrigger                                 src/components/ui/dialog.tsx:105:40                                    
+DialogClose                                   src/components/ui/dialog.tsx:105:55                                    
+ScrollBar                                     src/components/ui/scroll-area.tsx:37:22                                
+SelectGroup                                   src/components/ui/select.tsx:81:18                                     
+SheetPortal                                   src/components/ui/sheet.tsx:105:17                                     
+SheetOverlay                                  src/components/ui/sheet.tsx:105:30                                     
+SheetClose                                    src/components/ui/sheet.tsx:105:58                                     
+SheetDescription                              src/components/ui/sheet.tsx:105:109                                    
+useAnimeYugiohPasscodeSync          function  src/features/anime-collection/hooks/useAnimeYugiohPasscodeSync.tsx:8:17
+isAnimeExternalImage                function  src/features/anime-collection/utils/anime-image.ts:6:17                
+normalizeDigimonSetCode             function  src/features/catalog/services/card-api/digimon.utils.ts:87:17          
+digimonTcgPlayerIdFromResult        function  src/features/catalog/services/card-api/digimon.utils.ts:131:17         
+digimonCardPriceFields              function  src/features/catalog/services/card-api/digimon.utils.ts:142:17         
+digimonEffectiveSetCodeForPricing   function  src/features/catalog/services/card-api/digimon.utils.ts:165:17         
+digimonOwnedCardPriceFields         function  src/features/catalog/services/card-api/digimon.utils.ts:189:17         
+variantMatchesOwnedCard             function  src/features/catalog/services/card-api/variants.ts:160:17              
+findVariantForSelection             function  src/features/catalog/services/card-api/variants.ts:182:17              
+buildVariantPriceBlueprintFields    function  src/features/catalog/services/card-api/variants.ts:258:17              
+normalizeSearchText                 function  src/features/catalog/services/search-ranking.ts:3:17                   
+cardNameMatchesQuery                function  src/features/catalog/services/search-ranking.ts:24:17                  
+CATALOG_SOURCE_LABELS                         src/features/catalog/services/serialize-search-results.ts:39:14        
+catalogSourceLabel                  function  src/features/catalog/services/serialize-search-results.ts:45:17        
+ANIME_BACKUP_KIND                             src/features/import/services/backup-export.ts:13:14                    
+normalizeAnimeCharacterCards        function  src/features/import/services/backup-export.ts:48:17                    
+downloadJson                        function  src/features/import/services/backup-export.ts:101:17                   
+DIGIMON_CARD_ID_PATTERN                       src/features/import/services/decklist-parser.ts:27:14                  
+parseDigimonDeckLine                function  src/features/import/services/decklist-parser.ts:48:17                  
+isDigimonCardId                     function  src/features/import/services/decklist-parser.ts:86:17                  
+isDigimonDeckLine                   function  src/features/import/services/decklist-parser.ts:165:17                 
+detectDecklistFormat                function  src/features/import/services/decklist-parser.ts:280:17                 
+isCtYugiohAppJson                   function  src/features/import/services/external-wishlist-converter.ts:104:17     
+resolveCardTraderUrl                function  src/features/market/hooks/useCardTraderPrices.ts:18:17                 
+UPSTREAM_TIMEOUT_MS                           src/lib/api/request-limits.ts:7:14                                     
+upstreamSignal                      function  src/lib/api/request-limits.ts:44:17                                    
+readCachedPasscodesForCards         function  src/lib/cache/passcode.ts:25:23                                        
+TRUSTED_IMAGE_HOST_SUFFIXES                   src/lib/cache/trusted-image-hosts.ts:5:14                              
+getCardPreviewImageUrl              function  src/lib/cards/preview-image.ts:106:17                                  
+isYugiohPasscodeId                            src/lib/cards/preview-image.ts:148:10                                  
+extractCardTraderSlugFromImageUrl   function  src/lib/cardtrader/catalog.ts:117:17                                   
+getBlueprintProductSlug             function  src/lib/cardtrader/catalog.ts:130:17                                   
+buildCardTraderCardUrl              function  src/lib/cardtrader/catalog.ts:179:17                                   
+buildCardTraderSlugUrl              function  src/lib/cardtrader/catalog.ts:204:17                                   
+buildCardTraderSearchUrl            function  src/lib/cardtrader/catalog.ts:213:17                                   
+normalizeCardTraderImageUrl         function  src/lib/cardtrader/images.ts:12:17                                     
+buildCardTraderSearchUrl                      src/lib/cardtrader/index.ts:2:3                                        
+buildCardTraderSlugUrl                        src/lib/cardtrader/index.ts:3:3                                        
+buildCardTraderCardUrl                        src/lib/cardtrader/index.ts:4:3                                        
+buildCardTraderManaSearchUrl                  src/lib/cardtrader/index.ts:5:3                                        
+cardTraderBlueprintMatchesCard                src/lib/cardtrader/index.ts:8:3                                        
+resolveCardTraderManaSearchUrl                src/lib/cardtrader/index.ts:12:10                                      
+isCardTraderHostedImage                       src/lib/cardtrader/index.ts:14:10                                      
+isCardTraderPlaceholderImage                  src/lib/cardtrader/index.ts:14:35                                      
+parseCollectionId                   function  src/lib/data/collection-requirements.ts:10:17                          
+messages                                      src/lib/i18n/messages.ts:4:14                                          
+PROXY_IMAGE_REF                               src/lib/proxy-print/custom-images.ts:3:14                              
+storeProxyCustomImage               function  src/lib/proxy-print/custom-images.ts:94:23                             
+expandProxyDeckCustomImages         function  src/lib/proxy-print/custom-images.ts:147:23                            
+detectGameFromFilename              function  src/lib/proxy-print/detect-game.ts:137:17                              
+DRAGONBALL_CARD_ID                            src/lib/proxy-print/dragonball-resolve.ts:10:14                        
+parseYdkText                        function  src/lib/proxy-print/parse-deck.ts:155:17                               
+parseTextDeckContent                function  src/lib/proxy-print/parse-deck.ts:189:17                               
+expandEntries                       function  src/lib/proxy-print/parse-deck.ts:287:17                               
+orderedKeysFromZones                function  src/lib/proxy-print/parse-deck.ts:324:17                               
+canLoadPreviewDirect                function  src/lib/proxy-print/preview-image.ts:4:17                              
+resolveProxyDeck                    function  src/lib/proxy-print/resolve-urls.ts:294:23                             
+NIL_RARITY_STYLE                              src/lib/rarity/resolve-rarity.ts:191:14                                
+resolveRarityStyleByCode            function  src/lib/rarity/resolve-rarity.ts:254:17                                
+isSupabaseAdminConfigured           function  src/lib/supabase/admin.ts:19:17                                        
+getLocalizedYgoCardTypeLabel        function  src/lib/yugioh/advanced-search-labels.ts:136:17                        
+normalizeYugiohCardName             function  src/lib/yugioh/lookup.ts:4:17                                          
+fetchYugiohCardBySetNumber          function  src/lib/yugioh/lookup.ts:46:23                                         
+isCardTraderHostedImage                       src/lib/yugioh/passcode.ts:4:10                                        
+isCardTraderBlueprintExternalId     function  src/lib/yugioh/passcode.ts:37:17                                       
+yugiohSetPrefix                     function  src/lib/yugioh/set-code.ts:3:17                                        
+yugiohCardNumberVariants            function  src/lib/yugioh/set-code.ts:10:17                                       
+yugiohCollectorNumbersMatch         function  src/lib/yugioh/set-code.ts:33:17                                       
+isCardTraderLostArtPromosExpansion  function  src/lib/yugioh/set-code.ts:48:17                                       
+yugiohSetCodeLooksLike              function  src/lib/yugioh/set-code.ts:53:17                                       
+slugifyCardName                     function  src/lib/yugioh/urls.ts:5:17                                            
+CURRENCIES                                    src/types/tcg.ts:7:14                                                  
+GAME_SLUGS                                    src/types/tcg.ts:10:14                                                 
+Unused exported types (13)
+BadgeProps                     interface  src/components/ui/badge.tsx:20:18                                          
+ButtonProps                    interface  src/components/ui/button.tsx:29:18                                         
+ResponsiveSelectOption         interface  src/components/ui/responsive-select.tsx:13:18                              
+AnimeCollectionBreadcrumbItem  interface  src/features/anime-collection/components/AnimeCollectionBreadcrumb.tsx:8:18
+BinderGridLayout               type       src/features/collection/stores/collection-ui.store.ts:5:13                 
+ImageCacheEntry                interface  src/lib/cache/idb.ts:57:18                                                 
+ProxyCustomImageEntry          interface  src/lib/cache/idb.ts:170:18                                                
+CardTraderBlueprintMeta        interface  src/lib/cardtrader/catalog.ts:158:18                                       
+ResolveCardTraderUrlInput      type       src/lib/cardtrader/index.ts:13:15                                          
+DataMode                       type       src/lib/data/server/data-context.ts:7:13                                   
+ProxyDeckPreview               interface  src/lib/proxy-print/types.ts:45:18                                         
+ProxyPrintOptions              interface  src/lib/proxy-print/types.ts:51:18                                         
+GameSlug                       type       src/types/tcg.ts:11:13                                                     

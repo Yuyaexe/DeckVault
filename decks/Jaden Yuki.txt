@@ -1,0 +1,636 @@
+Jaden Yuki
+==========
+
+=== Seven Stars ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Sparkman
+1 Dark Catapulter
+1 Elemental Hero Bladedge
+1 Elemental Hero Bubbleman
+1 Elemental Hero Necroshade
+1 Elemental Hero Wildheart
+3 Hero Kid
+1 Winged Kuriboh
+1 Winged Kuriboh LV10
+1 Wroughtweiler
+1 Battle Fusion
+1 Bubble Blaster
+1 Bubble Illusion
+1 Bubble Shuffle
+1 Burst Impact
+1 Burst Return
+1 Clay Wrap
+1 Courageous Charge
+1 Cyclone Boomerang
+1 Dark Factory of Mass Production
+1 De-Fusion
+1 Double Spell
+1 E - Emergency Call
+1 Emergency Provisions
+1 Fairy of the Spring
+1 Feather Shot
+1 Fusion Gate
+1 Fusion Recovery
+1 Fusion Sage
+1 H - Heated Heart
+1 Hero Flash!!
+1 Hero Heart
+1 Kishido Spirit
+1 Metamorphosis
+1 Miracle Fusion
+1 Mirage of Nightmare
+1 Monster Reborn
+1 Monster Reincarnation
+1 Mud Max
+1 O - Oversoul
+2 Polymerization
+1 Pot of Greed
+1 R - Righteous Justice
+1 Sabatiel - The Philosopher's Stone
+1 Silent Doom
+1 Skyscraper
+1 Spark Blaster
+1 Special Hurricane
+1 Spy Hero
+1 The Flute of Summoning Kuriboh
+1 The Warrior Returning Alive
+1 Transcendent Wings
+1 Wild Half
+1 A Hero Emerges
+1 Clay Charge
+1 Cross Heart
+1 Draining Shield
+1 Edge Hammer
+1 Elemental Burst
+1 Feather Wind
+1 Final Fusion
+1 Hero Barrier
+1 Hero Ring
+1 Hero Signal
+1 Hero Spirit
+1 Hero's Rule 1: Five Freedoms
+1 Insurance
+1 Invincible Hero
+1 Miracle Kids
+1 Mirror Force
+1 Mirror Gate
+1 Negate Attack
+1 Solemn Judgment
+1 Soul Union
+1 Staunch Defender
+1 Super Junior Confrontation
+1 Trap Hole
+
+#extra
+1 Elemental Hero Electrum
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Mariner
+1 Elemental Hero Mudballman
+1 Elemental Hero Neo Bubbleman
+1 Elemental Hero Rampart Blaster
+1 Elemental Hero Shining Flare Wingman
+1 Elemental Hero Steam Healer
+1 Elemental Hero Tempest
+2 Elemental Hero Thunder Giant
+1 Elemental Hero Wildedge
+
+=== Elemental Hero ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Sparkman
+1 Dark Catapulter
+1 Elemental Hero Bladedge
+1 Elemental Hero Bubbleman
+1 Elemental Hero Necroshade
+1 Elemental Hero Wildheart
+1 Hero Kid
+1 Winged Kuriboh
+1 Wroughtweiler
+1 Bubble Blaster
+1 Bubble Illusion
+1 Burial from a Different Dimension
+1 Burst Return
+1 Clay Wrap
+1 De-Fusion
+1 Fusion Gate
+1 Light Laser
+1 Metamorphosis
+1 Miracle Fusion
+1 Monster Reincarnation
+2 Polymerization
+1 Pot of Greed
+1 Skyscraper
+1 The Flute of Summoning Kuriboh
+1 The Warrior Returning Alive
+1 Wild Half
+1 Edge Hammer
+1 Hero Ring
+2 Insurance
+1 Soul Union
+
+#extra
+1 Elemental Hero Clay Guardian
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Mudballman
+1 Elemental Hero Necroid Shaman
+1 Elemental Hero Neo Bubbleman
+1 Elemental Hero Rampart Blaster
+1 Elemental Hero Shining Flare Wingman
+1 Elemental Hero Tempest
+1 Elemental Hero Thunder Giant
+1 Elemental Hero Wild Wingman
+1 Elemental Hero Wildedge
+
+=== Neos ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Neos
+1 Elemental Hero Sparkman
+1 Ojama Black
+1 Card Blocker
+1 Card Trooper
+1 Chrysalis Dolphin
+1 Dandylion
+1 Dark Catapulter
+1 Elemental Hero Bladedge
+1 Elemental Hero Bubbleman
+1 Elemental Hero Necroshade
+1 Elemental Hero Wildheart
+3 Hero Kid
+1 Neo-Spacian Air Hummingbird
+1 Neo-Spacian Aqua Dolphin
+1 Neo-Spacian Dark Panther
+1 Neo-Spacian Flare Scarab
+1 Neo-Spacian Glow Moss
+1 Neo-Spacian Grand Mole
+1 Rallis the Star Bird
+1 Spell Striker
+1 Winged Kuriboh
+1 Winged Kuriboh LV10
+1 Wroughtweiler
+1 Battle x 2
+1 Bubble Blaster
+1 Bubble Shuffle
+1 Burst Impact
+1 Clay Wrap
+1 Climax Hour
+1 Common Soul
+1 Contact
+1 Damage Off Zone
+1 De-Fusion
+1 Double Fusion
+1 E - Emergency Call
+1 Element Sword
+1 Fake Hero
+1 Feather Shot
+1 Fifth Hope
+1 Fusion Recovery
+2 Fusion Sage
+1 Gift of the Martyr
+1 Graceful Charity
+1 H - Heated Heart
+1 Hero Dice
+1 Hero Flash!!
+1 Instant Fusion
+1 Metamorphosis
+1 Miracle Fusion
+1 Monster Reincarnation
+1 Necro Illusion
+1 Neo Space
+1 Neos Energy
+1 Neos Force
+1 O - Oversoul
+2 Polymerization
+1 Pot of Greed
+1 Power Charger
+1 Quick Summon
+1 R - Righteous Justice
+1 Reverse of Neos
+1 Silent Doom
+1 Skyscraper
+1 Skyscraper 2 - Hero City
+1 Spark Blaster
+1 Spell Calling
+1 Spy Hero
+1 Swing of Memories
+1 The Flute of Summoning Kuriboh
+1 The Shallow Grave
+1 Transcendent Wings
+1 A Hero Emerges
+1 Change of Hero - Reflector Ray
+1 Disgraceful Charity
+1 Elemental Mirage
+1 Emergency Evasion
+1 Feather Storm
+1 Hero Call
+1 Hero Counterattack
+1 Hero Medal
+1 Hero Ring
+1 Hero Signal
+1 Hero Spirit
+1 Kid Guard
+1 Negate Attack
+1 Secret Mission
+1 Soul Union
+
+#extra
+1 Elemental Hero Aqua Neos
+1 Elemental Hero Dark Neos
+1 Elemental Hero Electrum
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Flare Neos
+1 Elemental Hero Glow Neos
+1 Elemental Hero Grand Neos
+1 Elemental Hero Mudballman
+1 Elemental Hero Necroid Shaman
+1 Elemental Hero Neo Bubbleman
+1 Elemental Hero Rampart Blaster
+1 Elemental Hero Shining Flare Wingman
+1 Elemental Hero Tempest
+1 Elemental Hero Thunder Giant
+1 Elemental Hero Wildedge
+
+=== Ojama-Hero ===
+
+#main
+1 Elemental Hero Sparkman
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 Neo-Spacian Glow Moss
+1 Good Hero
+1 Mystik Wok
+1 Ojama Delta Hurricane!!
+1 Ojamandala
+1 Polymerization
+1 Pot of Greed
+1 Shield Attack
+1 Over Limit
+
+#extra
+1 Ojama Knight
+
+=== Neos ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Neos
+1 Elemental Hero Sparkman
+1 Card Ejector
+1 Card Trooper
+1 Chrysalis Chicky
+1 Chrysalis Dolphin
+1 Chrysalis Larva
+1 Chrysalis Mole
+1 Chrysalis Pantail
+1 Chrysalis Pinny
+1 Dandylion
+1 Dark Catapulter
+1 Elemental Hero Bladedge
+1 Elemental Hero Bubbleman
+1 Elemental Hero Necroshade
+1 Elemental Hero Neo Bubbleman
+1 Elemental Hero Prisma
+1 Elemental Hero Wildheart
+1 Freed the Brave Wanderer
+1 Hero Kid
+1 Necro Gardna
+1 Neo-Spacian Air Hummingbird
+1 Neo-Spacian Aqua Dolphin
+1 Neo-Spacian Dark Panther
+1 Neo-Spacian Flare Scarab
+1 Neo-Spacian Glow Moss
+1 Neo-Spacian Grand Mole
+1 Rainbow Dragon
+1 Spell Striker
+1 Winged Kuriboh
+1 Winged Kuriboh LV10
+1 Arm Hole
+1 Assault Armor
+1 Battle Fusion
+1 Battle of Sleeping Spirits
+1 Bubble Rod
+1 Burst Return
+1 Clay Wrap
+1 Climax Hour
+1 Cocoon Party
+1 Common Soul
+1 Contact
+1 Contact Out
+1 Contact Soul
+1 Convert Contact
+1 Cross Change
+1 Dark Factory of Mass Production
+1 De-Fusion
+1 E - Emergency Call
+1 EN Shuffle
+1 Fake Hero
+1 Feather Shot
+1 Fifth Hope
+1 Fusion Gate
+1 Fusion Recovery
+1 Fusion Sage
+1 Gift of the Martyr
+1 Graceful Charity
+1 H - Heated Heart
+1 Hero Dice
+1 Hero Heart
+1 Hero Mask
+1 Instant Fusion
+1 Instant Neo Space
+1 Miracle Fusion
+1 Mirage Tube
+1 Necro Illusion
+1 Necro Shot
+1 Neo Space
+1 Neos Energy
+1 Neos Force
+1 Neospace Wave
+1 NEX
+1 O - Oversoul
+2 Polymerization
+1 Quick Summon
+1 R - Righteous Justice
+1 Rainbow Veil
+1 Re-Fusion
+1 Revoke Fusion
+1 Silent Doom
+1 Space Gift
+1 Spark Blaster
+1 Spy Hero
+1 Super Polymerization
+1 Tag Request
+1 The Flute of Summoning Kuriboh
+1 Transcendent Wings
+1 A Hero Emerges
+1 Alchemy Cycle
+1 Call of the Haunted
+1 Change of Hero - Reflector Ray
+1 Cocoon Veil
+1 Common Sacrifice
+1 Cross Heart
+1 Draining Shield
+1 Dummy Marker
+1 Elemental Burst
+1 Elemental Mirage
+1 Emergency Evasion
+1 Feather Storm
+1 Feather Wind
+1 Hero Barrier
+1 Hero Medal
+1 Hero Ring
+1 Hero Signal
+1 Hero's Rule 1: Five Freedoms
+1 Hero's Rule 2
+1 Invincible Hero
+1 Miracle Kids
+1 Negate Attack
+1 Neo Signal
+1 Neospace Road
+1 Over Limit
+1 Secret Mission
+1 Soul Union
+1 Spiritual Fusion
+1 Staunch Defender
+1 Super Junior Confrontation
+
+#extra
+1 Elemental Hero Air Neos
+1 Elemental Hero Aqua Neos
+1 Elemental Hero Chaos Neos
+1 Elemental Hero Clay Guardian
+1 Elemental Hero Dark Neos
+1 Elemental Hero Darkbright
+1 Elemental Hero Electrum
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Flare Neos
+1 Elemental Hero Glow Neos
+1 Elemental Hero Grand Neos
+1 Elemental Hero Magma Neos
+1 Elemental Hero Marine Neos
+1 Elemental Hero Mariner
+1 Elemental Hero Mudballman
+1 Elemental Hero Necroid Shaman
+1 Elemental Hero Plasma Vice
+1 Elemental Hero Rampart Blaster
+1 Elemental Hero Shining Flare Wingman
+1 Elemental Hero Steam Healer
+1 Elemental Hero Storm Neos
+1 Elemental Hero Tempest
+1 Elemental Hero Thunder Giant
+1 Elemental Hero Wildedge
+1 Neo-Spacian Marine Dolphin
+1 Neo-Spacian Twinkle Moss
+1 Rainbow Neos
+
+=== Past Deck ===
+
+#main
+1 Beaver Warrior
+1 Oscillo Hero
+1 Skelengel
+1 Yubel
+1 The Warrior Returning Alive
+
+=== Evil Hero ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Neos
+1 Elemental Hero Sparkman
+1 Elemental Hero Wildheart
+1 Evil Hero Infernal Gainer
+1 Evil Hero Infernal Prodigy
+1 Evil Hero Malicious Edge
+1 Dark Calling
+2 Dark Fusion
+1 Fake Hero
+1 O - Oversoul
+1 Super Polymerization
+1 Vicious Claw
+1 Evil Blast
+
+#extra
+1 Evil Hero Dark Gaia
+1 Evil Hero Infernal Sniper
+1 Evil Hero Inferno Wing
+1 Evil Hero Lightning Golem
+1 Evil Hero Malicious Fiend
+1 Evil Hero Wild Cyclone
+
+=== Darkness ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Neos
+1 Elemental Hero Sparkman
+1 Arcana Force 0 - The Fool
+1 Card Ejector
+2 Card Trooper
+1 Chrysalis Chicky
+1 Chrysalis Pantail
+1 Chrysalis Pinny
+1 Cross Porter
+1 Dandylion
+1 Elemental Hero Bladedge
+2 Elemental Hero Bubbleman
+1 Elemental Hero Necroshade
+1 Elemental Hero Neo Bubbleman
+1 Elemental Hero Wildheart
+1 Gallis the Star Beast
+1 Hero Kid
+1 Honest
+1 Miracle Flipper
+1 Necro Gardna
+1 Neo-Spacian Air Hummingbird
+1 Neo-Spacian Aqua Dolphin
+1 Neo-Spacian Dark Panther
+1 Neo-Spacian Flare Scarab
+1 Neo-Spacian Glow Moss
+1 Neo-Spacian Grand Mole
+1 Spell Striker
+1 Winged Kuriboh
+1 Winged Kuriboh LV10
+1 Wroughtweiler
+1 Yubel
+1 Battle x 2
+1 Cocoon Party
+1 Code Change
+1 Common Soul
+1 Contact
+1 Contact Out
+1 Contact Soul
+1 Convert Contact
+1 Cyclone Wing
+1 De-Fusion
+1 Demise of the Land
+1 Double Fusion
+2 E - Emergency Call
+1 Effect Shut
+1 Elemental Storm
+1 Fake Hero
+1 Fifth Hope
+1 Fusion Shot
+1 Gift of the Martyr
+1 Great Sword
+1 H - Heated Heart
+1 Hero Heart
+1 Hero's Guild
+1 Impact Flip
+1 Instant Fusion
+1 Instant Neo Space
+1 Miracle Contact
+1 Miracle Fusion
+1 Neo Space
+1 Neos Force
+1 Neospace Wave
+1 NEX
+1 O - Oversoul
+2 Polymerization
+1 Quick Summon
+1 R - Righteous Justice
+1 Relationship
+1 Reverse of Neos
+1 Skyscraper
+1 Skyscraper 2 - Hero City
+1 Space Gift
+1 Spark Blaster
+1 Subspace Battle
+1 Super Polymerization
+1 Tag Request
+1 Take Over Five
+1 The Flute of Summoning Kuriboh
+1 The Rival's Name
+1 Transcendent Wings
+1 A Hero Emerges
+1 Astral Shift
+1 Cocoon Veil
+1 Damage Interest
+1 Death and Rebirth
+1 Elemental Burst
+1 Elemental Recharge
+1 Hero Barrier
+1 Hero Blast
+1 Hero Medal
+1 Hero Ring
+1 Hero Shield
+1 Hero Signal
+1 Hero's Backup
+1 Hero's Guard
+1 Hero's Rule 1: Five Freedoms
+1 Hope for the Future
+1 Limit Reverse
+1 Miracle Kids
+1 Mirror Gate
+1 Negate Attack
+1 Over Limit
+1 Secret Mission
+1 Skill Shock
+1 Soul Union
+1 Super Junior Confrontation
+
+#extra
+1 Elemental Hero Air Neos
+1 Elemental Hero Chaos Neos
+1 Elemental Hero Darkbright
+1 Elemental Hero Divine Neos
+1 Elemental Hero Electrum
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Flare Neos
+1 Elemental Hero Grand Neos
+1 Elemental Hero Magma Neos
+1 Elemental Hero Mariner
+1 Elemental Hero Mudballman
+1 Elemental Hero Necroid Shaman
+1 Elemental Hero Plasma Vice
+1 Elemental Hero Shining Flare Wingman
+1 Elemental Hero Tempest
+1 Elemental Hero Wildedge
+1 Neos Wiseman
+1 Rainbow Neos
+
+=== 3D Bonds Beyond Time ===
+
+#main
+1 Elemental Hero Neos
+1 Polymerization
+1 The Flute of Summoning Kuriboh
+1 Elemental Mirage
+1 Hero Barrier
+1 Neos Spiral Force
+
+#extra
+1 Elemental Hero Neos Knight
+
+=== 3D Bonds Beyond Time ===
+
+#main
+1 Elemental Hero Avian
+1 Elemental Hero Burstinatrix
+1 Elemental Hero Clayman
+1 Elemental Hero Neos
+1 Elemental Hero Sparkman
+1 Card Ejector
+1 Elemental Hero Bubbleman
+1 Elemental Hero Wildheart
+1 Winged Kuriboh
+
+#extra
+1 Elemental Hero Flame Wingman
+1 Elemental Hero Thunder Giant

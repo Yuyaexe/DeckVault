@@ -1,0 +1,315 @@
+Chazz Princeton
+===============
+
+=== Chthonian ===
+
+#main
+3 Chthonian Soldier
+1 Helpoemer
+1 Infernal Incinerator
+1 Mefist the Infernal General
+1 Pandemonium Watchbear
+1 Reborn Zombie
+1 Chthonian Alliance
+1 Chthonian Blast
+1 Inferno Reckless Summon
+1 Call of the Haunted
+1 Chthonian Polymer
+
+=== VWXYZ ===
+
+#main
+1 V-Tiger Jet
+1 X-Head Cannon
+1 Frontline Base
+1 Magical Mallet
+1 Call of the Haunted
+
+#extra
+1 VW-Tiger Catapult
+1 VWXYZ-Dragon Catapult Cannon
+1 XYZ-Dragon Cannon
+
+=== North Academy ===
+
+#main
+1 Ojama Yellow
+1 Disc Fighter
+1 Gemini Imps
+1 Giant Rat
+1 Gyaku-Gire Panda
+1 KA-2 Des Scissors
+1 Skull Knight #2
+1 Chaos End
+1 Inferno Tempest
+1 Limiter Removal
+1 Ring of Defense
+1 Return from the Different Dimension
+1 Ring of Destruction
+
+=== Armed Dragon ===
+
+#main
+1 Ojama Yellow
+3 Armed Dragon LV3
+1 Armed Dragon LV5
+1 Armed Dragon LV7
+1 Despair from the Dark
+1 Flying Kamakiri #1
+1 Masked Dragon
+1 Armed Changer
+1 Level Up!
+1 The Graveyard in the Fourth Dimension
+1 Call of the Haunted
+1 The Grave of Enkindling
+
+=== 0-ATK ===
+
+#main
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 Soul Tiger
+1 Catnipped Kitty
+1 Castle Gate
+1 Chaos Necromancer
+1 Copycat
+1 Royal Magical Library
+1 Spirit of the Breeze
+1 The Unhappy Maiden
+1 Relinquished
+1 Enchanting Fitting Room
+1 Ojama Delta Hurricane!!
+1 Painful Choice
+1 Pot of Greed
+1 The Dark Door
+1 Thunder Crash
+
+=== Ojama/Armed Dragon ===
+
+#main
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 Armed Dragon LV5
+1 Armed Dragon LV7
+1 Despair from the Dark
+1 Masked Dragon
+1 Fiend's Sanctuary
+1 Level Up!
+1 Ojamagic
+1 Ojamuscle
+1 Polymerization
+1 Pot of Greed
+1 Level Modulation
+1 Ojama Trio
+
+#extra
+1 Ojama King
+
+=== Love ===
+
+#main
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 Dress Up
+1 Giant Trunade
+1 Graceful Charity
+1 Hidden Wish
+1 Love Letter
+1 Polymerization
+1 Pot of Greed
+1 Chthonian Polymer
+1 Dramatic Crossroads
+1 Ojama Trio
+1 Ring of Destruction
+1 Treasure Map
+
+#extra
+1 Ojama King
+
+=== Misc ===
+
+#main
+3 Aitsu
+1 Archfiend Marmot of Nefariousness
+1 Dark Plant
+1 Kattapillar
+1 Petit Angel
+1 Petit Dragon
+1 Serpent Marauder
+1 Skull Servant
+1 Ameba
+1 Anti-Aircraft Flower
+1 Charm of Shabti
+1 Cliff the Trap Remover
+1 Dark Scorpion - Chick the Yellow
+1 Dark Scorpion - Gorg the Strong
+1 Dark Scorpion - Meanae the Thorn
+1 Don Zaloog
+1 Fox Fire
+1 Griggle
+1 Larvae Moth
+1 Outstanding Dog Marron
+
+=== Armed Dragon/Ojama/Machine Union ===
+
+#main
+1 Beetron-1 Beetletop
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 V-Tiger Jet
+1 X-Head Cannon
+1 Armed Dragon LV3
+1 Armed Dragon LV5
+1 Armed Dragon LV7
+1 Armed Dragon LV10
+1 Chthonian Soldier
+1 Infernal Incinerator
+1 Mecha Ojama King
+1 Ojamachine Yellow
+1 A Feather of the Phoenix
+1 Chthonian Alliance
+1 Enchanting Fitting Room
+1 Front Change
+1 Frontline Base
+1 Graceful Charity
+1 Hidden Wish
+1 Infernal White
+1 Level Down!
+1 Level Modulation
+1 Love Letter
+1 Magical Mallet
+1 Mecha Ojama King Transformation
+1 Mystical Space Typhoon
+1 Ojama Delta Hurricane!!
+1 Ojama Ride
+1 Ojamagic
+1 Ojamandala
+1 Polymerization
+1 Pot of Greed
+1 Quick Summon
+1 Shield Attack
+1 White Veil
+1 Chthonian Polymer
+1 Ojama Delta Wear
+1 Ojama Trio
+1 Ring of Destruction
+
+#extra
+1 Assault Cannon Beetle
+1 Combat Scissor Beetle
+1 Ojama King
+1 VW-Tiger Catapult
+1 VWXYZ-Dragon Cannon
+1 XYZ-Dragon Cannon
+
+=== White Knight ===
+
+#main
+1 White Knight Gardna
+1 White Knight Lancer
+1 White Knight Lord
+2 White Knight Swordsman
+1 Buried Destiny
+1 Cemetery Change
+1 Goblin Negotiator
+1 Infernal Gauntlet
+1 Infernal Transaction
+1 Silent Doom
+1 Stray Lambs
+1 Tribute to the Doomed
+1 Sealed Gate
+
+=== Dimension World ===
+
+#main
+1 Dark Blade
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 V-Tiger Jet
+1 Vorse Raider
+1 X-Head Cannon
+1 Armed Dragon LV7
+1 Armed Dragon LV10
+1 Chaos Necromancer
+1 Chthonian Soldier
+1 Don Zaloog
+1 Infernal Incinerator
+1 Reborn Zombie
+1 Return Zombie
+1 Chthonian Alliance
+1 Desperado Manager
+1 Different Dimension Hangar
+1 Dimensional Catapult
+1 Enchanting Fitting Room
+1 Frontline Base
+1 Fusion Buster
+1 Graceful Charity
+1 Level Up!
+1 Magical Mallet
+1 Megamorph
+1 Ojama Delta Hurricane!!
+1 Ojama Delta Thunder!!
+1 Ojamagic
+1 Ojamandala
+1 Polymerization
+1 Premature Burial
+1 Quick Rush
+1 The Dark Door
+1 Thunder Crash
+1 Tribute to the Doomed
+1 Call of the Haunted
+1 Chthonian Blast
+1 Chthonian Polymer
+1 Dramatic Crossroads
+1 Good Goblin Housekeeping
+1 Hyper Coat
+1 Ojama Delta Wear
+1 Ojama Trio
+1 Return from the Different Dimension
+1 Roll Out!
+
+#extra
+1 Dark Blade Dragon Knight
+1 VW-Tiger Catapult
+1 VWXYZ-Dragon Catapult Cannon
+1 XYZ-Dragon Cannon
+
+=== Darkness ===
+
+#main
+1 Ojama Black
+1 Ojama Green
+1 Ojama Yellow
+1 Armed Dragon LV3
+2 Armed Dragon LV5
+2 Armed Dragon LV7
+1 Armed Dragon LV10
+3 Masked Dragon
+1 Infernal Incinerator
+1 Level Copy
+1 Level Up!
+1 Lightning Vortex
+1 Ojama Delta Hurricane!!
+1 Ojamagic
+1 Ojamandala
+1 Ojamuscle
+1 Polymerization
+1 Reload
+1 Call of the Haunted
+1 Chthonian Polymer
+1 Direct Border
+1 Level Bond
+1 Level Soul
+1 Ojamarble
+1 Ojamarking
+2 Ojama Trio
+1 Pride Shout
+
+#extra
+1 Ojama King
+1 VWXYZ-Dragon Catapult Cannon

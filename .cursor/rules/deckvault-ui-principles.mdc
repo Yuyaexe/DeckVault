@@ -1,0 +1,24 @@
+---
+description: How to think about DeckVault page UX
+globs: src/features/**/*
+alwaysApply: false
+---
+
+# UI Principles
+
+Describe HOW pages should behave, not just what to build.
+
+## Collection Page
+Prioritize scanning thousands of cards quickly:
+- Sticky header + sticky filters
+- Virtualized table (TanStack Virtual)
+- Fast searching, instant filtering
+- Keyboard shortcuts (`/` search, arrows navigate, Enter detail)
+- Infinite scrolling, row selection, bulk editing
+- Right-click context menus, double-click opens details
+
+## Dashboard
+Vercel-style stat cards, large metrics, quick action links.
+
+## General
+Every interaction should feel like a native desktop app.

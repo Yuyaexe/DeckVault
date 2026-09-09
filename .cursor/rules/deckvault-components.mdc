@@ -1,0 +1,16 @@
+---
+description: Mandatory reusable components — never duplicate
+globs: src/**/*.tsx
+alwaysApply: false
+---
+
+# Component Rules
+
+Every UI element must be a reusable component. Do NOT duplicate.
+
+Required shared components in `src/components/shared/`:
+SearchBar, Sidebar, CollectionRow, BulkActionBar, EmptyState, PageHeader, CardInspectDialog, CardImage, Modal, QuantityStepper, binder/BinderChrome
+
+Feature pages compose shared components — no inline one-off UI.
+
+Do not invent PriceBadge / wishlist / deck / Live presence widgets unless those products return to scope.

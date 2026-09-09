@@ -1,0 +1,742 @@
+Yuma Tsukumo
+============
+
+=== =First Syllable ===
+
+#main
+1 Achacha Archer
+1 Acorno
+1 Dododo Warrior
+1 Flelf
+2 Gagaga Magician
+2 Ganbara Knight
+1 Goblindbergh
+1 Gogogo Golem
+1 Joe the Pixie
+1 Kagetokage
+1 Pinecono
+1 Rai Rider
+1 Stinging Swordsman
+1 Zubaba Knight
+1 Armored Xyz
+1 Attraffic Control
+2 Blustering Winds
+1 Cross Attack
+1 Decrease
+1 Dian Keto the Cure Master
+1 Double or Nothing!
+1 Ego Boost
+1 Flip Flap
+1 Full-Force Strike
+1 Gagagaback
+1 Gagagabolt
+2 Monster Reborn
+1 Monster Slots
+1 Release Lease
+1 Revenge Attack
+1 Thunder Short
+1 Tornado
+2 Wonder Wand
+1 Battle Break
+1 Bye Bye Damage
+1 Copy Knight
+1 Damage Diet
+1 Fiery Fervor
+1 Gagagashield
+1 Goblin Out of the Frying Pan
+1 Guts Guard
+1 Half Unbreak
+1 Heartfelt Appeal
+1 Just Desserts
+1 Mirror Mail
+1 Overconfidence
+1 Pixie Gong
+1 Reserve Cyclone
+1 Secret Barrel
+1 Vector Change
+
+#extra
+1 Baby Tiragon
+1 Number 17: Leviathan Dragon
+1 Number 34: Terror-Byte
+1 Number 39: Utopia
+
+=== =Wooden Training Deck ===
+
+#main
+1 Statue Dark Magician
+1 Statue Dark Magician Girl
+1 Monster Recovery
+1 Monster Reincarnation
+1 Pot of Avarice
+1 Reload
+1 Statue Zone
+1 Shift
+
+=== =Second Syllable ===
+
+#main
+1 Acorno
+1 Darklon
+1 Dododo Warrior
+1 Gagaga Girl
+1 Gagaga Magician
+1 Ganbara Knight
+1 Gogogo Giant
+1 Gogogo Golem
+1 Kagetokage
+1 Kurivolt
+1 Pinecono
+1 ZW - Unicorn Spear
+1 Zubaba Knight
+1 Comeback
+1 Decrease
+1 Double Defender
+1 Drop Exchange
+1 Gagaga Thunder
+1 Star Light, Star Bright
+1 Voltage Summon
+1 Wonder Wand
+1 Xyz Cyclone
+1 Battle Break
+1 Bye Bye Damage
+1 Clean Barrier - Clear Force
+1 Counterforce
+1 Gagagaguard
+1 Half Unbreak
+1 Nitwit Outwit
+1 Overlay Banish
+1 Xyz Reflect
+1 Xyz Weight
+
+#extra
+1 Number 39: Utopia
+1 Number 96: Dark Mist
+1 Number C39: Utopia Ray
+
+=== World Duel Carnival Preliminaries ===
+
+#main
+1 Achacha Archer
+1 Cardcar D
+1 Chachaka Archer
+1 Damage Mage
+1 Flelf
+1 Gagaga Gardna
+1 Gagaga Girl
+1 Gagaga Magician
+1 Ganbara Knight
+1 Goblindbergh
+1 Gogogo Giant
+1 Gogogo Golem
+1 Kagetokage
+1 Kurivolt
+1 Mystical Donator
+1 Overlay Eater
+1 Overlay Owl
+1 Pinecono
+1 Rai Rider
+1 Tasuke Knight
+1 ZW - Phoenix Bow
+1 Zubaba Buster
+1 Zubaba Knight
+1 Attraffic Control
+1 Blustering Winds
+1 Bound Wand
+1 Comeback
+1 Cross Attack
+1 Double or Nothing!
+1 Double Tension
+1 Extra Blast
+1 Gagaga Thunder
+1 Gagagarevenge
+1 Giant Hunter
+1 Mini-Guts
+1 Monster Reborn
+1 Monster Slots
+1 Voltage Summon
+1 Wonder Wand
+1 Xyz Cyclone
+1 Battle Break
+1 Bye Bye Damage
+1 Commander of Swords
+1 Courageous Heart
+1 Damage Diet
+1 Gagagarush
+1 Gagagashield
+1 Gamushara
+1 Half Unbreak
+1 Heartfelt Appeal
+1 Impenetrable Attack
+1 Mirror Mail
+1 Nitwit Outwit
+1 Overlay Buster
+1 Small Resistance
+1 Transaction Summon
+1 Trap Reborn
+
+#extra
+1 Baby Tiragon
+1 Melomelody the Brass Djinn
+1 Muzurhythm the String Djinn
+1 Number 11: Big Eye
+1 Number 39: Utopia
+1 Number C39: Utopia Ray
+1 Temtempo the Percussion Djinn
+
+=== World Duel Carnival Finals ===
+
+#main
+1 Achacha Chanbara
+1 Amarylease
+1 Bacon Saver
+1 Bull Blader
+1 Dododo Bot
+1 Flelf
+1 Gagaga Caesar
+1 Gagaga Clerk
+1 Gagaga Magician
+1 Ganbara Knight
+1 Goblindbergh
+1 Gogogo Ghost
+1 Gogogo Golem
+1 Grandram
+1 Mogmole
+1 Rai Rider
+1 Stinging Swordsman
+1 Traplin
+1 Zubaba Knight
+1 ZW - Lightning Blade
+1 ZW - Tornado Bringer
+1 ZW - Ultimate Shield
+1 Bound Wand
+1 Card of Spell Containment
+1 Double Bind
+1 Double or Nothing!
+1 Fighting Fund
+1 Flash Effect
+1 Gagagadraw
+1 Gamusharush
+1 Golden Form
+1 One-Shot Wand
+1 Seven Store
+1 Xyz Double Back
+1 Xyz Revival
+1 Xyz Treasure
+1 Xyz Triangle Force
+1 Xyz Unity
+1 Zerozerock
+1 ZEXAL Catapult
+1 Battle Break
+1 Dimension Gate
+1 Gamushara
+1 Half Guard
+1 Half Unbreak
+1 Impenetrable Attack
+1 Overlay Buster
+1 Power Change Barrier
+1 Rivals Unite
+
+#extra
+1 Gagaga Cowboy
+1 Heroic Champion - Excalibur
+1 Number 12: Crimson Shadow Armor Ninja
+1 Number 17: Leviathan Dragon
+1 Number 34: Terror-Byte
+1 Number 39: Utopia
+1 Number C39: Utopia Ray
+1 One-Eyed Skill Gainer
+1 ZW - Leo Arms
+
+=== Barian Invasion ===
+
+#main
+1 Achacha Archer
+1 Achacha Chanbara
+1 Amarylease
+1 Bachibachibachi
+1 Bacon Saver
+1 Bite Bug
+1 Bull Blader
+1 Caligo Claw Crow
+1 Cardcar D
+1 Chachaka Archer
+1 Crane Crane
+1 Damage Mage
+1 Dododo Buster
+1 Dododo Warrior
+1 Dotedotengu
+1 DZW - Chimera Clad
+1 Gagaga Caesar
+1 Gagaga Child
+1 Gagaga Clerk
+1 Gagaga Gardna
+1 Gagaga Girl
+1 Gagaga Magician
+1 Ganbara Knight
+1 Ganbara Lancer
+1 Gentlemander
+1 Goblindbergh
+1 Gogogo Giant
+1 Gogogo Gigas
+1 Gogogo Golem
+1 Interceptomato
+1 Kagetokage
+1 Magical Undertaker
+1 Mimimic
+1 Mogmole
+1 Rai Rider
+1 Spell Recycler
+1 Stinging Swordsman
+1 Tatakawa Knight
+1 V Gnome
+1 V Salamander
+1 V Sylph
+1 V Undine
+1 Xyz Agent
+1 Zubaba Knight
+1 ZW - Eagle Claw
+1 Blustering Winds
+1 Clear Robe
+1 Djinn Orchestra
+1 Fourcing
+1 Gagagadraw
+1 Gagagawind
+1 Gagaga x Gagaga
+1 Gamusharush
+1 Giant Hunter
+1 Gogogo Talisman
+1 Level Lifter
+1 Magnum Shield
+1 Monster Reborn
+1 Numbers Evocation
+1 Numbers Impact
+1 Overlay Barrage
+1 Overlay Chain
+1 Plus Star 123
+1 Rank-Up-Magic Limited Barian's Force
+1 Rank-Up-Magic Numeron Force
+1 Resurrection March
+1 Seven Store
+1 Swords of Burning Light
+1 Three Card Summon
+1 V Call
+1 Wonder Wand
+1 Xyz Double Back
+1 Xyz Reception
+1 Xyz Revenge
+1 Xyz Stand
+1 Xyz Treasure
+1 Battle Restart
+1 Battle Rush
+1 Desperate Guard
+1 Fiery Fervor
+1 Gamushara
+1 Half Unbreak
+1 Impenetrable Attack
+1 Last Chance
+1 Memory Loss
+1 Overlay Buster
+1 Overtraining
+1 Panic Burial
+1 Pinpoint Guard
+1 Puzzle Reborn
+1 Reverse Glasses
+1 Xyz Revenge Shuffle
+1 Xyz Strike
+
+#extra
+1 Baby Tiragon
+1 Gagaga Cowboy
+1 Gauntlet Launcher
+1 Heroic Champion - Excalibur
+1 Melomelody the Brass Djinn
+1 Muzurhythm the String Djinn
+1 Number 6: Chronomaly Atlandis
+1 Number 34: Terror-Byte
+1 Number 39: Utopia
+1 Number 61: Volcasaurus
+1 Number 96: Dark Mist
+1 Number C39: Utopia Ray
+1 Number C39: Utopia Ray V
+1 Number C39: Utopia Ray Victory
+1 One-Eyed Skill Gainer
+1 Temtempo the Percussion Djinn
+
+=== Mythyrian Numbers War ===
+
+#main
+1 Bacon Saver
+1 Chow Chow Chan
+1 Dododo Swordsman
+1 Dododo Witch
+1 Doggy Diver
+1 Gagaga Caesar
+1 Gagaga Child
+1 Gagaga Clerk
+1 Gagaga Gardna
+1 Gagaga Magician
+1 Ganbara Knight
+1 Gillagillancer
+1 Goblindbergh
+1 Gogogo Golem
+1 Explossum
+1 Kagetokage
+1 Rainbow Kuriboh
+1 Stinging Swordsman
+1 Swordsman of Revealing Light
+2 Toy Knight
+1 ZS - Vanish Sage
+1 ZW - Asura Strike
+1 ZW - Sleipnir Mail
+1 Armored Xyz
+1 Cross Attack
+1 Double or Nothing!
+1 Gagagamirror
+1 Gagagatag
+1 Guard Plus
+1 Guard Robe Exchange
+1 Monster Reborn
+1 Overtake Summon
+1 Rank-Down-Magic Numeron Fall
+1 Rank-Up-Magic Numeron Force
+1 Release, Reverse, Burst
+1 Reservation Reward
+1 Reverse Breaker
+1 Stealth Strike
+1 Stop Hammer
+1 Swords of Burning Light
+1 Tribute Ticket
+1 Utopian Hope
+1 Xyz Shift
+1 Xyz Treasure
+1 Burst Rebirth
+1 Half Unbreak
+1 Hyper Quick!
+1 Number Return
+1 Number Spell Caster
+1 Overlay Marker
+1 Overlay Stopper
+1 Purge Ray
+1 Returning Light
+1 Soul Strike
+1 Superior Overlay
+1 Xyz Reborn
+
+#extra
+1 Heroic Champion - Excalibur
+1 Number 39: Utopia
+1 Number 39: Utopia Roots
+1 Number 69: Heraldry Crest
+1 Number 92: Heart-eartH Dragon
+1 Number C39: Utopia Ray
+1 Number C39: Utopia Ray Victory
+
+=== =With the Numbers ===
+
+#main
+1 Buzzbuzz Seven
+1 Darklon
+1 Gagaga Caesar
+1 Gagaga Child
+1 Gagaga Clerk
+1 Gagaga Gardna
+1 Gagaga Guardian
+1 Gagaga Magician
+1 Ganbara Knight
+1 Kurivolt
+1 Rainbow Kuriboh
+1 Tasuke Knight
+1 Toy Knight
+1 ZS - Ouroboros Sage
+1 ZW - Sylphid Wing
+1 ZW - Tornado Bringer
+1 Double or Nothing!
+1 Emperor's Armor
+1 Overlay Reborn
+1 Rank-Up-Magic Astral Force
+1 Re-Xyz
+1 Utopia Sword
+1 Xyz Treasure
+1 Ant Barrier
+1 Bonds of Hope
+1 Damage Reactor
+1 Damage Take-Over
+1 Dimensional U-Turn
+1 Half Unbreak
+1 Overlay Assistance
+1 Nitwit Outwit
+1 Session Draw
+1 Utopia Rising
+1 Weaker Overlay
+1 Xyz Pieces
+
+#extra
+1 Heroic Champion - Excalibur
+1 Number 11: Big Eye
+1 Number 39: Utopia
+1 Number 39: Utopia Beyond
+1 Number 54: Lion Heart
+1 Number 100: Numeron Dragon
+1 Number C39: Utopia Ray Victory
+
+=== =Without the Numbers ===
+
+#main
+1 Dododo Warrior
+1 Gagaga Girl
+1 Gagaga Magician
+1 Gagaga Mancer
+1 Gogogo Golem
+1 Double or Nothing!
+1 Gagaga Mirror Slash
+1 Gagagarevenge
+1 Xyz Treasure
+1 Danger Draw
+1 Gagagamirage
+1 Guard Go!
+1 Guardraw
+1 Halfway to Forever
+1 Half Unbreak
+1 Hi-Five the Sky
+1 Light Wing Bumper
+1 Memories of Courage
+
+#extra
+1 Gagaga Cowboy
+1 Gagaga Samurai
+1 Number F0: Utopic Future
+
+=== Aim For Number 1 in the World! ===
+
+#main
+1 Flelf
+1 Gagaga Girl
+1 Gagaga Magician
+1 Ganbara Knight
+1 Stinging Swordsman
+1 Monster Reborn
+1 Wonder Wand
+1 Mirror Force
+
+#extra
+1 Number 39: Utopia
+
+=== V Jump Magazine ===
+
+#main
+3 Gagaga Girl
+3 Gagaga Magician
+3 Goblindbergh
+3 Kagetokage
+3 Mystic Tomato
+1 Sangan
+2 Summoner Monk
+3 ZW - Unicorn Spear
+1 Book of Moon
+1 Dark Hole
+2 Gagagaback
+3 Gagagabolt
+1 Heavy Storm
+1 Monster Reborn
+2 Mystical Space Typhoon
+1 Pot of Avarice
+2 Call of the Haunted
+1 Mirror Force
+3 Negate Attack
+1 Raigeki Break
+2 Solemn Warning
+
+#extra
+1 Daigusto Phoenix
+1 Gachi Gachi Gantetsu
+1 Gem-Knight Pearl
+1 Kachi Kochi Dragon
+1 Number 16: Shock Master
+1 Number 17: Leviathan Dragon
+1 Number 30: Acid Golem of Destruction
+1 Number 39: Utopia
+1 Number C39: Utopia Ray
+
+=== V Jump Magazine ===
+
+#main
+3 Gene-Warped Warwolf
+1 Dododo Warrior
+2 Feedback Warrior
+3 Gagaga Magician
+2 Gogogo Golem
+3 Goblindbergh
+1 Kagetokage
+1 Marauding Captain
+1 Rescue Rabbit
+1 Shine Knight
+2 Zubaba Knight
+1 Blustering Winds
+1 Fissure
+1 Monster Reborn
+2 Mystical Space Typhoon
+2 Star Changer
+1 Swords of Revealing Light
+1 The Warrior Returning Alive
+1 Xyz Energy
+1 Copy Knight
+1 Damage Diet
+2 Gagagashield
+1 Mirror Force
+1 Mirror Mail
+1 Seven Tools of the Bandit
+2 Trap Hole
+1 Xyz Effect
+
+#extra
+1 Baby Tiragon
+1 Gachi Gachi Gantetsu
+1 Gem-Knight Pearl
+2 Grenosaurus
+2 Number 17: Leviathan Dragon
+1 Number 19: Freezadon
+1 Number 34: Terror-Byte
+3 Number 39: Utopia
+1 Number 61: Volcasaurus
+1 Number 83: Galaxy Queen
+
+=== V Jump Magazine ===
+
+#main
+3 Constellar Gredi
+3 Constellar Pollux
+3 Constellar Kaus
+2 Constellar Sombre
+1 Cyber Dragon
+1 Ghost Ship
+3 Goblindbergh
+1 Kagetokage
+1 Tasuke Knight
+1 ZW - Lightning Blade
+1 ZW - Phoenix Bow
+1 ZW - Tornado Bringer
+1 ZW - Ultimate Shield
+1 ZW - Unicorn Spear
+1 Dark Hole
+2 Fire Formation - Tenki
+1 Heavy Storm
+1 Monster Reborn
+2 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 The Warrior Returning Alive
+2 Call of the Haunted
+1 Impenetrable Attack
+1 Solemn Warning
+2 Xyz Reborn
+1 Xyz Reflect
+
+#extra
+1 Constellar Pleiades
+1 Constellar Ptolemy M7
+2 Number 39: Utopia
+2 Number C39: Utopia Ray
+1 ZW - Leo Arms
+
+=== December 2013 ===
+
+#main
+2 Cardcar D
+3 Crane Crane
+2 Gagaga Caesar
+3 Gagaga Child
+2 Gagaga Clerk
+3 Gagaga Gardna
+2 Gagaga Girl
+3 Gagaga Magician
+1 Dark Hole
+1 Heavy Storm
+3 Gagagabolt
+3 Gagagarevenge
+1 Monster Reborn
+3 Mystical Space Typhoon
+1 Rank-Up-Magic Limited Barian's Force
+1 Rank-Up-Magic Numeron Force
+3 Call of the Haunted
+3 Pinpoint Guard
+
+#extra
+1 Gagaga Cowboy
+1 Gauntlet Launcher
+1 Maestroke the Symphony Djinn
+1 Muzurhythm the String Djinn
+1 Number 11: Big Eye
+1 Number 39: Utopia
+1 Number 61: Volcasaurus
+1 Number C39: Utopia Ray
+1 Number C39: Utopia Ray V
+1 Number C39: Utopia Ray Victory
+1 Temtempo the Percussion Djinn
+
+=== December 2013 ===
+
+#main
+3 Goblindbergh
+3 Gogogo Giant
+1 Gogogo Gigas
+3 Gogogo Ghost
+3 Gogogo Golem
+2 Gogogo Golem - Golden Form
+3 Kagetokage
+3 Catapult Zone
+1 Dark Hole
+1 Heavy Storm
+1 Monster Reborn
+3 Mystical Space Typhoon
+1 Rank-Up-Magic Limited Barian's Force
+1 Rank-Up-Magic Numeron Force
+1 Reinforcement of the Army
+1 Terraforming
+1 United We Stand
+3 Call of the Haunted
+3 Raigeki Break
+1 Solemn Judgment
+1 Solemn Warning
+
+#extra
+1 Gagaga Cowboy
+1 Maestroke the Symphony Djinn
+1 Number 16: Shock Master
+1 Number 39: Utopia
+1 Number C39: Utopia Ray V
+1 Number C39: Utopia Ray Victory
+1 One-Eyed Skill Gainer
+
+=== Numbers Guide 2 ===
+
+#main
+2 Gagaga Caesar
+3 Gagaga Child
+2 Gagaga Gardna
+2 Gagaga Girl
+3 Gagaga Magician
+3 Goblindbergh
+2 ZW - Tornado Bringer
+2 ZW - Unicorn Spear
+3 Gagagabolt
+1 Gagagadraw
+3 Gagagarevenge
+1 Heavy Storm
+1 Monster Reborn
+2 Mystical Space Typhoon
+2 Rank-Up-Magic Limited Barian's Force
+2 Rank-Up-Magic Numeron Force
+1 Wonder Wand
+2 Call of the Haunted
+1 Solemn Judgment
+2 Xyz Reborn
+
+#extra
+1 Heroic Champion - Excalibur
+1 Number 6: Chronomaly Atlandis
+3 Number 39: Utopia
+1 Number 61: Volcasaurus
+1 Number 96: Dark Mist
+1 Number C39: Utopia Ray V
+1 Number C39: Utopia Ray Victory
+1 ZW - Leo Arms

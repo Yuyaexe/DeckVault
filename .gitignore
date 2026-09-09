@@ -1,0 +1,69 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+/release
+
+# misc
+.DS_Store
+*.pem
+.verify-result
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# tauri
+src-tauri/target/
+
+# drizzle
+.drizzle
+
+# logs
+*.log
+deckvault.log
+.tmp-video-frames/
+.ygo-test-result
+
+# CT / test backups (keep in Tools/CT/backup, not in repo)
+yugioh-backup-*.json
+yugioh-collection-*.json
+.verify-backup-result
+
+# accidental nested clone
+CollecitonMYPICA/
+
+# editor
+.vscode/
+.env*
+
+# audit ephemeral browser profile (Lighthouse / screenshots)
+docs/audit-artifacts/chrome-profile/
+
+# local-only tooling / imports (not shipped with the app)
+/local/
+release/

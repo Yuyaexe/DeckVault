@@ -1,0 +1,724 @@
+Tetsu Trudge
+============
+
+=== Stardust Accelerator ===
+
+#main
+2 Drillroid
+3 Giant Rat
+2 Gonogo
+1 Handcuffs Dragon
+1 Montage Dragon
+2 Ninja Grandmaster Sasuke
+1 Pursuit Chaser
+1 Sangan
+2 Search Striker
+1 Speed Spell - Bait Doll
+1 Speed Spell - Creature Swap
+1 Speed Spell - Dash Pilfer
+1 Speed Spell - Enemy Controller
+1 Speed Spell - Harpie's Feather Duster
+2 Speed Spell - Monster Reborn
+1 Speed Spell - Rapid Shotwing
+1 Speed Spell - Shield Crush
+1 Bottomless Trap Hole
+3 Dark Bribe
+1 Mirror Force
+3 No Entry!!
+1 Solemn Judgment
+1 Torrential Tribute
+1 Tragedy
+
+#extra
+3 Goyo Guardian
+
+=== Reverse of Arcadia ===
+
+#main
+2 Gonogo
+1 Gorz the Emissary of Darkness
+3 Montage Dragon
+3 Search Striker
+3 Stygian Street Patrol
+3 Tragoedia
+1 Speed Spell - Accelerator Draw
+1 Speed Spell - Monster Reborn
+1 Speed Spell - Mystical Space Typhoon
+1 Speed Spell - Raigeki
+2 Speed Spell - Rapid Shotwing
+1 Speed Spell - Scapegoat
+2 Speed Spell - Sonic Buster
+2 Speed Spell - Speed Storm
+1 Bottomless Trap Hole
+1 Dimensional Prison
+1 Divine Wrath
+2 Dust Tornado
+2 Regretful Rebirth
+
+#extra
+1 Goyo Guardian
+3 Stygian Sergeants
+
+=== Over the Nexus ===
+
+#main
+2 Gonogo
+2 Guard Dog
+1 Handcuffs Dragon
+1 Pursuit Chaser
+2 Samurai Sword Baron
+2 Sasuke Samurai
+2 Search Striker
+3 Stygian Street Patrol
+1 Speed Spell - Monster Reborn
+1 Speed Spell - Mystical Space Typhoon
+1 Speed Spell - Scapegoat
+1 Speed Spell - Sonic Buster
+2 Speed Spell - Speed Energy
+1 Speed Spell - Speed Storm
+1 Bottomless Trap Hole
+1 Dimensional Prison
+1 Divine Wrath
+1 Dust Tornado
+2 No Entry!!
+1 Regretful Rebirth
+2 Security Orb
+
+#extra
+1 Goyo Guardian
+3 Stygian Sergeants
+
+=== Wheelie Breakers ===
+
+#main
+1 Gate Blocker
+1 Gonogo
+
+#extra
+1 Goyo Guardian
+
+=== Tag Force 4 ===
+
+#main
+1 Tyhone
+3 Assault Dog
+2 Gate Defender
+2 Gonogo
+1 Handcuffs Dragon
+2 Montage Dragon
+2 Pursuit Chaser
+2 Search Striker
+1 Tactical Espionage Expert
+1 Brain Control
+1 Fissure
+1 Giant Trunade
+1 Heavy Storm
+1 Lightning Vortex
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 Smashing Ground
+1 Swords of Revealing Light
+1 The Warrior Returning Alive
+1 Discord Counter
+1 Eatgaboon
+1 Intercept
+1 Mirror Force
+1 No Entry!!
+1 Security Orb
+1 Torrential Tribute
+1 Wiretap
+
+#extra
+2 Colossal Fighter
+2 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+
+=== Tag Force 4 ===
+
+#main
+1 Tyhone
+3 Assault Dog
+2 Gonogo
+2 Handcuffs Dragon
+3 Montage Dragon
+1 Pursuit Chaser
+3 Search Striker
+1 Tactical Espionage Expert
+1 Fissure
+1 Giant Trunade
+1 Heavy Storm
+1 Lightning Vortex
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 Smashing Ground
+1 Swords of Revealing Light
+2 Discord Counter
+1 Eatgaboon
+1 Intercept
+1 Mirror Force
+2 No Entry!!
+1 Security Orb
+1 Torrential Tribute
+2 Wiretap
+
+#extra
+3 Colossal Fighter
+3 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+
+=== Tag Force 4 ===
+
+#main
+3 Big Shield Gardna
+2 Gate Defender
+2 Gonogo
+3 Mid Shield Gardna
+3 Stone Statue of the Aztecs
+1 Giant Trunade
+1 Heavy Storm
+1 Monster Reborn
+1 Mystical Space Typhoon
+3 Shrink
+1 Swords of Revealing Light
+2 Unity
+2 Broken Blocker
+1 Defender's Mind
+2 Discord Counter
+1 Mirror Force
+3 Staunch Defender
+1 Terminal Countdown
+
+#extra
+3 Colossal Fighter
+3 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+
+=== Tag Force 4 ===
+
+#main
+3 Command Knight
+3 D.D. Assailant
+1 D.D. Warrior Lady
+3 Ehren, Lightsworn Monk
+1 Exiled Force
+3 Koa'ki Meiru Bergzak
+3 Marauding Captain
+2 Enemy Controller
+1 Giant Trunade
+1 Heavy Storm
+1 Monster Reborn
+1 Mystical Space Typhoon
+2 Reinforcement of the Army
+3 Solidarity
+1 United We Stand
+3 Bottomless Trap Hole
+1 Mirror Force
+3 Solemn Judgment
+1 Torrential Tribute
+
+#extra
+3 Colossal Fighter
+3 Gaia Knight, the Force of Earth
+3 Goyo Guardian
+3 X-Saber Urbellum
+3 X-Saber Wayne
+
+=== Tag Force 4 ===
+
+#main
+2 Aztekipede, the Worm Warrior
+2 Chainsaw Insect
+2 Doom Dozer
+2 Howling Insect
+1 Morphing Jar
+2 Mystic Tomato
+2 Needle Worm
+2 Shield Worm
+2 Warm Worm
+2 Book of Moon
+1 Card Destruction
+2 Creature Swap
+2 Fires of Doomsday
+1 Giant Trunade
+1 Heavy Storm
+1 Lightning Vortex
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Swords of Revealing Light
+1 The Shallow Grave
+1 Worm Bait
+2 Limit Reverse
+1 Mirror Force
+1 Regretful Rebirth
+1 Torrential Tribute
+
+=== Tag Force 4 ===
+
+#main
+1 Armageddon Knight
+3 Chainsaw Insect
+2 Doom Dozer
+2 Howling Insect
+1 Morphing Jar
+3 Mystic Tomato
+3 Shield Worm
+3 Warm Worm
+1 Card Destruction
+2 Creature Swap
+2 Fires of Doomsday
+1 Giant Trunade
+1 Heavy Storm
+1 Lightning Vortex
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Swords of Revealing Light
+2 Worm Bait
+2 Limit Reverse
+1 Mirror Force
+1 Regretful Rebirth
+1 Torrential Tribute
+
+=== Tag Force 4 ===
+
+#main
+3 Chainsaw Insect
+1 Doom Dozer
+2 Howling Insect
+1 Morphing Jar
+2 Mystic Tomato
+3 Needle Worm
+3 Shield Worm
+2 Warm Worm
+2 Book of Moon
+1 Card Destruction
+2 Creature Swap
+1 Fires of Doomsday
+1 Giant Trunade
+1 Heavy Storm
+1 Lightning Vortex
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Swords of Revealing Light
+1 The Shallow Grave
+1 Worm Bait
+1 Limit Reverse
+1 Mirror Force
+1 Regretful Rebirth
+1 Torrential Tribute
+
+=== Tag Force 4 ===
+
+#main
+3 Banisher of the Light
+3 Banisher of the Radiance
+3 Bazoo the Soul-Eater
+3 Dimensional Alchemist
+1 Fiber Jar
+2 Gren Maju Da Eiza
+1 Marshmallon
+1 Morphing Jar
+3 Morphing Jar 2
+3 Necroface
+3 Needle Worm
+1 Spirit Reaper
+2 Book of Eclipse
+1 Card Destruction
+2 Dimensional Fissure
+1 Giant Trunade
+3 Gold Sarcophagus
+2 Hand Destruction
+1 Mystical Space Typhoon
+2 Soul Absorption
+1 Swords of Revealing Light
+3 Macro Cosmos
+1 Return from the Different Dimension
+
+=== Tag Force 5 ===
+
+#main
+1 Tyhone
+1 Gonogo
+2 Handcuffs Dragon
+1 Montage Dragon
+1 Pursuit Chaser
+2 Samurai Sword Baron
+1 Sangan
+1 Satellite Cannon
+2 Search Striker
+2 Stygian Street Patrol
+1 Tactical Espionage Expert
+1 Cold Wave
+1 Giant Trunade
+1 Hammer Shot
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 Pot of Avarice
+1 Reinforcement of the Army
+1 Shield Crush
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Eatgaboon
+1 Intercept
+1 Mirror Force
+2 No Entry!!
+2 Security Orb
+1 Solemn Judgement
+1 Torrential Tribute
+
+#extra
+2 Colossal Fighter
+2 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+2 Stygian Sergeants
+
+=== Tag Force 5 ===
+
+#main
+3 Big Shield Gardna
+3 Gate Defender
+3 Gonogo
+3 Mid Shield Gardna
+3 Stone Statue of the Aztecs
+2 Book of Moon
+1 Giant Trunade
+1 Heavy Storm
+1 Mystical Space Typhoon
+3 Shrink
+1 Swords of Revealing Light
+2 Unity
+2 Battle Mania
+2 Broken Blocker
+1 Call of the Haunted
+3 Defender's Mind
+2 Discord Counter
+1 Terminal Countdown
+
+#extra
+3 Colossal Fighter
+3 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+
+=== Tag Force 5 ===
+
+#main
+2 Chaosrider Gustaph
+2 Diskblade Rider
+3 Samurai Sword Baron
+1 Sangan
+3 Search Striker
+1 Snipe Hunter
+3 Stygian Street Patrol
+1 Brain Control
+1 Giant Trunade
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 Swords of Revealing Light
+1 The Warrior Returning Alive
+2 Bottomless Trap Hole
+1 Call of the Haunted
+2 Dimensional Prison
+1 Mirror Force
+2 No Entry!!
+2 Security Orb
+1 Torrential Tribute
+
+#extra
+1 Ally of Justice Catastor
+1 Brionac, Dragon of the Ice Barrier
+2 Chaos King Archfiend
+1 Colossal Fighter
+1 Goyo Guardian
+1 Mist Wurm
+1 Psychic Lifetrancer
+3 Stygian Sergeants
+1 Thought Ruler Archfiend
+1 Trishula, Dragon of the Ice Barrier
+
+=== Tag Force 5 ===
+
+#main
+2 Armageddon Knight
+2 Dark Grepher
+2 Destiny Hero - Dasher
+1 Elemental Hero Stratos
+1 Koa'ki Meiru War Arms
+3 Kuraz the Light Monarch
+1 Necro Gardna
+2 Spell Striker
+2 The Immortal Bushi
+1 Card Destruction
+1 Foolish Burial
+1 Giant Trunade
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 Swords of Revealing Light
+2 The Warrior Returning Alive
+2 Bottomless Trap Hole
+1 Call of the Haunted
+1 Mirror Force
+2 Raigeki Break
+3 Rivalry of Warlords
+1 Torrential Tribute
+
+#extra
+3 Colossal Fighter
+2 Gaia Knight, the Force of Earth
+1 Goyo Guardian
+1 Junk Archer
+1 Junk Destroyer
+2 Junk Warrior
+2 Lightning Warrior
+1 X-Saber Urbellum
+2 X-Saber Wayne
+
+=== Tag Force 6 ===
+
+#main
+2 Chaosrider Gustaph
+2 Diskblade Rider
+2 Gonogo
+1 Handcuffs Dragon
+1 Montage Dragon
+1 Pursuit Chaser
+2 Rai Rider
+3 Stygian Street Patrol
+1 Book of Eclipse
+1 Book of Moon
+1 Darkworld Shackles
+1 Giant Trunade
+2 Mystical Space Typhoon
+1 Nobleman of Crossout
+1 Reinforcement of the Army
+1 Shield Crush
+1 Swords of Concealing Light
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Climactic Barricade
+1 Intercept
+1 Mirror Force
+2 No Entry!!
+2 Security Orb
+1 Torrential Tribute
+
+#extra
+3 Chaos King Archfiend
+3 Colossal Fighter
+1 Driven Daredevil
+3 Gaia Knight, the Force of Earth
+3 Stygian Sergeants
+1 X-Saber Urbellum
+1 X-Saber Wayne
+
+=== Tag Force 6 ===
+
+#main
+3 Big Shield Gardna
+3 Gate Defender
+3 Gonogo
+3 Mid Shield Gardna
+3 Stone Statue of the Aztecs
+3 Dark Arena
+2 Mystical Space Typhoon
+1 Monster Reborn
+2 Shrink
+2 Unity
+3 Battle Mania
+2 Broken Blocker
+1 Call of the Haunted
+3 Defender's Mind
+2 Discord Counter
+1 Inverse Universe
+1 Terminal Countdown
+1 Wiretap
+
+#extra
+3 Colossal Fighter
+3 Gaia Knight, the Force of Earth
+2 Gem-Knight Pearl
+1 Goyo Guardian
+1 X-Saber Urbellum
+1 X-Saber Wayne
+
+=== Tag Force 6 ===
+
+#main
+3 Assault Dog
+2 Samurai Sword Baron
+1 Sangan
+3 Search Striker
+3 Snipe Hunter
+3 Stygian Street Patrol
+1 Book of Moon
+1 Giant Trunade
+1 Monster Reborn
+2 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 The Warrior Returning Alive
+2 Attention!
+2 Bottomless Trap Hole
+1 Call of the Haunted
+1 Mirror Force
+1 No Entry!!
+1 Security Orb
+2 Solemn Warning
+1 Torrential Tribute
+
+#extra
+1 Ally of Justice Catastor
+1 Brionac, Dragon of the Ice Barrier
+2 Chaos King Archfiend
+1 Colossal Fighter
+1 Goyo Guardian
+1 Mist Wurm
+1 Scrap Archfiend
+1 Scrap Dragon
+2 Stygian Sergeants
+1 Thought Ruler Archfiend
+1 Trishula, Dragon of the Ice Barrier
+1 X-Saber Urbellum
+1 X-Saber Wayne
+
+=== Tag Force 6 ===
+
+#main
+3 Dark Grepher
+2 Destiny Hero - Dasher
+2 Destiny Hero - Malicious
+1 Elemental Hero Stratos
+3 Kuraz the Light Monarch
+1 Necro Gardna
+1 Spell Striker
+2 The Immortal Bushi
+1 Card Destruction
+1 Confiscation
+2 Change of Heart
+1 Foolish Burial
+1 Giant Trunade
+1 Monster Reborn
+2 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 The Warrior Returning Alive
+3 Tuning
+1 Call of the Haunted
+1 Mirror Force
+1 Rivalry of Warlords
+1 Solemn Warning
+1 Torrential Tribute
+
+#extra
+1 Crimson Blader
+1 Colossal Fighter
+1 Driven Daredevil
+2 Gaia Knight, the Force of Earth
+3 Goyo Guardian
+1 Junk Archer
+1 Junk Berserker
+1 Junk Destroyer
+1 Junk Gardna
+1 Junk Warrior
+2 Lightning Warrior
+1 Scarred Warrior
+1 X-Saber Urbellum
+1 X-Saber Wayne
+
+=== Duel Transer ===
+
+#main
+3 Blocker
+3 Cyber Commander
+3 Gatekeeper
+1 Guardian of the Throne Room
+1 Metal Guardian
+1 Soitsu
+1 Gonogo
+1 Handcuffs Dragon
+1 Orichalcos Shunoros
+3 Pursuit Chaser
+2 Search Striker
+2 Troop Dragon
+1 Dark-Piercing Light
+1 De-Spell
+1 Emergency Provisions
+1 Mooyan Curry
+1 Nightmare's Steel Cage
+1 Reinforcement of the Army
+1 The Reliable Guardian
+1 A Hero Emerges
+2 Broken Blocker
+1 Eatgaboon
+1 No Entry!!
+2 Security Orb
+1 Reinforcements
+1 Two-Pronged Attack
+
+=== Duel Transer ===
+
+#main
+1 Tyhone
+3 Gonogo
+3 Handcuffs Dragon
+1 Montage Dragon
+3 Pursuit Chaser
+3 Samurai Sword Baron
+3 Search Striker
+3 Stygian Street Patrol
+3 Tactical Espionage Expert
+1 Giant Trunade
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+1 The Warrior Returning Alive
+1 Bark of Dark Ruler
+2 Broken Blocker
+1 Eatgaboon
+1 Hate Buster
+1 Intercept
+1 No Entry!!
+2 Security Orb
+1 Sakuretsu Armor
+
+#extra
+1 Goyo Guardian
+3 Stygian Sergeants
+
+=== Decade Duels ===
+
+#main
+3 Command Knight
+2 Gonogo
+3 Marauding Captain
+2 Montage Dragon
+2 Ninja Grandmaster Sasuke
+2 Search Striker
+2 Book of Moon
+1 Heavy Storm
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Reinforcement of the Army
+2 The A. Forces
+2 The Warrior Returning Alive
+2 Dust Tornado
+1 Mirror Force
+3 No Entry!!
+2 Security Orb
+2 Solemn Judgment
+1 Torrential Tribute
+
+#extra
+3 Colossal Fighter
+1 Goyo Guardian
+
+=== Duel Terminal ===
+
+#main
+1 Warrior Dai Grepher
+1 X-Saber Anu Piranha
+1 X-Saber Galahad
+1 Reinforcement of the Army
+1 Soul Resurrection
+
+#extra
+1 Goyo Guardian

@@ -1,0 +1,14 @@
+---
+description: Required tech stack and libraries
+globs: src/**/*
+alwaysApply: false
+---
+
+# Coding Standards
+
+Use: Tailwind CSS, shadcn/ui, TanStack Table, TanStack Virtual, Framer Motion, React Hook Form, Zod, React Query, Zustand, Drizzle ORM, Supabase.
+
+- Custom hooks for reusable logic
+- Zod schemas for validation
+- Server Actions / Route Handlers for mutations
+- Never expose SUPABASE_SERVICE_ROLE_KEY in client or Tauri bundle

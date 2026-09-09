@@ -1,0 +1,22 @@
+---
+description: DeckVault project scope and roadmap
+alwaysApply: true
+---
+
+# DeckVault — TCG Collection Manager
+
+Supported games: Yu-Gi-Oh, Pokemon, Digimon.
+
+Goals: track collection, import/export (including file backup), multi-collection, anime side collection, proxy print, optional cloud sync (own account), shared collections with activity log.
+
+## Product scope (current)
+
+**In scope:** Auth (optional cloud), Collection views, Search/Quick Add, Import CSV/decklist, Export, Collection manager, Anime collection (local + **optional cloud share**), Proxy print, Settings + **JSON backup/restore**, **Share / collection invites** (editor/viewer, TCG + Anime), **Activity log + undo** (simple card actions).
+
+**Out of scope (removed):** Deck builder, Wishlist, Folders, Tags, Price history, Trading, Notifications, Phase 4 community, **Live realtime presence**.
+
+## Roadmap (slim)
+
+**Now:** Backup-by-file, polish collection UX, API safety (caps + rate limit), collab + activity.
+
+**Later (optional):** Stats summaries, bulk edit beyond delete, binder virtualization, anime cloud sync.

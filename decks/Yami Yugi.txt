@@ -1,0 +1,867 @@
+Yami Yugi
+=========
+
+=== Waking the Dragons ===
+
+#main
+1 Alpha The Magnet Warrior
+1 Beta The Magnet Warrior
+1 Curse of Dragon
+1 Dark Magician
+1 Gaia The Fierce Knight
+1 Gamma The Magnet Warrior
+1 Gazelle the King of Mythical Beasts
+1 Giant Soldier of Stone
+1 Jack's Knight
+1 Queen's Knight
+1 Summoned Skull
+1 Beast of Gilfer
+1 Berfomet
+1 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 Buster Blader
+1 Catapult Turtle
+1 Dark Magician Girl
+1 Electromagnetic Turtle
+1 King's Knight
+1 Kuribabylon
+1 Kuribah
+1 Kuribandit
+1 Kuribee
+1 Kuribeh
+1 Kuriboh
+1 Kuriboo
+1 Legendary Knight Critias
+1 Legendary Knight Hermos
+1 Legendary Knight Timaeus
+1 Obelisk the Tormentor
+1 Obnoxious Celtic Guardian
+1 Sangan
+1 Slifer the Sky Dragon
+1 The Winged Dragon of Ra
+1 Valkyrion the Magna Warrior
+1 Watapon
+1 Black Luster Soldier
+1 Altar of Restoration
+1 Berserker Soul
+1 Black Luster Ritual
+1 Brave Attack
+1 Card Destruction
+1 Card of Sanctity
+1 Dark Magic Curtain
+1 De-Fusion
+1 Diffusion Wave-Motion
+1 Excalibur
+1 Fissure
+1 Five Star Twilight
+1 Graceful Charity
+1 Hand Control
+1 Magic Formula
+1 Magical Academy
+1 Magical Hats
+1 Magical Pigeon
+1 Monster Reborn
+1 Multiply
+1 Mystical Space Typhoon
+1 Necromancy
+1 Polymerization
+1 Pot of Greed
+1 Pump Up
+1 Spider Web
+1 Swords of Revealing Light
+1 The Shallow Grave
+1 Underworld Circle
+1 Claw of Hermos
+1 Legend of Heart
+1 The Eye of Timaeus
+1 Goddess Bow
+1 Ambush Shield
+1 Attack Guidance Barrier
+1 Chain Destruction
+1 Collected Power
+1 Dark Renewal
+1 Divine Wind
+1 Dust Tornado
+1 Meteorain
+1 Mirror Force
+1 Natural Selection
+1 Reduction Barrier
+1 Relay Soul
+1 Rope of Life
+1 Soul Rope
+1 Soul Shield
+1 Zero Gravity
+
+#extra
+1 Chimera the Flying Mythical Beast
+1 Dragon Master Knight
+1 Gaia the Dragon Champion
+1 Timaeus the Knight of Destiny
+1 Amulet Dragon
+1 Dark Magician Girl the Dragon Knight
+
+=== Dawn of the Duel ===
+
+#main
+1 Dark Magician
+1 Gazelle the King of Mythical Beasts
+1 Jack's Knight
+1 Queen's Knight
+1 Beast of Gilfer
+1 Berfomet
+1 Big Shield Gardna
+1 Dark Magician Girl
+1 King's Knight
+1 Swift Gaia the Fierce Knight
+1 Obelisk the Tormentor
+1 Slifer the Sky Dragon
+1 The Tricky
+1 The Winged Dragon of Ra
+1 Awakening from Beyond
+1 Book of Secret Arts
+1 Bounce Spell
+1 Card of Sanctity
+1 Dark Magic Curtain
+1 Dark Spear
+1 Magicians Unite
+1 Monster Reborn
+1 Polymerization
+1 Pot of Greed
+1 Rebellion
+1 Thousand Knives
+1 Tricky Spell 4
+1 Dark Illusion
+1 Mirror Force
+1 Summoning Clock
+
+#extra
+1 Chimera the Flying Mythical Beast
+
+=== Memory World ===
+
+#main
+1 Big Shield Gardna
+1 Dark Magician
+1 Jack's Knight
+1 Dark Magician Girl
+1 Slifer the Sky Dragon
+1 The God of the Obelisk
+1 The Tricky
+1 Bounce
+1 Magicians Unite
+1 Monster Reborn
+1 Rebellion
+1 Tricky's Magic 4
+1 Mirror Force
+
+=== ''R'' ===
+
+#main
+1 Big Shield Gardna
+1 Dark Magician
+1 Gazelle the King of Mythical Beasts
+1 Gorz the Emissary of Darkness
+1 Jack's Knight
+1 Kaien the Emissary of Darkness
+1 Queen's Knight
+1 Alpha the Magnet Warrior
+1 Archfiend of Gilfer
+1 Beta the Magnet Warrior
+1 Blockman
+1 Buster Blader
+1 Dark Magician Girl
+1 Gamma the Magnet Warrior
+1 King's Knight
+1 Slifer the Sky Dragon
+1 The God of the Obelisk
+1 The Sun Dragon Ra
+1 The Tricky
+1 Bounce
+1 Card of Sanctity
+1 De-Spell
+1 Diffusion Wave-Motion
+1 Dimension Magic
+1 Divine Evolution
+1 Flames of the Archfiend
+1 Lightning Blade
+1 Monster Reborn
+1 Monster Recovery
+1 Negate Attack
+1 Owner's Seal
+1 Polymerization
+1 Soul Barter
+1 Swords of Revealing Light
+1 Union Attack
+1 Weapon Regeneration
+1 Cross Counter Trap
+1 Shadow Guardsmen
+1 Soul Rope
+1 Spellbinding Circle
+1 Spellbinding Illusion
+1 Stairway to the Underworld
+
+#extra
+1 Arcana Knight Joker
+1 Valyrion the Magna Warrior
+
+=== ''R'' ===
+
+#main
+1 Bau the Black Dog Beast
+1 Dark Red Enchanter
+1 Gorz the Emissary of Darkness
+1 Kaien the Emissary of Darkness
+1 Van'Dalgyon the Dark Dragon Lord
+1 Negate Attack
+1 Domain of the Dark Ruler
+1 Stairway to the Underworld
+
+=== The Eternal Duelist Soul ===
+
+#main
+1 Alpha The Magnet Warrior
+1 Beta The Magnet Warrior
+2 Dark Magician
+1 Gamma The Magnet Warrior
+1 Gazelle the King of Mythical Beasts
+2 Gemini Elf
+1 Giant Soldier of Stone
+1 Mystical Elf
+2 Summoned Skull
+2 Big Shield Gardna
+1 Buster Blader
+1 Cyber Jar
+2 Dark Magician Girl
+1 Kuriboh
+1 Sinister Serpent
+1 Valkyrion the Magna Warrior
+2 Witch of the Black Forest
+1 Change of Heart
+1 Chorus of Sanctuary
+2 Graceful Charity
+1 Harpie's Feather Duster
+1 Monster Reborn
+1 Mystical Space Typhoon
+1 Pot of Greed
+1 Raigeki
+1 Snatch Steal
+1 Swords of Revealing Light
+1 Anti Raigeki
+2 Magic Jammer
+1 Mirror Force
+1 Seven Tools of the Bandit
+1 White Hole
+
+=== Worldwide Edition: Stairway to the Destined Duel ===
+
+#main
+3 Alpha The Magnet Warrior
+3 Beta The Magnet Warrior
+2 Dark Magician
+3 Gamma The Magnet Warrior
+3 Gemini Elf
+2 Summoned Skull
+1 Cyber Jar
+3 Dark Magician Girl
+2 Magician of Faith
+2 Valkyrion the Magna Warrior
+3 Magician of Black Chaos
+1 Change of Heart
+1 Dark Hole
+3 Dark Magic Ritual
+1 Harpie's Feather Duster
+2 Heavy Storm
+1 Monster Reborn
+2 Premature Burial
+1 Raigeki
+1 Snatch Steal
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Magic Cylinder
+1 Mirror Force
+
+=== The Sacred Cards ===
+
+#main
+1 Alpha The Magnet Warrior
+1 Beta The Magnet Warrior
+1 Blackland Fire Dragon
+1 Celtic Guardian
+1 Curse of Dragon
+1 Dark Magician
+1 Gaia the Fierce Knight
+1 Gamma The Magnet Warrior
+1 Gazelle the King of Mythical Beasts
+1 Great White
+1 Koumori Dragon
+1 Left Arm of the Forbidden One
+1 Left Leg of the Forbidden One
+1 Meteor Dragon
+1 Mystical Elf
+1 Right Arm of the Forbidden One
+1 Right Leg of the Forbidden One
+1 Summoned Skull
+1 Winged Dragon, Guardian of the Fortress #1
+1 Archfiend of Gilfer
+1 Berfomet
+1 Big Shield Gardna
+1 Buster Blader
+1 Catapult Turtle
+1 Exodia the Forbidden One
+1 Dark Magician Girl
+1 Kuriboh
+1 Slifer the Sky Dragon
+1 Book of Secret Arts
+1 Brain Control
+1 Dark Magic Ritual
+1 Horn of the Unicorn
+1 Monster Reborn
+1 Multiply
+1 Mystical Moon
+1 Swords of Revealing Light
+1 Spellbinding Circle
+
+#extra
+1 Chimera the Flying Mythical Beast
+1 Gaia the Dragon Champion
+1 Dragon Master Knight
+
+=== World Championship 2004 ===
+
+#main
+3 Dark Magician
+3 Gemini Elf
+2 Summoned Skull
+1 Cyber Jar
+3 Dark Magician Girl
+3 Slate Warrior
+3 Magician of Black Chaos
+3 Change of Heart
+3 Dark Hole
+2 Dark Magic Ritual
+3 Harpie's Feather Duster
+1 Heavy Storm
+1 Mage Power
+3 Monster Reborn
+1 Premature Burial
+3 Raigeki
+1 Snatch Steal
+1 Swords of Revealing Light
+1 United We Stand
+1 Call of the Haunted
+1 Fairy Box
+1 Magic Cylinder
+1 Mirror Force
+
+=== Dawn of Destiny ===
+
+#main
+1 Alpha The Magnet Warrior
+1 Beta the Magnet Warrior
+3 Dark Magician
+1 Feral Imp
+1 Gamma the Magnet Warrior
+3 Giant Soldier of Stone
+1 Great White
+1 Horn Imp
+1 Koumori Dragon
+3 Mystical Elf
+3 Summoned Skull
+1 Cyber Jar
+2 Dark Magician Girl
+2 Magician of Black Chaos
+2 Axe of Despair
+1 Change of Heart
+1 Dark Hole
+2 Dark Magic Ritual
+1 Harpie's Feather Duster
+1 Mage Power
+1 Monster Reborn
+1 Pot of Greed
+1 Premature Burial
+1 Raigeki
+1 Snatch Steal
+1 Swords of Revealing Light
+1 United We Stand
+1 Call of the Haunted
+1 Magic Cylinder
+1 Magic Jammer
+1 Mirror Force
+1 Negate Attack
+1 Ring of Destruction
+1 Royal Decree
+1 Trap Hole
+
+=== Reshef of Destruction ===
+
+#main
+1 Dark Magician
+1 Jack's Knight
+3 Queen's Knight
+3 Big Shield Gardna
+3 Dark Elf
+1 Dark Magician Girl
+1 Dark Magician Knight
+3 Flash Assailant
+3 King's Knight
+1 Mirage Knight
+1 Slifer the Sky Dragon
+3 Change of Heart
+3 Harpie's Feather Duster
+3 Megamorph
+3 Monster Reborn
+3 Pot of Greed
+3 Swords of Revealing Light
+3 Torrential Tribute
+
+#extra
+1 Dark Flare Knight
+1 Dark Paladin
+
+=== 7 Trials to Glory: World Championship Tournament 2005 ===
+
+#main
+3 Dark Magician
+3 Dunames Dark Witch
+3 Gemini Elf
+2 Summoned Skull
+1 Cyber Jar
+3 Dark Magician Girl
+1 Slate Warrior
+3 Soul of Purity and Light
+1 Magician of Black Chaos
+1 Card Destruction
+1 Dark Hole
+1 Dark Magic Ritual
+1 Graceful Charity
+1 Harpie's Feather Duster
+1 Heavy Storm
+1 Premature Burial
+1 Snatch Steal
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Fairy Box
+1 Magic Cylinder
+2 Magic Jammer
+2 Seven Tools of the Bandit
+1 Torrential Tribute
+
+=== World Championship 2007 ===
+
+#main
+1 Dark Magician
+2 Airknight Parshath
+1 Big Shield Gardna
+1 Dandylion
+1 Magician of Faith
+1 Marshmallon
+1 Morphing Jar
+3 Nimble Momonga
+2 Royal Magical Library
+1 Sangan
+3 Skilled Dark Magician
+1 Slifer the Sky Dragon
+1 Spirit Reaper
+2 Brain Control
+1 Giant Trunade
+1 Graceful Charity
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 Nobleman of Crossout
+1 Pot of Avarice
+1 Premature Burial
+3 Sealed Gold Coffer
+1 Smashing Ground
+1 Swords of Revealing Light
+1 The Shallow Grave
+1 Call of the Haunted
+1 Mirror Force
+1 Ring of Destruction
+1 Ultimate Offering
+2 Wall of Revealing Light
+
+=== World Championship 2007 ===
+
+#main
+2 Dark Magician
+1 Gemini Elf
+2 Giant Soldier of Stone
+1 Mystical Elf
+1 Summoned Skull
+1 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 D.D. Warrior Lady
+1 Dark Magician Girl
+1 Dark Magician of Chaos
+1 Kuriboh
+1 Magician of Faith
+2 Magician's Valkyria
+2 Obnoxious Celtic Guard
+1 Sangan
+3 Skilled Dark Magician
+1 Brain Control
+2 Dark Magic Curtain
+1 Dedication through Light and Darkness
+1 Heavy Storm
+1 Magical Dimension
+1 Mystic Box
+1 Mystical Space Typhoon
+1 Premature Burial
+1 Scapegoat
+1 Swords of Revealing Light
+1 Call Of The Haunted
+1 Magic Cylinder
+1 Magical Hats
+1 Magician's Circle
+1 Mirror Force
+1 Rope of Spirit
+1 Solemn Wishes
+
+=== World Championship 2008 ===
+
+#main
+3 Dark Magician
+3 Gemini Elf
+3 Giant Soldier of Stone
+2 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 D.D. Warrior Lady
+1 Dark Magician Girl
+1 Dark Magician of Chaos
+1 Kuriboh
+3 Magician's Valkyria
+3 Skilled Dark Magician
+1 Brain Control
+1 Dark Magic Curtain
+1 Dedication through Light and Darkness
+1 Heavy Storm
+1 Magical Dimension
+1 Mystic Box
+1 Mystical Space Typhoon
+1 Pot of Avarice
+1 Premature Burial
+1 Scapegoat
+1 Swords of Revealing Light
+2 Birthright
+1 Call Of The Haunted
+1 Magic Cylinder
+1 Magical Hats
+1 Magician's Circle
+1 Mirror Force
+
+=== World Championship 2008 ===
+
+#main
+2 Dark Magician
+1 Gemini Elf
+2 Giant Soldier of Stone
+1 Mystical Elf
+1 Summoned Skull
+1 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 D.D. Warrior Lady
+1 Dark Magician Girl
+1 Dark Magician of Chaos
+1 Kuriboh
+2 Magician's Valkyria
+2 Obnoxious Celtic Guard
+1 Sangan
+3 Skilled Dark Magician
+1 Brain Control
+2 Dark Magic Curtain
+1 Dedication through Light and Darkness
+1 Heavy Storm
+1 Magical Dimension
+1 Mystic Box
+1 Mystical Space Typhoon
+1 Premature Burial
+1 Scapegoat
+1 Swords of Revealing Light
+1 Call Of The Haunted
+1 Legacy of Yata-Garasu
+1 Magic Cylinder
+1 Magical Hats
+1 Magician's Circle
+1 Mirror Force
+1 Soul Rope
+1 Solemn Wishes
+
+=== Decks ===
+
+#main
+1 Beaver Warrior
+1 Blackland Fire Dragon
+1 Celtic Guardian
+1 Dark Magician
+1 Feral Imp
+2 Giant Soldier of Stone
+1 Great White
+1 Mystical Elf
+1 Summoned Skull
+1 Winged Dragon,Guardian of the Fortress #1
+2 Big Shield Gardna
+1 Buster Blader
+1 Dark Magician Girl
+1 Dark Magician of Chaos
+1 Kuriboh
+1 Manju of the Ten Thousand Hands
+1 Obnoxious Celtic Guard
+1 Sangan
+1 Skilled Dark Magician
+1 Magician of Black Chaos
+1 Brain Control
+1 Cost Down
+1 Dark Magic Curtain
+1 Dark Magic Ritual
+1 Dedication through Light and Darkness
+1 Enchanted Arrow
+1 Mystic Box
+2 Polymerization
+1 Pot of Greed
+1 Swords of Revealing Light
+1 Lightforce Sword
+1 Magic Cylinder
+1 Magical Hats
+1 Magic-Arm Shield
+1 Mirror Force
+2 Spellbinding Circle
+
+#extra
+3 Dark Paladin
+
+=== Decks ===
+
+#main
+1 Alpha The Magnet Warrior
+2 Beta The Magnet Warrior
+1 Dark Magician
+2 Gamma The Magnet Warrior
+1 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 D. D. Warrior Lady
+1 Dark Magician of Chaos
+2 Gear Golem the Moving Fortress
+2 Giant Rat
+1 Kuriboh
+1 Obnoxious Celtic Guard
+1 Sangan
+2 Skilled Dark Magician
+2 Valkyrion the Magna Warrior
+1 Zombyra the Dark
+1 Brain Control
+2 Dark Factory of Mass Production
+1 Delinquent Duo
+1 Graceful Charity
+1 Mystic Box
+1 Pot of Greed
+1 Scapegoat
+1 Snatch Steal
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Magic Cylinder
+1 Magical Hats
+1 Magic-Arm Shield
+1 Mirror Force
+2 Rock Bombardment
+1 Soul Rope
+
+=== Decks ===
+
+#main
+1 Dark Magician
+2 Giant Soldier of Stone
+1 Mystical Elf
+2 Big Shield Gardna
+1 Breaker the Magical Warrior
+1 Buster Blader
+1 D. D. Warrior Lady
+1 Dark Magician Girl
+1 Dark Magician of Chaos
+1 Kuriboh
+3 Obnoxious Celtic Guard
+1 Sangan
+3 Skilled Dark Magician
+1 Skull Archfiend of Lightning
+2 Zombyra the Dark
+1 Brain Control
+1 Cost Down
+1 Dark Magic Curtain
+1 Dedication through Light and Darkness
+1 Delinquent Duo
+1 Graceful Charity
+1 Mystic Box
+2 Polymerization
+1 Pot of Greed
+1 Scapegoat
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Magic Cylinder
+1 Magical Hats
+1 Magic-Arm Shield
+1 Mirror Force
+1 Rope of Spirit
+
+#extra
+3 Dark Paladin
+
+=== Decks ===
+
+#main
+1 Dark Magician
+2 Big Shield Gardna
+1 Buster Blader
+1 Cyber Jar
+3 Gilasaurus
+1 Magician of Faith
+1 Marshmallon
+1 Obelisk the Tormentor
+2 Obnoxious Celtic Guard
+1 Sangan
+2 Skilled Dark Magician
+2 Slate Warrior
+2 Spirit Reaper
+2 Zombyra the Dark
+1 Brain Control
+1 Graceful Charity
+1 Monster Reincarnation
+1 Mystical Space Typhoon
+1 Polymerization
+1 Pot of Greed
+1 Premature Burial
+3 Soul Exchange
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Dust Tornado
+1 Interdimensional Matter Transporter
+1 Magic Cylinder
+1 Metal Reflect Slime
+1 Mirror Force
+1 Trap Jammer
+
+#extra
+3 Dark Paladin
+
+=== Decks ===
+
+#main
+1 Dark Magician
+2 Airknight Parshath
+1 Big Shield Gardna
+1 Cyber Jar
+1 Gear Golem the Moving Fortress
+2 Magician of Faith
+1 Marshmallon
+1 Morphing Jar
+3 Royal Magical Library
+1 Sangan
+2 Skelengel
+3 Skilled Dark Magician
+1 Slifer the Sky Dragon
+3 Thunder Dragon
+1 Book of Moon
+1 Delinquent Duo
+1 Giant Trunade
+1 Graceful Charity
+1 Mystical Space Typhoon
+1 Pot of Greed
+1 Premature Burial
+3 Toon Table of Contents
+1 United We Stand
+2 Upstart Goblin
+1 Call of the Haunted
+1 Magic Cylinder
+1 Mirror Force
+1 Ring of Destruction
+
+=== Decks ===
+
+#main
+1 Dark Magician
+1 Airknight Parshath
+1 Black Luster Soldier - Envoy of the Beginning
+1 Breaker the Magical Warrior
+2 Copycat
+1 Dark Magician of Chaos
+1 D. D. Warrior Lady
+2 Kycoo the Ghost Destroyer
+1 Magician of Faith
+1 Marshmallon
+1 Reflect Bounder
+1 Rocket Warrior
+1 Sangan
+2 Skilled Dark Magician
+1 Skull Archfiend of Lightning
+3 Zombyra the Dark
+1 Brain Control
+1 Dark Magic Curtain
+1 Delinquent Duo
+2 Different Dimension Capsule
+1 Graceful Charity
+1 Heavy Storm
+1 Mystical Space Typhoon
+1 Pot of Greed
+1 Scapegoat
+1 Snatch Steal
+1 Swords of Revealing Light
+1 Call of the Haunted
+1 Magic Cylinder
+1 Magic-Arm Shield
+1 Mirror Force
+1 Ring of Destruction
+1 Rope of Spirit
+1 Sixth Sense
+
+=== Deck Recipe ===
+
+#main
+1 Dark Magician
+2 Airknight Parshath
+1 Big Shield Gardna
+1 Cyber Jar
+1 Gear Golem the Moving Fortress
+2 Magician of Faith
+1 Marshmallon
+1 Morphing Jar
+3 Royal Magical Library
+1 Sangan
+2 Skelengel
+3 Skilled Dark Magician
+1 Slifer the Sky Dragon
+3 Thunder Dragon
+1 Book of Moon
+1 Delinquent Duo
+1 Giant Trunade
+1 Graceful Charity
+1 Mystical Space Typhoon
+1 Pot of Greed
+1 Premature Burial
+3 Toon Table of Contents
+1 United We Stand
+2 Upstart Goblin
+1 Call of the Haunted
+1 Magic Cylinder
+1 Mirror Force
+1 Ring of Destruction
+
+=== Duel Terminals ===
+
+#main
+1 Aqua Madoor
+1 Dark Magician
+1 Dark Magician Girl
+1 Skilled Dark Magician
+1 Dark Magic Attack
+1 Magical Dimension
+1 Sage's Stone
+1 Magician's Circle
+
+=== Duel Terminals ===
+
+#main
+1 Aqua Madoor
+1 Dark Magician
+1 Buster Blader
+1 Dark Magician Girl
+1 Skilled Dark Magician
+1 Skilled White Magician
+1 Lightforce Sword

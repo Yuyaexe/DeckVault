@@ -1,0 +1,44 @@
+---
+description: Feature-based architecture and plan-before-code workflow
+globs: src/**/*
+alwaysApply: false
+---
+
+# Architecture
+
+Feature-based structure under `src/features/`:
+
+**Shipped today:** collection, catalog, import, auth, dashboard, **anime-collection**, **proxy-print**, market (thin CardTrader links), **activity** (log + undo), collaboration (members/invites)
+
+**Not in product:** deckbuilder, wishlist, pricing/graphs, trade, notifications, tags, in-collection folders, Live realtime presence
+
+Shared: `src/components/shared/`, `src/hooks/`, `src/types/`, `src/lib/`
+
+## Data modes
+
+- **Demo:** Zustand persist (`deckvault-demo`) — full TCG collection + anime collection + JSON backup/restore + local activity log
+- **Supabase:** React Query + `/api/app/*` for TCG; shared collections via `collection_members` / invites; **Anime** can be shared via `anime_workspaces` snapshot sync in cloud mode
+- **No Live:** realtime presence is out of product scope (poll/refetch after mutations)
+
+## Before writing code
+
+1. Analyze requirements
+2. Suggest architecture
+3. Explain state management (React Query = server, Zustand = UI/local)
+4. Explain database changes
+5. Explain reusable components
+6. Then generate code
+
+Strict TypeScript — no `any`. Small functions, maximum readability, no deeply nested logic.
+
+## App data hooks
+
+- `useAppConfig()` — demo vs supabase mode
+- `useOwnedCardsMutations()` — add/update/import/delete cards
+- `useAppData()` — composes the above with collections, profile; accepts pending invites on cloud boot
+
+## Security notes
+
+- Shared `cards` catalog: server writes via service role only (`0009_cards_catalog_immutable.sql`)
+- Image proxy: `src/lib/cache/trusted-image-hosts.ts` (suffix match, not substring)
+- Collection access: `private.user_can_access_collection` / `user_can_edit_collection` (owner or member)

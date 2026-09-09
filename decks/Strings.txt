@@ -1,0 +1,86 @@
+Strings
+=======
+
+=== Anime ===
+
+#main
+2 Humanoid Slime
+2 Worm Drake
+1 Revival Jam
+1 Slifer the Sky Dragon
+2 Card of Safe Return
+1 Infinite Cards
+2 Jam Breeding Machine
+1 Nightmare Steelcage
+1 Polymerization
+1 Pot of Greed
+1 Quick Attack
+2 Jam Defender
+
+#extra
+2 Humanoid Worm Drake
+
+=== Manga ===
+
+#main
+1 Humanoid Slime
+1 Slime King
+1 Worm Drake
+1 Revival Jam
+1 Slifer the Sky Dragon
+1 Card of Safe Return
+1 Infinite Cards
+1 Jam Breeding Machine
+1 Nightmare Steel Cage
+1 Polymerization
+1 Quick Attack
+1 Jam Defender
+
+#extra
+1 Humanoid Drake
+
+=== Reshef of Destruction ===
+
+#main
+3 Akihiron
+3 Barrel Rock
+3 Frog the Jam
+3 Humanoid Slime
+3 Humanoid Worm Drake
+3 Kappa Avenger
+3 Karate Man
+3 Monsturtle
+3 Prisman
+3 The Statue of Easter Island
+3 Worm Drake
+3 Revival Jam
+2 Power of Kaishin
+2 Invisible Wire
+
+=== The Dawn of Destiny ===
+
+#main
+2 Destroyer Golem
+3 Humanoid Slime
+2 Illusionist Faceless Mage
+2 Millennium Golem
+3 Rogue Doll
+2 Steel Ogre Grotto #2
+3 Worm Drake
+2 Axe of Despair
+2 Black Pendant
+2 Gravekeeper's Servant
+2 Mystical Space Typhoon
+2 Polymerization
+1 Premature Burial
+1 Raigeki
+2 Jar of Greed
+1 Magic Cylinder
+2 Magic Jammer
+1 Mirror Force
+1 Ring of Destruction
+2 Solemn Wishes
+2 Trap Hole
+
+#extra
+2 Humanoid Worm Drake

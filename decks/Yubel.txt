@@ -1,0 +1,133 @@
+Yubel
+=====
+
+=== Marcel ===
+
+#main
+1 Left Arm of the Forbidden One
+1 Left Leg of the Forbidden One
+1 Right Arm of the Forbidden One
+1 Right Leg of the Forbidden One
+1 Exodia the Forbidden One
+1 Mad Reloader
+1 Pot of Avarice
+1 Reload
+2 Break the Seal
+
+=== Marcel ===
+
+#main
+1 Chaos Core
+1 Dark Summoning Beast
+1 Hamon, Lord of Striking Thunder
+1 Phantom of Chaos
+1 Raviel, Lord of Phantasms
+1 Uria, Lord of Searing Flames
+1 Dimension Fusion Destruction
+1 Chaos Burst
+1 Chaos Form
+1 Dark Shrine Bribery
+1 Immortal Class
+
+#extra
+1 Chaos Phantasm Armityle
+
+=== Marcel ===
+
+#main
+2 The Rock Spirit
+1 House of Sand
+1 Polymerization
+
+=== Jesse ===
+
+#main
+1 Advanced Crystal Beast Amber Mammoth
+1 Advanced Crystal Beast Amethyst Cat
+1 Advanced Crystal Beast Cobalt Eagle
+1 Advanced Crystal Beast Emerald Tortoise
+1 Advanced Crystal Beast Ruby Carbuncle
+1 Advanced Crystal Beast Sapphire Pegasus
+1 Advanced Crystal Beast Topaz Tiger
+1 Rainbow Dark Dragon
+1 Advanced Dark
+1 Crystal Beacon
+1 Crystal Release
+1 GEM Burst
+1 M Force
+1 Prism Wall
+1 Amber Crystal Circle
+1 Counter Gem
+1 Last Trick
+1 Rainbow Life
+1 Rainbow Path
+1 Thousand Buster
+
+=== Jesse ===
+
+#main
+1 Grave Squirmer
+1 Hamon, Lord of Striking Thunder
+2 Illusion Brigadier
+1 Raviel, Lord of Phantasms
+1 Torch Golem
+1 Uria, Lord of Searing Flames
+1 Yubel
+1 Akashic Record
+1 Dimension Fusion Destruction
+2 Dual Gate
+1 Eternal Reverse
+1 Hand of Destruction
+1 Nightmare Shuffle
+3 Triangle Force
+3 Delta Barrier
+
+#extra
+1 Chaos Phantasm Armityle
+
+=== Fiend/Plant ===
+
+#main
+1 Chaos Core
+1 Dark Summoning Beast
+1 Gate Guardian
+1 Giant Germ
+1 Grave Squirmer
+1 Infernal Flame Emperor
+1 Infernal Incinerator
+1 Lava Golem
+1 Maju Garzett
+1 Phantom of Chaos
+1 Raviel, Lord of Phantasms
+1 Regenerating Rose
+1 Samsara Lotus
+1 Torch Golem
+1 Yubel
+1 Yubel - Terror Incarnate
+1 Yubel - The Ultimate Nightmare
+1 Mystical Space Typhoon
+1 Spell Chronicle
+1 Super Polymerization
+1 Chain Material
+1 Fiend Rose
+1 Hate Buster
+1 Sinister Seeds
+1 Zero Hole
+1 Zero Sprite
+
+#extra
+1 Super Fusion God
+
+=== Duel Terminal ===
+
+#main
+1 Dark Armed Dragon
+1 Doom Shaman
+1 Mystic Tomato
+1 Snipe Hunter
+1 Yubel
+1 Yubel - Terror Incarnate
+1 Yubel - The Ultimate Nightmare
+1 Hand Destruction
+1 Swing of Memories
+1 Limit Reverse
