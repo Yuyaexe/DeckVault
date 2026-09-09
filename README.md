@@ -92,13 +92,28 @@ Run in SQL Editor, in order:
 
 ### Desktop app (.exe)
 
-Requires [Rust](https://rustup.rs/):
+DeckVault can run as a standalone Windows desktop application, similar to VS Code.
+The desktop shell embeds the Next.js server and does not open a browser window.
+Node.js is only needed on the development machine; the generated installer includes
+the runtime.
 
 ```powershell
-npm run tauri:build
+npm install
+npm run desktop:dev       # open the desktop app locally
+npm run desktop:build     # generate the Windows installer
 ```
 
-Output: `src-tauri/target/release/deckvault.exe`
+The installer is generated in `release/`. The previous Tauri commands
+(`npm run tauri:dev` and `npm run tauri:build`) remain available for contributors
+who have Rust installed.
+
+#### Automatic updates
+
+Installed desktop builds check GitHub Releases for a newer version when they
+start. The update is downloaded in the background and the user can restart
+the app to install it. To publish an update, increment `version` in
+`package.json`, run `npm run desktop:build`, and upload the generated installer
+and `latest.yml` to a GitHub Release with the same version tag.
 
 ### Dev scripts
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Sparkles, Share2, RefreshCw } from "lucide-react";
+import { Download, Sparkles, Share2, RefreshCw } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { Modal } from "@/components/shared/Modal";
@@ -22,6 +22,7 @@ import {
 } from "@/features/anime-collection/components/AnimeSeriesCard";
 import { EditSeriesModal } from "@/features/anime-collection/components/EditSeriesModal";
 import { ShareHubModal } from "@/features/collection/components/ShareHubModal";
+import { ExportDeckModal } from "@/features/import/components/ExportDeckModal";
 import { useAnimeCollection } from "@/features/anime-collection/hooks/useAnimeCollection";
 import { useAnimeShareSyncStore } from "@/features/anime-collection/stores/anime-share-sync.store";
 import { resolveSeriesCoverUrl } from "@/features/anime-collection/utils/resolve-series-cover";
@@ -29,6 +30,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useAppConfig } from "@/hooks/useAppConfig";
 import type { AnimeSeries } from "@/features/anime-collection/types";
 import { useT } from "@/lib/i18n/context";
+import { animeCharacterCardToOwned } from "@/features/anime-collection/utils/character-card-inspect";
 import { toast } from "sonner";
 
 export function AnimeSeriesPage() {
@@ -38,6 +40,7 @@ export function AnimeSeriesPage() {
   const isTouchDevice = useMediaQuery("(hover: none) and (pointer: coarse)");
   const {
     animeSeries,
+    animeCharacterCards,
     characterCountBySeries,
     addAnimeSeries,
     renameAnimeSeries,
@@ -62,6 +65,8 @@ export function AnimeSeriesPage() {
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<AnimeSeries | null>(null);
   const [shareOpen, setShareOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
+  const exportCards = animeCharacterCards.map(animeCharacterCardToOwned);
 
   useEffect(() => {
     if (!awaitingManualSync.current) return;
@@ -188,6 +193,16 @@ export function AnimeSeriesPage() {
           >
             <Share2 className="h-4 w-4" />
             <span className="max-w-[9rem] truncate sm:max-w-none">{t("share.menuShare")}</span>
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="min-h-9 shrink-0"
+            onClick={() => setExportOpen(true)}
+            disabled={exportCards.length === 0}
+          >
+            <Download className="h-4 w-4" />
+            <span className="hidden sm:inline">Exportar todos</span>
           </Button>
         </div>
       </div>
@@ -378,6 +393,14 @@ export function AnimeSeriesPage() {
         open={shareOpen}
         onOpenChange={setShareOpen}
         preselectAnime
+      />
+      <ExportDeckModal
+        open={exportOpen}
+        onOpenChange={setExportOpen}
+        cards={exportCards}
+        collectionName="DeckVault_Anime_Todos"
+        title="Exportar todos os animes"
+        description="Exporte todas as cartas cadastradas em todos os animes."
       />
     </>
   );

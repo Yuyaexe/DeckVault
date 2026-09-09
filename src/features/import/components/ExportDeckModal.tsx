@@ -59,7 +59,19 @@ export function ExportDeckModal({
     }
     try {
       const content = buildCollectionDecklistContent(cards, format, gameSlug);
-      await navigator.clipboard.writeText(content);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(content);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = content;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand("copy");
+        textarea.remove();
+        if (!copied) throw new Error(t("export.copyFailed"));
+      }
       toast.success(t("export.copied"));
     } catch (err) {
       toast.error(err instanceof Error ? err.message : t("export.copyFailed"));
@@ -93,30 +105,8 @@ export function ExportDeckModal({
       onOpenChange={onOpenChange}
       title={title ?? t("export.title")}
       description={description ?? t("export.description")}
-    >
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <Label>{t("export.format")}</Label>
-          <ResponsiveSelect
-            preferNative
-            value={format}
-            onValueChange={(v) => setFormat(v as DeckExportFormat)}
-            options={formats.map((value) => ({
-              value,
-              label: EXPORT_FORMAT_LABELS[value],
-            }))}
-          />
-        </div>
-
-        <p className="text-xs text-muted-foreground">{formatHint}</p>
-
-        {previewContent && (
-          <pre className="max-h-40 overflow-auto rounded-lg border border-border/60 bg-muted/30 p-3 text-xs leading-relaxed text-foreground">
-            {previewContent}
-          </pre>
-        )}
-
-        <div className="flex flex-wrap justify-end gap-2">
+      footer={
+        <div className="flex w-full flex-wrap justify-end gap-2">
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             {t("common.cancel")}
           </Button>
@@ -135,6 +125,29 @@ export function ExportDeckModal({
             {t("export.download")}
           </Button>
         </div>
+      }
+    >
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label>{t("export.format")}</Label>
+          <ResponsiveSelect
+            preferNative
+            value={format}
+            onValueChange={(v) => setFormat(v as DeckExportFormat)}
+            options={formats.map((value) => ({
+              value,
+              label: EXPORT_FORMAT_LABELS[value],
+            }))}
+          />
+        </div>
+
+        <p className="text-xs text-muted-foreground">{formatHint}</p>
+
+        {previewContent && (
+          <pre className="max-h-32 overflow-auto rounded-lg border border-border/60 bg-muted/30 p-3 text-xs leading-relaxed text-foreground">
+            {previewContent}
+          </pre>
+        )}
       </div>
     </Modal>
   );

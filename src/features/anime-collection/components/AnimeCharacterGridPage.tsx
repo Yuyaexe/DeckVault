@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Users } from "lucide-react";
+import { Download, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { Modal } from "@/components/shared/Modal";
@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { AnimeCollectionBreadcrumb } from "@/features/anime-collection/components/AnimeCollectionBreadcrumb";
 import { CharacterBubbleGrid } from "@/features/anime-collection/components/CharacterBubbleGrid";
 import { EditCharacterModal } from "@/features/anime-collection/components/EditCharacterModal";
+import { ExportDeckModal } from "@/features/import/components/ExportDeckModal";
 import { useAnimeCollection } from "@/features/anime-collection/hooks/useAnimeCollection";
 import { useAnimeShareSyncStore } from "@/features/anime-collection/stores/anime-share-sync.store";
 import { parseCharacterList } from "@/features/anime-collection/utils/parse-character-list";
@@ -20,6 +21,7 @@ import type { AnimeCharacter } from "@/features/anime-collection/types";
 import { useT } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { animeCharacterCardToOwned } from "@/features/anime-collection/utils/character-card-inspect";
 
 type AddCharacterMode = "single" | "list";
 
@@ -36,6 +38,7 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
   const {
     getSeriesBySlug,
     getCharactersForSeries,
+    animeCharacterCards,
     addAnimeCharacter,
     addAnimeCharactersBatch,
     renameAnimeCharacter,
@@ -45,6 +48,10 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
 
   const series = getSeriesBySlug(seriesSlug);
   const characters = series ? getCharactersForSeries(series.id) : [];
+  const characterIds = new Set(characters.map((character) => character.id));
+  const exportCards = animeCharacterCards
+    .filter((card) => characterIds.has(card.characterId))
+    .map(animeCharacterCardToOwned);
 
   const [createOpen, setCreateOpen] = useState(false);
   const [addMode, setAddMode] = useState<AddCharacterMode>("single");
@@ -55,6 +62,7 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
   const [editTarget, setEditTarget] = useState<AnimeCharacter | null>(null);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<AnimeCharacter | null>(null);
+  const [exportOpen, setExportOpen] = useState(false);
 
   const existingNames = useMemo(
     () => characters.map((character) => character.name),
@@ -174,7 +182,16 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
             ? "1 character"
             : `${characters.length} characters`
         }
-      />
+      >
+        <Button
+          variant="outline"
+          onClick={() => setExportOpen(true)}
+          disabled={exportCards.length === 0}
+        >
+          <Download className="mr-1.5 h-4 w-4" />
+          Exportar anime
+        </Button>
+      </PageHeader>
 
       <div className="mt-8">
         {characters.length === 0 ? (
@@ -200,6 +217,15 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
           />
         )}
       </div>
+
+      <ExportDeckModal
+        open={exportOpen}
+        onOpenChange={setExportOpen}
+        cards={exportCards}
+        collectionName={`DeckVault_${series.name}`}
+        title={`Exportar ${series.name}`}
+        description="Exporte todas as cartas deste anime."
+      />
 
       <Modal
         open={createOpen}
