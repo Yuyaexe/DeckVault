@@ -162,7 +162,22 @@ function registerUpdateEvents() {
     });
 
     if (result.response === 0) {
-      autoUpdater.quitAndInstall();
+      for (const window of BrowserWindow.getAllWindows()) {
+        try {
+          window.close();
+        } catch {
+          // Ignore window-close errors; the app must still exit cleanly.
+        }
+      }
+
+      app.quit();
+      setTimeout(() => {
+        try {
+          autoUpdater.quitAndInstall(true, true);
+        } catch {
+          app.exit(0);
+        }
+      }, 250);
     }
   });
 }
