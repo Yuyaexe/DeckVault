@@ -60,6 +60,7 @@ import { LOCALE_OPTIONS, type AppLocale } from "@/lib/i18n/types";
 import { useT } from "@/lib/i18n/context";
 
 import { toast } from "sonner";
+import type { DesktopUpdateStatus } from "@/types/electron";
 
 
 
@@ -110,12 +111,20 @@ export default function SettingsPage() {
 
   const [draftLocale, setDraftLocale] = useState<AppLocale>(locale);
   const [checkingForUpdates, setCheckingForUpdates] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<DesktopUpdateStatus | null>(null);
 
 
 
   const hasProfileChanges =
 
     draft.displayName !== profile.displayName || draftLocale !== locale;
+
+  useEffect(() => {
+    const desktop = window.deckvaultDesktop;
+    if (!desktop) return;
+
+    return desktop.onUpdateStatus(setUpdateStatus);
+  }, []);
 
 
 
@@ -350,12 +359,15 @@ export default function SettingsPage() {
     try {
       const result = await desktop.checkForUpdates();
       if (result.status === "current") {
+        setUpdateStatus({ status: "current" });
         toast.success("Você já está usando a versão mais recente do DeckVault.");
       } else if (result.status === "downloading") {
+        setUpdateStatus({ status: "downloading", version: result.version, percent: 0 });
         toast.success(
           `A versão ${result.version ?? "nova"} está sendo baixada. Você será avisado quando estiver pronta.`,
         );
       } else if (result.status === "unavailable") {
+        setUpdateStatus({ status: "unavailable" });
         toast.info("As atualizações ainda não estão publicadas para esta versão.");
       } else {
         toast.info("A verificação de atualizações só funciona no aplicativo instalado.");
@@ -512,6 +524,23 @@ export default function SettingsPage() {
             <p className="text-sm text-muted-foreground">
               Verifique no GitHub se existe uma versão mais recente do DeckVault.
             </p>
+            {updateStatus?.status === "checking" && (
+              <p className="text-sm text-muted-foreground">Verificando atualizações...</p>
+            )}
+            {updateStatus?.status === "downloading" && (
+              <div className="space-y-2" aria-live="polite">
+                <div className="flex justify-between text-sm">
+                  <span>Baixando {updateStatus.version ? `v${updateStatus.version}` : "atualização"}</span>
+                  <span>{updateStatus.percent}%</span>
+                </div>
+                <div className="h-2 overflow-hidden rounded-full bg-muted" role="progressbar" aria-valuenow={updateStatus.percent} aria-valuemin={0} aria-valuemax={100}>
+                  <div className="h-full bg-primary transition-[width]" style={{ width: `${updateStatus.percent}%` }} />
+                </div>
+              </div>
+            )}
+            {updateStatus?.status === "downloaded" && (
+              <p className="text-sm text-emerald-600" aria-live="polite">Atualização baixada. Reinicie o app para instalar.</p>
+            )}
             <Button
               type="button"
               variant="outline"

@@ -24,6 +24,12 @@ function isMissingUpdateManifest(error) {
   return error?.statusCode === 404 || message.includes("latest.yml");
 }
 
+function sendUpdateStatus(status) {
+  for (const window of require("electron").BrowserWindow.getAllWindows()) {
+    window.webContents.send("update-status", status);
+  }
+}
+
 function getStandaloneDirectory() {
   if (app.isPackaged) {
     return path.join(process.resourcesPath, ".next", "standalone");
@@ -107,9 +113,14 @@ function checkForUpdates() {
   registerUpdateEvents();
   autoUpdater.autoDownload = true;
   autoUpdater.autoInstallOnAppQuit = false;
+  sendUpdateStatus({ status: "checking" });
   autoUpdater.checkForUpdates().catch((error) => {
-    if (isMissingUpdateManifest(error)) return;
+    if (isMissingUpdateManifest(error)) {
+      sendUpdateStatus({ status: "unavailable" });
+      return;
+    }
 
+    sendUpdateStatus({ status: "error", message: "Não foi possível verificar atualizações." });
     fs.appendFileSync(
       startupLog,
       `${new Date().toISOString()}\nUpdate check failed: ${error.stack || error.message}\n\n`,
@@ -123,7 +134,23 @@ function registerUpdateEvents() {
   if (!autoUpdater || updateEventsRegistered) return;
 
   updateEventsRegistered = true;
+  autoUpdater.on("update-available", (info) => {
+    sendUpdateStatus({ status: "downloading", version: info.version, percent: 0 });
+  });
+  autoUpdater.on("download-progress", (progress) => {
+    sendUpdateStatus({
+      status: "downloading",
+      percent: Math.round(progress.percent),
+      bytesPerSecond: progress.bytesPerSecond,
+      transferred: progress.transferred,
+      total: progress.total,
+    });
+  });
+  autoUpdater.on("update-not-available", () => {
+    sendUpdateStatus({ status: "current" });
+  });
   autoUpdater.on("update-downloaded", async () => {
+    sendUpdateStatus({ status: "downloaded", percent: 100 });
     const result = await dialog.showMessageBox({
       type: "info",
       buttons: ["Reiniciar agora", "Mais tarde"],
@@ -146,15 +173,23 @@ ipcMain.handle("check-for-updates", async () => {
 
   registerUpdateEvents();
   autoUpdater.autoDownload = true;
+  sendUpdateStatus({ status: "checking" });
   let result;
   try {
     result = await autoUpdater.checkForUpdates();
   } catch (error) {
-    if (isMissingUpdateManifest(error)) return { status: "unavailable" };
+    if (isMissingUpdateManifest(error)) {
+      sendUpdateStatus({ status: "unavailable" });
+      return { status: "unavailable" };
+    }
+    sendUpdateStatus({ status: "error", message: "Não foi possível verificar atualizações." });
     throw error;
   }
 
-  if (!result?.isUpdateAvailable) return { status: "current" };
+  if (!result?.isUpdateAvailable) {
+    sendUpdateStatus({ status: "current" });
+    return { status: "current" };
+  }
 
   return {
     status: "downloading",
