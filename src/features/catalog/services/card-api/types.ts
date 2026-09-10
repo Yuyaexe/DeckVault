@@ -16,6 +16,7 @@ export type CatalogSearchLocale = "en" | "pt";
 
 export interface CatalogSearchOptions {
   locale?: CatalogSearchLocale;
+  setId?: string;
 }
 
 export interface CardDetail extends CardSearchResult {

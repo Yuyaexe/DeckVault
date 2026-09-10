@@ -51,10 +51,13 @@ function mapPokemonCard(card: PokemonCard): CardSearchResult {
 export const pokemonAdapter: CardApiAdapter = {
   gameSlug: "pokemon",
 
-  async search(query: string, _options?: CatalogSearchOptions): Promise<CardSearchResult[]> {
-    if (!query.trim()) return [];
+  async search(query: string, options?: CatalogSearchOptions): Promise<CardSearchResult[]> {
+    const searchTerms = query.trim();
+    if (!searchTerms && !options?.setId) return [];
+    const queryParts = [options?.setId ? `set.id:${options.setId}` : ""];
+    if (searchTerms) queryParts.push(buildSearchQuery(searchTerms));
     const res = await fetch(
-      `${API}/cards?q=${encodeURIComponent(buildSearchQuery(query))}&pageSize=20`,
+      `${API}/cards?q=${encodeURIComponent(queryParts.filter(Boolean).join(" "))}&pageSize=250&orderBy=number`,
       { headers: getHeaders() }
     );
     if (!res.ok) return [];

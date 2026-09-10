@@ -166,6 +166,9 @@ export const messages = {
     "quickAdd.added": "Added: {name}",
     "quickAdd.addFailed": "Could not add card",
     "quickAdd.searchPlaceholder": "Search {game} cards...",
+    "quickAdd.collection": "Collection",
+    "quickAdd.allCollections": "All collections",
+    "quickAdd.loadingCollections": "Loading collections...",
     "quickAdd.searchPlaceholderPt": "Buscar cartas {game}...",
     "quickAdd.unsupportedGame": "Search not available for {game}. Use CSV Import instead.",
 
@@ -469,6 +472,9 @@ export const messages = {
     "quickAdd.added": "Adicionado: {name}",
     "quickAdd.addFailed": "Não foi possível adicionar a carta",
     "quickAdd.searchPlaceholder": "Search {game} cards...",
+    "quickAdd.collection": "Coleção",
+    "quickAdd.allCollections": "Todas as coleções",
+    "quickAdd.loadingCollections": "Carregando coleções...",
     "quickAdd.searchPlaceholderPt": "Buscar cartas {game}...",
     "quickAdd.unsupportedGame": "Busca indisponível para {game}. Use Importar CSV.",
 

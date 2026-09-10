@@ -97,6 +97,7 @@ export function QuickAddModal({
   const [selectedGameSlug, setSelectedGameSlug] = useState<QuickAddGameSlug>(
     defaultGameSlug ?? QUICK_ADD_GAMES[0]?.slug ?? "yugioh"
   );
+  const [selectedPokemonSet, setSelectedPokemonSet] = useState("all");
   const [searchLocale, setSearchLocale] = useState<CatalogSearchLocale>("en");
   const [searchErrorDetail, setSearchErrorDetail] = useState<string | null>(null);
   const [ygoSearchMode, setYgoSearchMode] = useState<"simple" | "advanced">("simple");
@@ -109,6 +110,31 @@ export function QuickAddModal({
   const isMobile = useMediaQuery("(max-width: 767px)");
   const { addCardFromSearch, profile } = useAppData();
   const game = getQuickAddGame(selectedGameSlug);
+
+  const { data: pokemonSets = [], isLoading: pokemonSetsLoading } = useQuery<
+    Array<{ id: string; name: string; series: string | null; printedTotal: number | null }>
+  >({
+    queryKey: ["pokemon-sets"],
+    queryFn: async () => {
+      const response = await fetch("/api/cards/pokemon/sets");
+      if (!response.ok) throw new Error("Failed to load Pokemon collections");
+      const json = (await response.json()) as { sets?: Array<{ id: string; name: string; series: string | null; printedTotal: number | null }> };
+      return json.sets ?? [];
+    },
+    enabled: open && game.slug === "pokemon",
+    staleTime: 60 * 60 * 1000,
+  });
+
+  const pokemonSetOptions = useMemo(
+    () => [
+      { value: "all", label: t("quickAdd.allCollections") },
+      ...pokemonSets.map((set) => ({
+        value: set.id,
+        label: `${set.name}${set.printedTotal ? ` (${set.printedTotal})` : ""}`,
+      })),
+    ],
+    [pokemonSets, t]
+  );
 
   useEffect(() => {
     if (open) {
@@ -145,6 +171,7 @@ export function QuickAddModal({
     setPreviewKey(null);
     setLastSelectedKey(null);
     setYgoSearchMode("simple");
+    setSelectedPokemonSet("all");
     setYgoAdvancedFilters(EMPTY_YGO_ADVANCED_FILTERS);
     setAdvancedSearchNonce(0);
     setMobileAdvancedTab("filters");
@@ -218,13 +245,13 @@ export function QuickAddModal({
   });
 
   const { data, isLoading, isError, isFetching, error } = useQuery<CardSearchResult[]>({
-    queryKey: ["card-search", debouncedQuery, game.slug, profile.currency, searchLocale],
+    queryKey: ["card-search", debouncedQuery, game.slug, profile.currency, searchLocale, selectedPokemonSet],
     queryFn: async ({ signal }) => {
       setSearchErrorDetail(null);
       const localeParam =
         game.slug === "yugioh" && searchLocale === "pt" ? "&locale=pt" : "";
       const res = await fetch(
-        `/api/cards/search?q=${encodeURIComponent(debouncedQuery)}&game=${game.slug}&currency=${profile.currency}&quick=1${localeParam}`,
+        `/api/cards/search?q=${encodeURIComponent(debouncedQuery)}&game=${game.slug}&currency=${profile.currency}&quick=1${localeParam}${game.slug === "pokemon" && selectedPokemonSet !== "all" ? `&set=${encodeURIComponent(selectedPokemonSet)}` : ""}`,
         { signal }
       );
       const json = (await res.json()) as {
@@ -244,7 +271,7 @@ export function QuickAddModal({
     },
     enabled:
       ygoSearchMode === "simple" &&
-      debouncedQuery.length >= 2 &&
+      (debouncedQuery.length >= 2 || (game.slug === "pokemon" && selectedPokemonSet !== "all")) &&
       isQuickAddSupported(game.slug),
     staleTime: 5 * 60 * 1000,
     retry: false,
@@ -262,7 +289,7 @@ export function QuickAddModal({
   const searchQueryError = isAdvancedMode ? advancedQueryError : error;
   const hasSearchQuery = isAdvancedMode
     ? advancedSearchNonce > 0 && hasActiveYgoAdvancedFilters(ygoAdvancedFilters)
-    : debouncedQuery.length >= 2;
+    : debouncedQuery.length >= 2 || (game.slug === "pokemon" && selectedPokemonSet !== "all");
 
   const showInitialLoader =
     searchLoading && hasSearchQuery && searchResults.length === 0;
@@ -507,7 +534,10 @@ export function QuickAddModal({
                 value={selectedGameSlug}
                 onValueChange={(slug) => {
                   const next = QUICK_ADD_GAMES.find((g) => g.slug === slug);
-                  if (next) setSelectedGameSlug(next.slug);
+                  if (next) {
+                    setSelectedGameSlug(next.slug);
+                    if (next.slug !== "pokemon") setSelectedPokemonSet("all");
+                  }
                 }}
                 options={GAME_SELECT_OPTIONS}
                 triggerClassName="h-10 w-full sm:w-[200px]"
@@ -735,6 +765,16 @@ export function QuickAddModal({
                 options={GAME_SELECT_OPTIONS}
                 triggerClassName="h-10 w-full sm:w-[220px]"
               />
+              {game.slug === "pokemon" && (
+                <ResponsiveSelect
+                  preferNative
+                  value={selectedPokemonSet}
+                  onValueChange={setSelectedPokemonSet}
+                  options={pokemonSetOptions}
+                  placeholder={pokemonSetsLoading ? t("quickAdd.loadingCollections") : undefined}
+                  triggerClassName="h-10 w-full sm:w-[240px]"
+                />
+              )}
               {game.slug === "yugioh" && (
                 <>
                   <ResponsiveSelect

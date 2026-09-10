@@ -19,9 +19,10 @@ export async function GET(request: NextRequest) {
   const game = searchParams.get("game") ?? "yugioh";
   const localeParam = searchParams.get("locale");
   const locale = localeParam === "pt" ? ("pt" as const) : ("en" as const);
+  const setId = searchParams.get("set")?.trim() || undefined;
   const quickSearch = searchParams.get("quick") === "1";
 
-  if (!query.trim()) {
+  if (!query.trim() && !(game === "pokemon" && setId)) {
     return NextResponse.json({ results: [] });
   }
 
@@ -40,7 +41,7 @@ export async function GET(request: NextRequest) {
 
     let results: CardSearchResult[] = await adapter.search(
       query,
-      game === "yugioh" ? { locale } : undefined
+      game === "yugioh" ? { locale } : game === "pokemon" ? { setId } : undefined
     );
 
     results = dedupeSearchResults(rankSearchResults(query, results), game).slice(
