@@ -113,7 +113,9 @@ Installed desktop builds check GitHub Releases for a newer version when they
 start. The update is downloaded in the background and the user can restart
 the app to install it. To publish an update, increment `version` in
 `package.json`, run `npm run desktop:build`, and upload the generated installer
-and `latest.yml` to a GitHub Release with the same version tag.
+and `latest.yml` to a GitHub Release with the same version tag. Also upload the
+matching `.blockmap` file and mark the release as latest; without `latest.yml`,
+the updater cannot find an update.
 
 ### Dev scripts
 

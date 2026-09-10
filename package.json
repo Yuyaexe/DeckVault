@@ -1,6 +1,6 @@
 {
   "name": "deckvault",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -21,7 +21,8 @@
     "tauri:build": "tauri build",
     "desktop:prepare": "npm run build && node scripts/prepare-desktop.mjs",
     "desktop:dev": "npm run desktop:prepare && electron .",
-    "desktop:build": "npm run desktop:prepare && electron-builder"
+    "desktop:clean": "node scripts/clean-desktop-release.mjs",
+    "desktop:build": "npm run desktop:prepare && npm run desktop:clean && electron-builder"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
@@ -78,7 +79,7 @@
     "appId": "com.deckvault.app",
     "productName": "DeckVault",
     "directories": {
-      "output": "C:\\DeckVault-release"
+      "output": "release"
     },
     "files": [
       "electron/**/*",

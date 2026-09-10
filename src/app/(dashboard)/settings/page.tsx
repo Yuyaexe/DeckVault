@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 
 import { useQueryClient } from "@tanstack/react-query";
 
-import { HardDriveDownload, HardDriveUpload, Loader2, LogOut } from "lucide-react";
+import { HardDriveDownload, HardDriveUpload, Loader2, LogOut, RefreshCw } from "lucide-react";
 import { useSignOut } from "@/features/auth/hooks/useSignOut";
 
 import { PageHeader } from "@/components/shared/PageHeader";
@@ -109,6 +109,7 @@ export default function SettingsPage() {
   const [draft, setDraft] = useState<DemoProfile>(profile);
 
   const [draftLocale, setDraftLocale] = useState<AppLocale>(locale);
+  const [checkingForUpdates, setCheckingForUpdates] = useState(false);
 
 
 
@@ -338,6 +339,34 @@ export default function SettingsPage() {
 
   const isBusy = backingUp || restoring || saving;
 
+  const handleCheckForUpdates = async () => {
+    const desktop = window.deckvaultDesktop;
+    if (!desktop) {
+      toast.info("A atualização automática está disponível apenas no aplicativo instalado.");
+      return;
+    }
+
+    setCheckingForUpdates(true);
+    try {
+      const result = await desktop.checkForUpdates();
+      if (result.status === "current") {
+        toast.success("Você já está usando a versão mais recente do DeckVault.");
+      } else if (result.status === "downloading") {
+        toast.success(
+          `A versão ${result.version ?? "nova"} está sendo baixada. Você será avisado quando estiver pronta.`,
+        );
+      } else if (result.status === "unavailable") {
+        toast.info("As atualizações ainda não estão publicadas para esta versão.");
+      } else {
+        toast.info("A verificação de atualizações só funciona no aplicativo instalado.");
+      }
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Não foi possível verificar atualizações.");
+    } finally {
+      setCheckingForUpdates(false);
+    }
+  };
+
 
 
   return (
@@ -477,6 +506,23 @@ export default function SettingsPage() {
             <p className="text-sm text-muted-foreground">{t("settings.offlineMode")}</p>
 
           )}
+
+          <section className="space-y-3 border-t border-border pt-6 sm:pt-8">
+            <h2 className="text-base font-semibold sm:text-lg">Atualizações</h2>
+            <p className="text-sm text-muted-foreground">
+              Verifique no GitHub se existe uma versão mais recente do DeckVault.
+            </p>
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full sm:w-auto"
+              onClick={() => void handleCheckForUpdates()}
+              disabled={checkingForUpdates || isBusy}
+            >
+              <RefreshCw className={checkingForUpdates ? "h-4 w-4 animate-spin" : "h-4 w-4"} />
+              {checkingForUpdates ? "Verificando..." : "Verificar atualizações"}
+            </Button>
+          </section>
 
           {isSupabaseMode && (
             <section className="space-y-3 border-t border-border pt-6 sm:pt-8">

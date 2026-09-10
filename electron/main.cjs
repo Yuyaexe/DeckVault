@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog } = require("electron");
+const { app, BrowserWindow, dialog, ipcMain } = require("electron");
 let autoUpdater = null;
 try {
   ({ autoUpdater } = require("electron-updater"));
@@ -17,6 +17,11 @@ function logStartupError(error) {
   const message = error instanceof Error ? error.stack || error.message : String(error);
   fs.appendFileSync(startupLog, `${new Date().toISOString()}\n${message}\n\n`);
   dialog.showErrorBox("DeckVault não conseguiu iniciar", `${message}\n\nLog: ${startupLog}`);
+}
+
+function isMissingUpdateManifest(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return error?.statusCode === 404 || message.includes("latest.yml");
 }
 
 function getStandaloneDirectory() {
@@ -85,6 +90,7 @@ async function createWindow() {
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,
+      preload: path.join(__dirname, "preload.cjs"),
     },
   });
 
@@ -98,30 +104,63 @@ async function createWindow() {
 function checkForUpdates() {
   if (!app.isPackaged || !autoUpdater) return;
 
+  registerUpdateEvents();
   autoUpdater.autoDownload = true;
   autoUpdater.autoInstallOnAppQuit = false;
-  autoUpdater.on("update-downloaded", async () => {
-    const result = await dialog.showMessageBox({
-      type: "info",
-      buttons: ["Reiniciar agora", "Mais tarde"],
-      defaultId: 0,
-      cancelId: 1,
-      title: "Atualização disponível",
-      message: "Uma nova versão do DeckVault foi baixada.",
-      detail: "Reinicie o aplicativo agora para concluir a atualização.",
-    });
-
-    if (result.response === 0) {
-      autoUpdater.quitAndInstall();
-    }
-  });
   autoUpdater.checkForUpdates().catch((error) => {
+    if (isMissingUpdateManifest(error)) return;
+
     fs.appendFileSync(
       startupLog,
       `${new Date().toISOString()}\nUpdate check failed: ${error.stack || error.message}\n\n`,
     );
   });
 }
+
+let updateEventsRegistered = false;
+
+function registerUpdateEvents() {
+  if (!autoUpdater || updateEventsRegistered) return;
+
+  updateEventsRegistered = true;
+  autoUpdater.on("update-downloaded", async () => {
+    const result = await dialog.showMessageBox({
+      type: "info",
+      buttons: ["Reiniciar agora", "Mais tarde"],
+      defaultId: 0,
+      cancelId: 1,
+      title: "Atualização pronta",
+      message: "A nova versão do DeckVault foi baixada.",
+      detail: "Reinicie agora para aplicar a atualização. Seus dados ficam preservados.",
+    });
+
+    if (result.response === 0) {
+      autoUpdater.quitAndInstall();
+    }
+  });
+}
+
+ipcMain.handle("check-for-updates", async () => {
+  if (!app.isPackaged) return { status: "development" };
+  if (!autoUpdater) throw new Error("O atualizador não está disponível nesta instalação.");
+
+  registerUpdateEvents();
+  autoUpdater.autoDownload = true;
+  let result;
+  try {
+    result = await autoUpdater.checkForUpdates();
+  } catch (error) {
+    if (isMissingUpdateManifest(error)) return { status: "unavailable" };
+    throw error;
+  }
+
+  if (!result?.isUpdateAvailable) return { status: "current" };
+
+  return {
+    status: "downloading",
+    version: result.updateInfo.version,
+  };
+});
 
 app.whenReady().then(createWindow).catch((error) => {
   logStartupError(error);
