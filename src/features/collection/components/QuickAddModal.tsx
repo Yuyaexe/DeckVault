@@ -485,7 +485,7 @@ export function QuickAddModal({
           ? "sm:max-w-4xl max-sm:max-h-[96dvh] max-sm:overflow-y-auto"
           : isAdvancedMode
             ? cn(
-                "flex max-h-[min(92vh,900px)] flex-col gap-0 overflow-hidden sm:max-w-6xl",
+                "flex h-[min(92vh,900px)] max-h-[92dvh] min-h-0 flex-col gap-0 overflow-hidden sm:max-w-6xl",
                 MOBILE_DIALOG_FULL
               )
             : "sm:max-w-3xl max-sm:max-h-[96dvh] max-sm:overflow-y-auto"
@@ -612,8 +612,8 @@ export function QuickAddModal({
               {(!isMobile || mobileAdvancedTab === "filters") && (
                 <div
                   className={cn(
-                    "flex min-h-0 flex-col",
-                    isMobile ? "overflow-y-auto" : "lg:max-h-[min(58vh,560px)]"
+                    "flex min-h-0 flex-col overflow-hidden",
+                    isMobile ? "overflow-y-auto" : "flex-1"
                   )}
                 >
                   <YugiohAdvancedSearchPanel

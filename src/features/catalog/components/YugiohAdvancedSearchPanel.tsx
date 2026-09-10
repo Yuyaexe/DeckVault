@@ -390,7 +390,7 @@ export function YugiohAdvancedSearchPanel({
     layout === "sidebar"
       ? isMobile
         ? "overflow-visible"
-        : "min-h-0 flex-1 pr-2"
+        : "min-h-0 flex-1 overflow-hidden pr-2"
       : "h-[min(42vh,380px)] pr-2";
 
   const FiltersScrollWrapper = isMobile && layout === "sidebar" ? "div" : ScrollArea;
@@ -404,7 +404,7 @@ export function YugiohAdvancedSearchPanel({
       )}
     >
       {/* Search hero */}
-      <div className="mb-3 rounded-xl border border-border/50 bg-gradient-to-br from-muted/40 via-card/30 to-muted/20 p-3 shadow-sm">
+      <div className="mb-3 border-b border-border/50 pb-3">
         <div className="mb-3 flex items-center gap-2 text-xs font-medium text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           {t("ygoSearch.hero")}
@@ -416,7 +416,7 @@ export function YugiohAdvancedSearchPanel({
             value={filters.keyword}
             onChange={(e) => patch({ keyword: e.target.value })}
             placeholder={t("ygoSearch.keywordPlaceholder")}
-            className="h-10 border-border/60 bg-background/80 pl-9"
+            className="h-10 border-border/60 bg-background/50 pl-9"
             onKeyDown={(e) => {
               if (e.key === "Enter") onSearch();
             }}
@@ -433,7 +433,7 @@ export function YugiohAdvancedSearchPanel({
                 patch({ searchField: value as YugiohAdvancedSearchFilters["searchField"] })
               }
               options={searchFieldOptions}
-              triggerClassName="h-10 bg-background/80 text-xs"
+              triggerClassName="h-10 bg-background/50 text-xs"
             />
           </div>
           <div className="space-y-1">
@@ -445,7 +445,7 @@ export function YugiohAdvancedSearchPanel({
                 patch({ sort: value as YugiohAdvancedSearchFilters["sort"] })
               }
               options={sortOptions}
-              triggerClassName="h-10 bg-background/80 text-xs"
+              triggerClassName="h-10 bg-background/50 text-xs"
             />
           </div>
         </div>
