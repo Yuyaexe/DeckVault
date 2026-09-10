@@ -197,6 +197,8 @@ ipcMain.handle("check-for-updates", async () => {
   };
 });
 
+ipcMain.handle("get-app-version", () => app.getVersion());
+
 app.whenReady().then(createWindow).catch((error) => {
   logStartupError(error);
   app.quit();

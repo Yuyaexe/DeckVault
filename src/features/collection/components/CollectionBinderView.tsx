@@ -24,9 +24,6 @@ import { useCollectionView } from "@/features/collection/context/collection-view
 import { useT } from "@/lib/i18n/context";
 import type { DemoOwnedCard } from "@/lib/demo/types";
 
-/** Matches the comfortable binder density at ~90% browser zoom. */
-const BINDER_DISPLAY_ZOOM = 0.9;
-
 function resolvePageCards(
   slotIds: (string | null)[],
   cardById: Map<string, DemoOwnedCard>
@@ -412,7 +409,27 @@ export function CollectionBinderView() {
   const binderGridLayout = useCollectionUIStore((s) => s.binderGridLayout);
   const setBinderGridLayout = useCollectionUIStore((s) => s.setBinderGridLayout);
   const [spreadIndex, setSpreadIndex] = useState(0);
+  const [binderZoom, setBinderZoom] = useState(1);
   const dragHandlers = useDragReorder(data.reorderCard);
+
+  useEffect(() => {
+    const updateBinderZoom = () => {
+      const width = window.innerWidth;
+
+      if (width < 1200) {
+        setBinderZoom(0.8);
+      } else if (width < 1440) {
+        setBinderZoom(0.9);
+      } else {
+        setBinderZoom(1);
+      }
+    };
+
+    updateBinderZoom();
+    window.addEventListener("resize", updateBinderZoom);
+
+    return () => window.removeEventListener("resize", updateBinderZoom);
+  }, []);
 
   const handleSelect = useCallback(
     (id: string, event: MouseEvent, rowIndex: number) => {
@@ -502,10 +519,10 @@ export function CollectionBinderView() {
 
   return (
     <div className="flex h-full min-h-0 flex-col bg-gradient-to-b from-zinc-950 via-zinc-900/95 to-background">
-      <div className="flex flex-1 flex-col items-center overflow-auto px-2 py-2 sm:px-4 sm:py-4">
+      <div className="flex flex-1 flex-col items-center overflow-x-auto overflow-y-hidden px-2 py-2 sm:px-4 sm:py-4">
         <div
-          className={cn("w-full", maxWidth)}
-          style={{ zoom: BINDER_DISPLAY_ZOOM }}
+          className={cn("w-full min-w-0", maxWidth)}
+          style={{ zoom: binderZoom }}
         >
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-muted-foreground sm:mb-3 sm:text-sm">
             <div className="flex items-center gap-2">

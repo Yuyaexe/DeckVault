@@ -112,6 +112,7 @@ export default function SettingsPage() {
   const [draftLocale, setDraftLocale] = useState<AppLocale>(locale);
   const [checkingForUpdates, setCheckingForUpdates] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<DesktopUpdateStatus | null>(null);
+  const [appVersion, setAppVersion] = useState<string | null>(null);
 
 
 
@@ -123,6 +124,7 @@ export default function SettingsPage() {
     const desktop = window.deckvaultDesktop;
     if (!desktop) return;
 
+    void desktop.getAppVersion().then(setAppVersion);
     return desktop.onUpdateStatus(setUpdateStatus);
   }, []);
 
@@ -524,6 +526,7 @@ export default function SettingsPage() {
             <p className="text-sm text-muted-foreground">
               Verifique no GitHub se existe uma versão mais recente do DeckVault.
             </p>
+            <p className="text-sm font-medium">Versão instalada: {appVersion ? `v${appVersion}` : "web"}</p>
             {updateStatus?.status === "checking" && (
               <p className="text-sm text-muted-foreground">Verificando atualizações...</p>
             )}

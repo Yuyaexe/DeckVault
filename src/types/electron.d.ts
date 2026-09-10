@@ -8,6 +8,7 @@ export type DesktopUpdateStatus =
 declare global {
   interface Window {
     deckvaultDesktop?: {
+      getAppVersion: () => Promise<string>;
       checkForUpdates: () => Promise<{
         status: "development" | "current" | "downloading" | "unavailable";
         version?: string;

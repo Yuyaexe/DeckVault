@@ -129,7 +129,7 @@ export function ActivityPanel() {
   const searchParams = useSearchParams();
   const queryClient = useQueryClient();
   const { isSupabaseMode } = useAppConfig();
-  const { collections, activeCollectionId, isLoading } = useAppData();
+  const { collections, isLoading } = useAppData();
   const demoEvents = useDemoStore((s) => s.activityEvents);
 
   const initialScope =
@@ -137,7 +137,7 @@ export function ActivityPanel() {
       ? ALL_ACTIVITY_SCOPE_ID
       : searchParams.get("scope") === "anime"
         ? ANIME_ACTIVITY_COLLECTION_ID
-        : activeCollectionId ?? collections[0]?.id ?? ALL_ACTIVITY_SCOPE_ID;
+        : ALL_ACTIVITY_SCOPE_ID;
 
   const [scope, setScope] = useState(initialScope);
   const [actorFilter, setActorFilter] = useState("all");
