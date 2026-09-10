@@ -144,7 +144,7 @@ export function ExportDeckModal({
         <p className="text-xs text-muted-foreground">{formatHint}</p>
 
         {previewContent && (
-          <pre className="max-h-32 overflow-auto rounded-lg border border-border/60 bg-muted/30 p-3 text-xs leading-relaxed text-foreground">
+          <pre className="max-w-full max-h-32 overflow-auto whitespace-pre-wrap break-all rounded-lg border border-border/60 bg-muted/30 p-3 text-xs leading-relaxed text-foreground">
             {previewContent}
           </pre>
         )}

@@ -47,7 +47,10 @@ export function AnimeCharacterGridPage({ seriesSlug }: AnimeCharacterGridPagePro
   } = useAnimeCollection();
 
   const series = getSeriesBySlug(seriesSlug);
-  const characters = series ? getCharactersForSeries(series.id) : [];
+  const characters = useMemo(
+    () => (series ? getCharactersForSeries(series.id) : []),
+    [getCharactersForSeries, series]
+  );
   const characterIds = new Set(characters.map((character) => character.id));
   const exportCards = animeCharacterCards
     .filter((card) => characterIds.has(card.characterId))

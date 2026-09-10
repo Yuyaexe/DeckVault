@@ -1,5 +1,10 @@
 const { app, BrowserWindow, dialog } = require("electron");
-const { autoUpdater } = require("electron-updater");
+let autoUpdater = null;
+try {
+  ({ autoUpdater } = require("electron-updater"));
+} catch {
+  // Updating is optional; the app must still start if the updater is unavailable.
+}
 const Module = require("node:module");
 const fs = require("node:fs");
 const http = require("node:http");
@@ -91,7 +96,7 @@ async function createWindow() {
 }
 
 function checkForUpdates() {
-  if (!app.isPackaged) return;
+  if (!app.isPackaged || !autoUpdater) return;
 
   autoUpdater.autoDownload = true;
   autoUpdater.autoInstallOnAppQuit = false;

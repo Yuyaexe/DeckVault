@@ -86,7 +86,10 @@ export function CharacterDetailPage({
 
   const series = getSeriesBySlug(seriesSlug);
   const character = getCharacterById(characterId);
-  const seriesCharacters = series ? getCharactersForSeries(series.id) : [];
+  const seriesCharacters = useMemo(
+    () => (series ? getCharactersForSeries(series.id) : []),
+    [getCharactersForSeries, series]
+  );
   const animeCharacterCards = useDemoStore((s) => s.animeCharacterCards);
   const characterCards = useMemo(
     () =>

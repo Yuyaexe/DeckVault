@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useAppConfig } from "@/hooks/useAppConfig";
 import { useDemoStore } from "@/lib/demo/store";
 import {
@@ -362,7 +362,7 @@ export function useAnimeCloudShareSync() {
     );
   };
 
-  const resolveConflictAndPush = async (
+  const resolveConflictAndPush = useCallback(async (
     base: AnimeWorkspaceSnapshotState,
     cloud: AnimeWorkspaceSnapshotState,
     local: AnimeWorkspaceSnapshotState,
@@ -408,9 +408,9 @@ export function useAnimeCloudShareSync() {
     rememberBase(merged, result.updatedAt ?? cloudUpdatedAt);
     if (repaired) markQtyUndoubleDone();
     return merged;
-  };
+  }, []);
 
-  const pushMerged = async (local: AnimeWorkspaceSnapshotState) => {
+  const pushMerged = useCallback(async (local: AnimeWorkspaceSnapshotState) => {
     // Fast path: no full pull. Assume cloud still matches last synced base.
     if (baseUpdatedAt.current != null) {
       const base = baseState.current;
@@ -443,7 +443,7 @@ export function useAnimeCloudShareSync() {
     const cloud = normalizeAnimeSnapshot(pulled.state);
     const cloudUpdatedAt = pulled.updatedAt ?? null;
     return resolveConflictAndPush(emptyAnimeSnapshot(), cloud, local, cloudUpdatedAt);
-  };
+  }, [resolveConflictAndPush]);
 
   const applyPulledSnapshot = async (
     json: SnapshotResponse,
@@ -837,6 +837,7 @@ export function useAnimeCloudShareSync() {
     animeCardTombstones,
     animeCharacterTombstones,
     animeSeriesTombstones,
+    pushMerged,
     setStatus,
   ]);
 }
