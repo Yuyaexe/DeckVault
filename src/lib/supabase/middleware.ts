@@ -41,6 +41,7 @@ export async function updateSession(request: NextRequest) {
     request.nextUrl.pathname.startsWith("/collections") ||
     request.nextUrl.pathname.startsWith("/anime-collection") ||
     request.nextUrl.pathname.startsWith("/proxy-print") ||
+    request.nextUrl.pathname.startsWith("/purchases") ||
     request.nextUrl.pathname.startsWith("/settings");
 
   if (request.nextUrl.pathname === "/dashboard" || request.nextUrl.pathname.startsWith("/dashboard/")) {

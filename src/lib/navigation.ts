@@ -3,6 +3,7 @@ import {
   LayoutGrid,
   History,
   Printer,
+  ShoppingBag,
   Settings,
   Sparkles,
   type LucideIcon,
@@ -34,6 +35,12 @@ export const appNavItems: AppNavItem[] = [
     labelKey: "nav.activity",
     shortLabelKey: "nav.activityShort",
     icon: History,
+  },
+  {
+    href: "/purchases",
+    labelKey: "nav.purchases",
+    shortLabelKey: "nav.purchasesShort",
+    icon: ShoppingBag,
   },
   {
     href: "/anime-collection",

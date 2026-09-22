@@ -175,12 +175,14 @@ export async function POST(request: NextRequest) {
       }
 
       const basedOn = body.basedOnUpdatedAt ?? null;
-      const meta = await getAnimeSnapshotMeta(supabase, info.workspaceId);
-      if (
-        basedOn != null &&
-        meta.updatedAt != null &&
-        basedOn !== meta.updatedAt
-      ) {
+      const saved = await putAnimeSnapshot(
+        supabase,
+        userId,
+        info.workspaceId,
+        body.state,
+        basedOn
+      );
+      if (!saved) {
         // Only load the full blob when the client must merge.
         const current = await getAnimeSnapshot(supabase, info.workspaceId);
         return NextResponse.json(
@@ -199,12 +201,6 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      const saved = await putAnimeSnapshot(
-        supabase,
-        userId,
-        info.workspaceId,
-        body.state
-      );
       return NextResponse.json({
         ok: true,
         workspaceId: info.workspaceId,

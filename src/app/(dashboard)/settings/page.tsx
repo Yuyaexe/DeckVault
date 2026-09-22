@@ -12,6 +12,7 @@ import { HardDriveDownload, HardDriveUpload, Loader2, LogOut, RefreshCw } from "
 import { useSignOut } from "@/features/auth/hooks/useSignOut";
 
 import { PageHeader } from "@/components/shared/PageHeader";
+import { PurchasedOverlaySettings } from "@/components/shared/PurchasedOverlaySettings";
 
 import { LoadingOverlay } from "@/components/shared/LoadingOverlay";
 
@@ -61,6 +62,7 @@ import { useT } from "@/lib/i18n/context";
 
 import { toast } from "sonner";
 import type { DesktopUpdateStatus } from "@/types/electron";
+import { PURCHASED_CARDS_QUERY_KEY } from "@/hooks/usePurchasedCardMatch";
 
 
 
@@ -113,6 +115,10 @@ export default function SettingsPage() {
   const [checkingForUpdates, setCheckingForUpdates] = useState(false);
   const [updateStatus, setUpdateStatus] = useState<DesktopUpdateStatus | null>(null);
   const [appVersion, setAppVersion] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [cardTraderToken, setCardTraderToken] = useState("");
+  const [cardTraderConfigured, setCardTraderConfigured] = useState(false);
+  const [savingCardTrader, setSavingCardTrader] = useState(false);
 
 
 
@@ -124,7 +130,9 @@ export default function SettingsPage() {
     const desktop = window.deckvaultDesktop;
     if (!desktop) return;
 
+    setIsDesktop(true);
     void desktop.getAppVersion().then(setAppVersion);
+    void desktop.getCardTraderConfig().then(({ configured }) => setCardTraderConfigured(configured));
     return desktop.onUpdateStatus(setUpdateStatus);
   }, []);
 
@@ -381,6 +389,40 @@ export default function SettingsPage() {
     }
   };
 
+  const handleSaveCardTraderToken = async () => {
+    const desktop = window.deckvaultDesktop;
+    if (!desktop || !cardTraderToken.trim()) return;
+    setSavingCardTrader(true);
+    try {
+      await desktop.saveCardTraderToken(cardTraderToken);
+      setCardTraderToken("");
+      setCardTraderConfigured(true);
+      await queryClient.invalidateQueries({ queryKey: PURCHASED_CARDS_QUERY_KEY });
+      toast.success(t("settings.cardTraderSaved"));
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : t("settings.cardTraderSaveFailed"));
+    } finally {
+      setSavingCardTrader(false);
+    }
+  };
+
+  const handleRemoveCardTraderToken = async () => {
+    const desktop = window.deckvaultDesktop;
+    if (!desktop) return;
+    setSavingCardTrader(true);
+    try {
+      await desktop.removeCardTraderToken();
+      setCardTraderToken("");
+      setCardTraderConfigured(false);
+      queryClient.removeQueries({ queryKey: PURCHASED_CARDS_QUERY_KEY });
+      toast.success(t("settings.cardTraderRemoved"));
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : t("settings.cardTraderSaveFailed"));
+    } finally {
+      setSavingCardTrader(false);
+    }
+  };
+
 
 
   return (
@@ -479,6 +521,54 @@ export default function SettingsPage() {
 
 
 
+          <section className="border-t border-border pt-6">
+            <PurchasedOverlaySettings />
+          </section>
+
+          {isDesktop && (
+            <section className="space-y-3 border-t border-border pt-6">
+              <div>
+                <h2 className="text-base font-semibold sm:text-lg">{t("settings.cardTrader")}</h2>
+                <p className="mt-1 text-sm text-muted-foreground">{t("settings.cardTraderHint")}</p>
+              </div>
+              <p className="text-sm font-medium">
+                {cardTraderConfigured ? t("settings.cardTraderConfigured") : t("settings.cardTraderNotConfigured")}
+              </p>
+              <div className="space-y-2">
+                <Label htmlFor="cardtrader-token">{t("settings.cardTraderToken")}</Label>
+                <Input
+                  id="cardtrader-token"
+                  type="password"
+                  autoComplete="off"
+                  value={cardTraderToken}
+                  onChange={(event) => setCardTraderToken(event.target.value)}
+                  placeholder={cardTraderConfigured ? t("settings.cardTraderReplacePlaceholder") : t("settings.cardTraderPlaceholder")}
+                />
+              </div>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => void handleSaveCardTraderToken()}
+                  disabled={savingCardTrader || !cardTraderToken.trim()}
+                >
+                  {savingCardTrader ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                  {t("settings.cardTraderSave")}
+                </Button>
+                {cardTraderConfigured && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => void handleRemoveCardTraderToken()}
+                    disabled={savingCardTrader}
+                  >
+                    {t("settings.cardTraderRemove")}
+                  </Button>
+                )}
+              </div>
+            </section>
+          )}
+
           <Button
 
             className="w-full sm:w-auto"
@@ -543,6 +633,9 @@ export default function SettingsPage() {
             )}
             {updateStatus?.status === "downloaded" && (
               <p className="text-sm text-emerald-600" aria-live="polite">Atualização baixada. Reinicie o app para instalar.</p>
+            )}
+            {updateStatus?.status === "error" && (
+              <p className="text-sm text-destructive" aria-live="polite">{updateStatus.message}</p>
             )}
             <Button
               type="button"

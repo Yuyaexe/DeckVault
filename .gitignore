@@ -15,6 +15,7 @@
 /build
 /dist
 /release
+/releases/
 
 # misc
 .DS_Store
@@ -62,8 +63,13 @@ CollecitonMYPICA/
 .env*
 
 # audit ephemeral browser profile (Lighthouse / screenshots)
-docs/audit-artifacts/chrome-profile/
+docs/auditoria/chrome-profile/
 
 # local-only tooling / imports (not shipped with the app)
 /local/
 release/
+/release-0.2.7/
+/releases/*
+!/releases/README.md
+.cardtrader.json
+cardtrader.json

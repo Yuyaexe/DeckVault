@@ -178,17 +178,32 @@ export async function putAnimeSnapshot(
   supabase: SupabaseClient,
   userId: string,
   workspaceId: string,
-  state: AnimeWorkspaceSnapshotState
-): Promise<{ updatedAt: string }> {
+  state: AnimeWorkspaceSnapshotState,
+  expectedUpdatedAt?: string | null
+): Promise<{ updatedAt: string } | null> {
   const db = dbClient(supabase);
-  const updatedAt = new Date().toISOString();
-  const { error } = await db.from("anime_workspace_snapshots").upsert({
-    workspace_id: workspaceId,
-    state: normalizeAnimeSnapshot(state),
-    updated_by: userId,
-    updated_at: updatedAt,
-  });
-  if (error) throw toError(error);
+  const updatedAt = new Date(Math.max(Date.now(), Date.parse(expectedUpdatedAt ?? "") + 1 || 0)).toISOString();
+  if (expectedUpdatedAt !== undefined) {
+    // The timestamp predicate is checked by Postgres in the same UPDATE as the
+    // state write. A concurrent writer changes it, so the stale update matches no row.
+    if (!expectedUpdatedAt) return null;
+    const { data, error } = await db.from("anime_workspace_snapshots")
+      .update({ state: normalizeAnimeSnapshot(state), updated_by: userId, updated_at: updatedAt })
+      .eq("workspace_id", workspaceId)
+      .eq("updated_at", expectedUpdatedAt)
+      .select("updated_at")
+      .maybeSingle();
+    if (error) throw toError(error);
+    if (!data) return null;
+  } else {
+    const { error } = await db.from("anime_workspace_snapshots").upsert({
+      workspace_id: workspaceId,
+      state: normalizeAnimeSnapshot(state),
+      updated_by: userId,
+      updated_at: updatedAt,
+    });
+    if (error) throw toError(error);
+  }
   await db
     .from("anime_workspaces")
     .update({ updated_at: updatedAt })

@@ -134,19 +134,39 @@ function stateHasData(state: AnimeWorkspaceSnapshotState | undefined | null): bo
 /** Content fingerprint — sync keys, not row UUIDs (those differ across devices). */
 function fingerprint(state: AnimeWorkspaceSnapshotState): string {
   const slim = slimAnimeState(state);
+  const seriesById = new Map(slim.animeSeries.map((series) => [series.id, series.slug]));
+  const characterById = new Map(slim.animeCharacters.map((character) => [
+    character.id,
+    `${seriesById.get(character.seriesId) ?? character.seriesId}|${character.name}`,
+  ]));
+  const cardById = new Map(slim.animeCharacterCards.map((card) => [card.id, animeCardSyncKey(card)]));
   const seriesSig = [...slim.animeSeries]
-    .map((s) => `${s.slug}:${s.name}`)
+    .map((s) => JSON.stringify([s.slug, s.name, s.coverImageUrl, s.coverColor, s.isSeeded, s.sortOrder]))
     .sort()
     .join(",");
   const charSig = [...slim.animeCharacters]
     .map((c) => {
-      const series = slim.animeSeries.find((s) => s.id === c.seriesId);
-      return `${series?.slug ?? c.seriesId}:${c.name}`;
+      return JSON.stringify([
+        seriesById.get(c.seriesId) ?? c.seriesId,
+        c.name, c.imageUrl, c.accentColor, c.isSeeded, c.sortOrder,
+      ]);
     })
     .sort()
     .join(",");
   const cardSig = [...slim.animeCharacterCards]
-    .map((c) => `${animeCardSyncKey(c)}:${c.quantity}`)
+    .map((c) => JSON.stringify([
+      animeCardSyncKey(c), c.quantity, c.condition, c.language, c.isFoil,
+      c.sortOrder, c.lastTouchedAt, c.card.name, c.card.setCode,
+      c.card.setName, c.card.collectorNumber, c.card.rarity, c.card.imageUrl,
+      c.card.marketPrice, c.card.type, c.card.cardTraderBlueprintId,
+    ]))
+    .sort()
+    .join("|");
+  const layoutSig = Object.entries(slim.animeBinderLayoutByCharacter)
+    .map(([characterId, layout]) => JSON.stringify([
+      characterById.get(characterId) ?? characterId,
+      layout.map((cardId) => cardId ? cardById.get(cardId) ?? cardId : null),
+    ]))
     .sort()
     .join("|");
   const tombSig = [...(slim.animeCardTombstones ?? [])]
@@ -161,7 +181,7 @@ function fingerprint(state: AnimeWorkspaceSnapshotState): string {
     .map((t) => `${t.key}@${t.deletedAt}`)
     .sort()
     .join("|");
-  return [seriesSig, charSig, cardSig, tombSig, charTombSig, seriesTombSig].join("::");
+  return [seriesSig, charSig, cardSig, layoutSig, tombSig, charTombSig, seriesTombSig].join("::");
 }
 
 /** Prefer remote cards when merge would wipe them, but never drop local-only characters. */

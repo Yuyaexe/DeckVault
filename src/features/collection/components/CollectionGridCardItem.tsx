@@ -1,6 +1,7 @@
 "use client";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { QuantityStepper } from "@/components/shared/QuantityStepper";
 import { useCollectionCardImage } from "@/hooks/useCollectionCardImage";
 import { useT } from "@/lib/i18n/context";
@@ -63,6 +64,7 @@ export function CollectionGridCardItem({
           sizes="140px"
           className="object-contain p-1"
         />
+        <PurchasedCardOverlay card={item.card} />
       </button>
 
       <div className="mt-2 space-y-1.5 px-1">

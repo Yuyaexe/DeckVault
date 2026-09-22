@@ -1,6 +1,7 @@
 import type { DemoOwnedCard } from "@/lib/demo/types";
 import { exportCollectionCsv } from "@/features/import/services/export-csv";
 import { encodeYdke } from "@/features/import/services/ydke-codec";
+import { resolveYugiohPasscode } from "@/lib/yugioh/passcode";
 
 export type DeckExportFormat = "decklist" | "ydke" | "ydk" | "csv";
 
@@ -45,9 +46,11 @@ function formatYdk(items: ReturnType<typeof aggregateCards>): string | null {
   const side: string[] = [];
 
   for (const { card, quantity } of items) {
-    if (!card.externalId || !/^\d+$/.test(card.externalId)) return null;
+    const passcode = exportPasscode(card);
+    if (!passcode) return null;
+    const section = isExtraDeckCard(card) ? extra : main;
     for (let i = 0; i < quantity; i++) {
-      main.push(card.externalId.padStart(8, "0"));
+      section.push(passcode.padStart(8, "0"));
     }
   }
 
@@ -58,15 +61,28 @@ function formatYdk(items: ReturnType<typeof aggregateCards>): string | null {
 
 function formatYdke(items: ReturnType<typeof aggregateCards>): string | null {
   const main: number[] = [];
+  const extra: number[] = [];
   for (const { card, quantity } of items) {
-    if (!card.externalId || !/^\d+$/.test(card.externalId)) return null;
-    const passcode = parseInt(card.externalId, 10);
+    const code = exportPasscode(card);
+    if (!code) return null;
+    const passcode = parseInt(code, 10);
+    const section = isExtraDeckCard(card) ? extra : main;
     for (let i = 0; i < quantity; i++) {
-      main.push(passcode);
+      section.push(passcode);
     }
   }
 
-  return encodeYdke({ main, extra: [], side: [] });
+  return encodeYdke({ main, extra, side: [] });
+}
+
+function exportPasscode(card: DemoOwnedCard["card"]): string | null {
+  if (card.gameSlug !== "yugioh") return null;
+  if (card.cardTraderBlueprintId && card.cardTraderBlueprintId === card.externalId) return null;
+  return resolveYugiohPasscode(card.externalId, card.imageUrl, null);
+}
+
+function isExtraDeckCard(card: DemoOwnedCard["card"]): boolean {
+  return /\b(Fusion|Synchro|Xyz|Link)\b/i.test(card.type ?? "");
 }
 
 function formatYugiohTextDecklist(items: ReturnType<typeof aggregateCards>): string {
@@ -143,7 +159,7 @@ export function getAvailableExportFormats(
   if (slug === "yugioh") {
     const items = aggregateCards(cards);
     const allPasscodes = items.every(
-      ({ card }) => card.externalId && /^\d+$/.test(card.externalId)
+      ({ card }) => exportPasscode(card) != null
     );
     if (allPasscodes && items.length > 0) {
       formats.splice(1, 0, "ydke", "ydk");

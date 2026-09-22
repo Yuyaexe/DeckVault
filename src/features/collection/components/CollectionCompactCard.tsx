@@ -3,6 +3,7 @@
 import { memo } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { QuantityStepper } from "@/components/shared/QuantityStepper";
 import { useCollectionCardImage } from "@/hooks/useCollectionCardImage";
 import { useT } from "@/lib/i18n/context";
@@ -64,6 +65,7 @@ export const CollectionCompactCard = memo(function CollectionCompactCard({
           sizes="52px"
           className="object-contain p-px"
         />
+        <PurchasedCardOverlay card={item.card} />
       </button>
 
       <div className="flex min-w-0 flex-1 flex-col gap-2">

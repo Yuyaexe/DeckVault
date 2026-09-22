@@ -27,33 +27,46 @@ async function resolveSupabaseCardId(
   const db = restoreWriteClient(supabase);
 
   if (card.externalId) {
+    const { data: existing, error: lookupError } = await db
+      .from("cards")
+      .select("id")
+      .eq("game_id", card.gameId)
+      .eq("external_id", card.externalId)
+      .maybeSingle();
+    if (lookupError) throw new RestoreStepError("resolve_cards", lookupError);
+    if (existing) return existing.id;
+
     const { data, error } = await db
       .from("cards")
-      .upsert(
-        {
-          game_id: card.gameId,
-          external_id: card.externalId,
-          name: card.name,
-          set_code: card.setCode,
-          set_name: card.setName,
-          collector_number: card.collectorNumber,
-          rarity: card.rarity,
-          image_url: card.imageUrl,
-          metadata: marketPriceMetadata(card.marketPrice),
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: "game_id,external_id" }
-      )
+      .upsert({
+        game_id: card.gameId,
+        external_id: card.externalId,
+        name: card.name,
+        set_code: card.setCode,
+        set_name: card.setName,
+        collector_number: card.collectorNumber,
+        rarity: card.rarity,
+        image_url: card.imageUrl,
+        metadata: marketPriceMetadata(card.marketPrice),
+      }, { onConflict: "game_id,external_id", ignoreDuplicates: true })
       .select("id")
-      .single();
+      .maybeSingle();
     if (error) {
       throw new RestoreStepError(
         "resolve_cards",
         error,
-        `upsert "${card.name}" (id ${card.externalId})`
+        `insert "${card.name}" (id ${card.externalId})`
       );
     }
-    return data.id;
+    if (data) return data.id;
+    const { data: concurrent, error: concurrentError } = await db
+      .from("cards")
+      .select("id")
+      .eq("game_id", card.gameId)
+      .eq("external_id", card.externalId)
+      .single();
+    if (concurrentError) throw new RestoreStepError("resolve_cards", concurrentError);
+    return concurrent.id;
   }
 
   const { data: existing } = await db

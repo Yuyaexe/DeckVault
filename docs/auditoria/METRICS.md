@@ -3,7 +3,7 @@
 **Captured:** 2026-07-20  
 **Environment:** Next.js dev server `http://localhost:3000`, Edge headless (`msedge.exe`), Windows.
 
-Artifacts: [`docs/audit-artifacts/`](./audit-artifacts/).
+Artifacts: arquivos de relatório e capturas nesta pasta.
 
 ## Lighthouse (dev, unauthenticated)
 
@@ -48,7 +48,7 @@ Highlights:
 - Unlisted: `postcss-load-config` (from `postcss.config.mjs`)
 - Many unused exports are shadcn re-exports and CardTrader helpers kept for API surface
 
-Raw dump: [`audit-artifacts/knip-raw.txt`](./audit-artifacts/knip-raw.txt).
+Raw dump: [`knip-raw.txt`](./knip-raw.txt).
 
 ## Source files &gt; 300 lines
 

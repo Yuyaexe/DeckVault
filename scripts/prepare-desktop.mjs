@@ -5,6 +5,9 @@ import { fileURLToPath } from "node:url";
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const standaloneRoot = path.join(projectRoot, ".next", "standalone");
 
+// Runtime image cache must never be shipped inside an installer.
+await rm(path.join(standaloneRoot, ".next", "cache"), { recursive: true, force: true });
+
 await mkdir(path.join(standaloneRoot, ".next"), { recursive: true });
 await cp(
   path.join(projectRoot, ".next", "static"),

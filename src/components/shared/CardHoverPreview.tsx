@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
+import type { PurchaseMatchInput } from "@/lib/purchases/types";
 import { cn } from "@/lib/utils";
 
 const PREVIEW_WIDTH = 200;
@@ -15,6 +17,7 @@ interface CardHoverPreviewProps {
   src: string | null | undefined;
   previewSrc?: string | null;
   alt: string;
+  card?: PurchaseMatchInput;
   children: React.ReactNode;
   className?: string;
 }
@@ -44,6 +47,7 @@ export function CardHoverPreview({
   src,
   previewSrc,
   alt,
+  card,
   children,
   className,
 }: CardHoverPreviewProps) {
@@ -110,7 +114,7 @@ export function CardHoverPreview({
             style={{ top: position.top, left: position.left, width: PREVIEW_WIDTH }}
             role="presentation"
           >
-            <div className="overflow-hidden rounded-xl bg-zinc-950/95 shadow-2xl ring-1 ring-border/60 backdrop-blur-sm">
+            <div className="relative overflow-hidden rounded-xl bg-zinc-950/95 shadow-2xl ring-1 ring-border/60 backdrop-blur-sm">
               <CardImage
                 src={imageSrc}
                 alt={alt}
@@ -119,6 +123,7 @@ export function CardHoverPreview({
                 useLocalCache
                 className="object-contain bg-zinc-950"
               />
+              {card && <PurchasedCardOverlay card={card} />}
             </div>
           </div>,
           document.body

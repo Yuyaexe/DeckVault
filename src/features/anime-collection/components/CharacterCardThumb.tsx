@@ -2,6 +2,7 @@
 
 import type { MouseEvent } from "react";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { resolveCollectionThumbUrl } from "@/lib/cards/preview-image";
 import { useYugiohPasscodeForDisplay } from "@/hooks/useYugiohPasscodeForDisplay";
 import { useT } from "@/lib/i18n/context";
@@ -24,7 +25,10 @@ export function CharacterCardThumb({
   const thumbSrc = resolveCollectionThumbUrl(item.card, ygoPasscode);
 
   const image = (
+    <>
     <CardImage src={thumbSrc} alt={item.card.name} fill sizes="140px" className="object-contain p-1" />
+    <PurchasedCardOverlay card={item.card} />
+    </>
   );
 
   const classes = cn(

@@ -7,6 +7,7 @@ import { MobileBottomNav } from "@/components/shared/MobileBottomNav";
 import { LocalModeBanner } from "@/components/shared/LocalModeBanner";
 import { useCollectionUIStore } from "@/features/collection/stores/collection-ui.store";
 import { useAnimeCloudShareSync } from "@/features/anime-collection/hooks/useAnimeCloudShareSync";
+import { usePurchasedOverlayPrefetch } from "@/hooks/usePurchasedCardMatch";
 import { cn } from "@/lib/utils";
 
 const ImportModal = dynamic(
@@ -19,6 +20,7 @@ export function DashboardShell({ children }: { children: React.ReactNode }) {
   const importOpen = useCollectionUIStore((s) => s.importOpen);
   const setImportOpen = useCollectionUIStore((s) => s.setImportOpen);
   useAnimeCloudShareSync();
+  usePurchasedOverlayPrefetch();
 
   return (
     <div className="flex h-[100dvh] overflow-hidden bg-background">

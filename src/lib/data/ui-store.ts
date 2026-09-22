@@ -8,7 +8,13 @@ interface DataUiStore {
   collectionOrder: string[];
   cardOrderByCollection: Record<string, string[]>;
   binderLayoutByCollection: Record<string, (string | null)[]>;
+  purchasedOverlayEnabled: boolean;
+  purchasedOverlayColor: string;
+  purchasedOverlayOpacity: number;
   setActiveCollectionId: (id: string) => void;
+  setPurchasedOverlayEnabled: (enabled: boolean) => void;
+  setPurchasedOverlayColor: (color: string) => void;
+  setPurchasedOverlayOpacity: (opacity: number) => void;
   setCollectionOrder: (order: string[]) => void;
   setCardOrder: (collectionId: string, order: string[]) => void;
   setBinderLayout: (collectionId: string, layout: (string | null)[]) => void;
@@ -28,7 +34,14 @@ export const useDataUiStore = create<DataUiStore>()(
       collectionOrder: [],
       cardOrderByCollection: {},
       binderLayoutByCollection: {},
+      purchasedOverlayEnabled: true,
+      purchasedOverlayColor: "#22c55e",
+      purchasedOverlayOpacity: 0.32,
       setActiveCollectionId: (id) => set({ activeCollectionId: id }),
+      setPurchasedOverlayEnabled: (enabled) => set({ purchasedOverlayEnabled: enabled }),
+      setPurchasedOverlayColor: (color) => set({ purchasedOverlayColor: color }),
+      setPurchasedOverlayOpacity: (opacity) =>
+        set({ purchasedOverlayOpacity: Math.min(0.7, Math.max(0.1, opacity)) }),
       setCollectionOrder: (order) => set({ collectionOrder: order }),
       setCardOrder: (collectionId, order) =>
         set((s) => ({

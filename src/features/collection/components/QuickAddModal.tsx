@@ -7,6 +7,7 @@ import { Plus, Loader2, SlidersHorizontal } from "lucide-react";
 import { Modal } from "@/components/shared/Modal";
 import { SearchBar } from "@/components/shared/SearchBar";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ResponsiveSelect } from "@/components/ui/responsive-select";
 import { MOBILE_DIALOG_FULL } from "@/lib/ui/mobile-dialog";
@@ -716,6 +717,15 @@ export function QuickAddModal({
                                     : null
                                 }
                               />
+                              <PurchasedCardOverlay
+                                card={{
+                                  name: result.name,
+                                  setName: result.setName,
+                                  imageUrl: result.imageUrl,
+                                  externalId: result.externalId,
+                                  gameSlug: game.slug,
+                                }}
+                              />
                               <span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-opacity group-hover:bg-black/25 group-hover:opacity-100">
                                 <Plus className="h-5 w-5 text-white drop-shadow-md" />
                               </span>
@@ -881,7 +891,8 @@ export function QuickAddModal({
                               : null
                           }
                         />
-                        <span className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-opacity group-hover:bg-black/20 group-hover:opacity-100">
+                        <PurchasedCardOverlay card={{ ...result, gameSlug: game.slug }} />
+                        <span className="absolute inset-0 z-[2] flex items-center justify-center bg-black/0 opacity-0 transition-opacity group-hover:bg-black/20 group-hover:opacity-100">
                           <Plus className="h-6 w-6 text-white drop-shadow-md" />
                         </span>
                       </div>

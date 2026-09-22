@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { ResponsiveSelect } from "@/components/ui/responsive-select";
 import { MOBILE_DIALOG_SHEET } from "@/lib/ui/mobile-dialog";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { QuantityStepper } from "@/components/shared/QuantityStepper";
 import { buildMarketplaceListings } from "@/features/market/services/marketplace";
 import { isApiSupported } from "@/features/catalog/services/card-api";
@@ -238,6 +239,7 @@ export function CardInspectDialog({
                     className="object-contain p-0.5"
                   />
                 )}
+                <PurchasedCardOverlay card={card.card} />
               </div>
               <div className="w-full min-w-0 text-center md:text-left">
                 <h2 className="text-base font-semibold leading-snug break-words md:text-lg">

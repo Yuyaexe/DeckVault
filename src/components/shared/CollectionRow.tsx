@@ -4,6 +4,7 @@ import { memo, useRef } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { CardHoverPreview } from "@/components/shared/CardHoverPreview";
 import { TruncatedTooltip } from "@/components/shared/TruncatedTooltip";
 import { QuantityStepper } from "@/components/shared/QuantityStepper";
@@ -95,6 +96,7 @@ export const CollectionRow = memo(function CollectionRow({
         className="shrink-0"
         src={thumbSrc}
         previewSrc={hoverSrc}
+        card={item.card}
         alt={item.card.name}
       >
         <div className="relative h-11 w-[1.875rem] shrink-0 overflow-hidden rounded-md bg-muted/40 ring-1 ring-border/30 transition-shadow group-hover:ring-primary/40">
@@ -107,6 +109,7 @@ export const CollectionRow = memo(function CollectionRow({
             sizes="44px"
             className="object-contain p-px"
           />
+          <PurchasedCardOverlay card={item.card} />
         </div>
       </CardHoverPreview>
 

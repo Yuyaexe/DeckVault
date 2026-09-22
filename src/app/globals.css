@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --font-sans: "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
+    --font-mono: "Cascadia Mono", "Consolas", monospace;
     --background: 0 0% 12%;
     --foreground: 0 0% 95%;
     --card: 0 0% 14%;
@@ -55,8 +57,16 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: clip;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-mono);
   }
 
   html {

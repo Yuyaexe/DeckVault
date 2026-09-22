@@ -136,8 +136,8 @@ function assertNotNull(label, value) {
 }
 
 function runLintCheck() {
-  const nextCli = join(ROOT, "node_modules", "next", "dist", "bin", "next");
-  const lint = spawnSync(process.execPath, [nextCli, "lint"], {
+  const eslintCli = join(ROOT, "node_modules", "eslint", "bin", "eslint.js");
+  const lint = spawnSync(process.execPath, [eslintCli, "."], {
     cwd: ROOT,
     encoding: "utf8",
     stdio: ["ignore", "pipe", "pipe"],

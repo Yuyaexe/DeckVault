@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, useCallback, memo, type MouseEvent } from
 import { Check, ChevronLeft, ChevronRight, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import {
   BinderEmptySlot,
   BinderLayoutToggle,
@@ -159,6 +160,7 @@ const BinderSlotFilled = memo(function BinderSlotFilled({
           {selected && (
             <span className="pointer-events-none absolute inset-0 bg-primary/15" aria-hidden />
           )}
+          <PurchasedCardOverlay card={card.card} />
         </button>
 
         <button

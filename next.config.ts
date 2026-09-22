@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname),
   images: {
+    // Long image-cache filenames exceed the NSIS temporary-path limit on updates.
+    // Keep HTTP/browser caching, but avoid generated files in the installed build.
+    maximumDiskCacheSize: 0,
     remotePatterns: [
       ...TRUSTED_IMAGE_REMOTE_HOSTNAMES.map((hostname) => ({
         protocol: "https" as const,

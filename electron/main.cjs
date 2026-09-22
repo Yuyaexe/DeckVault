@@ -9,9 +9,21 @@ const Module = require("node:module");
 const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
+const {
+  loadCardTraderToken,
+  saveCardTraderToken,
+  removeCardTraderToken,
+} = require("./cardtrader-config.cjs");
 
 const PORT = 3000;
 const startupLog = path.join(app.getPath("temp"), "deckvault-startup.log");
+process.env.DECKVAULT_DESKTOP = "1";
+
+async function loadDesktopConfiguration() {
+  const token = await loadCardTraderToken(app.getPath("userData"));
+  if (token) process.env.CARDTRADER_API_TOKEN = token;
+  else delete process.env.CARDTRADER_API_TOKEN;
+}
 
 function logStartupError(error) {
   const message = error instanceof Error ? error.stack || error.message : String(error);
@@ -112,7 +124,7 @@ function checkForUpdates() {
 
   registerUpdateEvents();
   autoUpdater.autoDownload = true;
-  autoUpdater.autoInstallOnAppQuit = false;
+  autoUpdater.autoInstallOnAppQuit = true;
   sendUpdateStatus({ status: "checking" });
   autoUpdater.checkForUpdates().catch((error) => {
     if (isMissingUpdateManifest(error)) {
@@ -146,12 +158,23 @@ function registerUpdateEvents() {
       total: progress.total,
     });
   });
+  autoUpdater.on("error", (error) => {
+    fs.appendFileSync(
+      startupLog,
+      `${new Date().toISOString()}\nUpdate download failed: ${error.stack || error.message}\n\n`,
+    );
+    sendUpdateStatus({
+      status: "error",
+      message: "Não foi possível baixar a atualização. Confira os arquivos da release no GitHub.",
+    });
+  });
   autoUpdater.on("update-not-available", () => {
     sendUpdateStatus({ status: "current" });
   });
   autoUpdater.on("update-downloaded", async () => {
     sendUpdateStatus({ status: "downloaded", percent: 100 });
-    const result = await dialog.showMessageBox({
+    const updateWindow = BrowserWindow.getAllWindows()[0];
+    const result = await dialog.showMessageBox(updateWindow, {
       type: "info",
       buttons: ["Reiniciar agora", "Mais tarde"],
       defaultId: 0,
@@ -162,22 +185,7 @@ function registerUpdateEvents() {
     });
 
     if (result.response === 0) {
-      for (const window of BrowserWindow.getAllWindows()) {
-        try {
-          window.close();
-        } catch {
-          // Ignore window-close errors; the app must still exit cleanly.
-        }
-      }
-
-      app.quit();
-      setTimeout(() => {
-        try {
-          autoUpdater.quitAndInstall(true, true);
-        } catch {
-          app.exit(0);
-        }
-      }, 250);
+      autoUpdater.quitAndInstall(true, true);
     }
   });
 }
@@ -214,7 +222,23 @@ ipcMain.handle("check-for-updates", async () => {
 
 ipcMain.handle("get-app-version", () => app.getVersion());
 
-app.whenReady().then(createWindow).catch((error) => {
+ipcMain.handle("get-cardtrader-config", () => ({
+  configured: Boolean(process.env.CARDTRADER_API_TOKEN),
+}));
+
+ipcMain.handle("save-cardtrader-token", async (_event, token) => {
+  const savedToken = await saveCardTraderToken(app.getPath("userData"), token);
+  process.env.CARDTRADER_API_TOKEN = savedToken;
+  return { configured: true };
+});
+
+ipcMain.handle("remove-cardtrader-token", async () => {
+  await removeCardTraderToken(app.getPath("userData"));
+  delete process.env.CARDTRADER_API_TOKEN;
+  return { configured: false };
+});
+
+app.whenReady().then(loadDesktopConfiguration).then(createWindow).catch((error) => {
   logStartupError(error);
   app.quit();
 });

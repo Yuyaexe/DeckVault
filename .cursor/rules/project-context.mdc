@@ -1,0 +1,21 @@
+---
+description: Contexto permanente, uso real e prioridades do DeckVault
+alwaysApply: true
+---
+
+# Contexto do DeckVault
+
+Antes de planejar ou alterar o projeto, leia:
+
+1. `docs/contexto-do-projeto/COMO-O-PROJETO-E-USADO.md`
+2. `docs/contexto-do-projeto/PRIORIDADES.md`
+3. `docs/contexto-do-projeto/ERROS-E-LIMITACOES.md`
+4. `docs/contexto-do-projeto/ESTADO-ATUAL.md`
+
+Use o programa Windows instalado como fluxo principal. O navegador local é o fluxo secundário.
+
+Priorize estabilidade local, proteção dos dados, backup e restauração, coleção, compras, exportação e instalador Windows.
+
+Supabase, Vercel e compartilhamento de coleções não fazem parte do uso atual. Não dê prioridade a esses caminhos sem um pedido explícito ou sem um defeito que afete o modo local.
+
+Preserve alterações locais existentes. Antes de mover arquivos, confirme referências no código e nos scripts.

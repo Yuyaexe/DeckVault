@@ -9,6 +9,9 @@ declare global {
   interface Window {
     deckvaultDesktop?: {
       getAppVersion: () => Promise<string>;
+      getCardTraderConfig: () => Promise<{ configured: boolean }>;
+      saveCardTraderToken: (token: string) => Promise<{ configured: true }>;
+      removeCardTraderToken: () => Promise<{ configured: false }>;
       checkForUpdates: () => Promise<{
         status: "development" | "current" | "downloading" | "unavailable";
         version?: string;

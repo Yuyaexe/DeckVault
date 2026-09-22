@@ -13,6 +13,7 @@ import { useCollectionYugiohImageRepair } from "@/hooks/useCollectionYugiohImage
 import { readPasscodeEntries, writePasscodeEntries } from "@/lib/cache/idb";
 import { resolveYugiohPasscode } from "@/lib/yugioh/passcode";
 import { yugiohPasscodeCacheKey } from "@/lib/yugioh/passcode-key";
+import { RESOLVE_BATCH_MAX_CARDS } from "@/lib/api/request-limits";
 import type { DemoCard, DemoOwnedCard } from "@/lib/demo/types";
 
 type PasscodeMap = Map<string, string | null>;
@@ -38,22 +39,29 @@ async function fetchPasscodeBatch(
   const yugiohCards = cards.filter((c) => c.card.gameSlug === "yugioh" && c.card.name.trim());
   if (yugiohCards.length === 0) return {};
 
-  const res = await fetch("/api/cards/yugioh/resolve-batch", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      cards: yugiohCards.map((c) => ({
-        id: c.id,
-        name: c.card.name,
-        setCode: c.card.setCode,
-        collectorNumber: c.card.collectorNumber,
-      })),
-    }),
-  });
-
-  if (!res.ok) return {};
-  const json = (await res.json()) as { passcodes?: Record<string, string | null> };
-  return json.passcodes ?? {};
+  const passcodes: Record<string, string | null> = {};
+  for (let i = 0; i < yugiohCards.length; i += RESOLVE_BATCH_MAX_CARDS) {
+    const batch = yugiohCards.slice(i, i + RESOLVE_BATCH_MAX_CARDS);
+    const res = await fetch("/api/cards/yugioh/resolve-batch", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        cards: batch.map((c) => ({
+          id: c.id,
+          name: c.card.name,
+          setCode: c.card.setCode,
+          collectorNumber: c.card.collectorNumber,
+        })),
+      }),
+    });
+    if (!res.ok) throw new Error(`Passcode lookup failed (${res.status})`);
+    const json = (await res.json()) as { passcodes?: Record<string, string | null> };
+    if (!json.passcodes || batch.some((card) => !(card.id in json.passcodes!))) {
+      throw new Error("Incomplete passcode lookup response");
+    }
+    Object.assign(passcodes, json.passcodes);
+  }
+  return passcodes;
 }
 
 function buildSeedPasscodes(cards: DemoOwnedCard[]): Record<string, string | null> {
@@ -150,7 +158,8 @@ export function YugiohPasscodeProvider({
       const remote = await fetchPasscodeBatch(uncachedCards);
       const idbWrites: Array<{ key: string; passcode: string | null }> = [];
       for (const owned of uncachedCards) {
-        const passcode = remote[owned.id] ?? null;
+        if (!(owned.id in remote)) continue;
+        const passcode = remote[owned.id];
         idbWrites.push({ key: yugiohPasscodeCacheKey(owned.card), passcode });
       }
       if (idbWrites.length) void writePasscodeEntries(idbWrites);

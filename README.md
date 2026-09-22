@@ -1,10 +1,16 @@
 # DeckVault
 
+**Guia simples:** [docs/guia-do-usuario/COMECE-AQUI.md](docs/guia-do-usuario/COMECE-AQUI.md)
+
+**Documentação e contexto do projeto:** [docs/INDEX.md](docs/INDEX.md)
+
 Manage your **Yu-Gi-Oh!**, **Pokémon**, and **Digimon** cards in one place — collection, imports/exports, anime side collection, proxy print, and optional cloud sync.
 
 ## Get started (2 minutes)
 
-**Windows:** double-click `DeckVault.bat`
+**Programa instalado:** use o instalador mais recente em `releases/<versão>/`.
+
+**Navegador local:** double-click `DeckVault.bat`
 
 **Or from the terminal:**
 
@@ -16,6 +22,9 @@ npm run dev
 Open [http://localhost:3000/collection](http://localhost:3000/collection)
 
 No account needed. Your data stays in the browser until you set up cloud sync.
+
+To show purchased CardTrader cards, set `CARDTRADER_API_TOKEN` in the server environment. The token is used only by the Next.js API route and is never sent to the browser.
+In production, also set `CARDTRADER_OWNER_USER_ID` to the Supabase user ID allowed to view purchases from that token. Other accounts cannot access that purchase history.
 
 ## What you can do
 
@@ -59,7 +68,7 @@ Everything below is optional — only needed for cloud sync or building a deskto
 
 1. Create a project at [supabase.com](https://supabase.com)
 2. Copy env vars into `.env.local` (Supabase URL, anon key, `DATABASE_URL`)
-3. Run migrations in the SQL Editor — files `0001` through `0014` in `src/lib/db/migrations/`, in order
+3. Run migrations in the SQL Editor — files `0001` through `0015` in `src/lib/db/migrations/`, in order
 4. Deploy to [Vercel](https://vercel.com)
 5. Supabase → **Authentication → URL Configuration** — set Site URL to your Vercel domain
 
@@ -81,6 +90,7 @@ Run in SQL Editor, in order:
 12. `0012_collaboration_and_activity.sql` (reintroduces members/invites + activity log)
 13. `0013_anime_workspace_share.sql` (shareable Anime Collection workspace)
 14. `0014_anime_invite_email_fallback.sql` (anime invite accept email fallback)
+15. `0015_collection_owner_immutable.sql` (prevents changing a collection owner)
 
 **Auth tip:** enable **Leaked password protection** under Authentication → Providers → Email.
 

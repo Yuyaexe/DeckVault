@@ -4,6 +4,7 @@ import { ArrowLeft, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CardImage } from "@/components/shared/CardImage";
+import { PurchasedCardOverlay } from "@/components/shared/PurchasedCardOverlay";
 import { RarityBadge } from "@/components/shared/RarityBadge";
 import type { CardSearchResult } from "@/features/catalog/services/card-api/types";
 import type { CardPrintVariant } from "@/features/catalog/services/card-api/variants";
@@ -52,6 +53,7 @@ export function QuickAddVariantPicker({
 
       <div className="flex flex-col gap-5 md:flex-row md:gap-6">
         <div className="flex shrink-0 flex-col items-center md:w-[168px]">
+          <div className="relative overflow-hidden rounded-lg">
           <CardImage
             src={previewImage}
             alt={pendingCard.name}
@@ -59,6 +61,14 @@ export function QuickAddVariantPicker({
             height={222}
             className="rounded-lg object-contain shadow-lg ring-1 ring-border/40"
           />
+          <PurchasedCardOverlay card={{
+            name: pendingCard.name,
+            externalId: previewVariant?.externalId ?? pendingCard.externalId,
+            imageUrl: previewImage,
+            setName: previewVariant?.setName ?? pendingCard.setName,
+            gameSlug,
+          }} />
+          </div>
           <p className="mt-3 text-center text-sm font-semibold leading-tight">
             {pendingCard.name}
           </p>

@@ -209,7 +209,7 @@ Smoke automático (merge):
 npx tsx scripts/smoke-anime-share-merge.ts
 ```
 
-**Lighthouse (auditoria de performance):** relatórios em `docs/audit-artifacts/lighthouse-*.report.{html,json}`.
+**Lighthouse (auditoria de performance):** relatórios em `docs/auditoria/lighthouse-*.report.{html,json}`.
 
 Última medição **produção local** (`next build` + `next start`, modo local sem redirect de auth):
 
