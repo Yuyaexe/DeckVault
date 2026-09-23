@@ -36,3 +36,9 @@
 - A sincronização anime concorrente ainda precisa de validação contra um banco de teste real.
 
 Consulte `docs/historico/REVISAO-2026-09-21.md` para o relatório técnico completo. Alguns itens antigos já foram corrigidos e devem ser conferidos contra o registro de manutenção mais recente.
+
+## Corrigido em 0.2.12
+
+- A exportação de cartas não compradas aceita compras de outras edições da mesma carta, pelo nome normalizado. Compras canceladas, perdidas e sem unidades válidas continuam excluídas da cobertura.
+
+0.2.13: a regra de ignorar edição também se aplica a todos os indicadores de compra (coleções, anime, busca, prévia e detalhes), usando a mesma função da exportação.

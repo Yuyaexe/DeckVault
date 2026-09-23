@@ -16,12 +16,7 @@ export function normalizePurchaseName(value: string): string {
 
 export function buildPurchasedCardIndex(cards: PurchasedCard[]): PurchasedCardIndex {
   const names = new Set<string>();
-  const namesWithoutSet = new Set<string>();
-  const namesWithoutSetOrBlueprint = new Set<string>();
-  const namesWithoutBlueprint = new Set<string>();
   const blueprintIds = new Set<number>();
-  const nameAndSet = new Set<string>();
-  const nameAndSetWithoutBlueprint = new Set<string>();
 
   for (const card of cards) {
     const validStates = card.source === "order"
@@ -37,29 +32,14 @@ export function buildPurchasedCardIndex(cards: PurchasedCard[]): PurchasedCardIn
     if (hasBlueprint && card.blueprintId != null) {
       blueprintIds.add(card.blueprintId);
     }
-    if (name && !hasBlueprint) namesWithoutBlueprint.add(name);
-    const set = normalizePurchaseName(card.expansion ?? "");
-    if (name && set) {
-      const key = `${name}|${set}`;
-      nameAndSet.add(key);
-      if (!hasBlueprint) nameAndSetWithoutBlueprint.add(key);
-    } else if (name) {
-      namesWithoutSet.add(name);
-      if (!hasBlueprint) namesWithoutSetOrBlueprint.add(name);
-    }
   }
 
-  return { names, namesWithoutSet, namesWithoutSetOrBlueprint, namesWithoutBlueprint, blueprintIds, nameAndSet, nameAndSetWithoutBlueprint };
+  return { names, blueprintIds };
 }
 
 export const EMPTY_PURCHASED_INDEX: PurchasedCardIndex = {
   names: new Set(),
-  namesWithoutSet: new Set(),
-  namesWithoutSetOrBlueprint: new Set(),
-  namesWithoutBlueprint: new Set(),
   blueprintIds: new Set(),
-  nameAndSet: new Set(),
-  nameAndSetWithoutBlueprint: new Set(),
 };
 
 export function isCardPurchased(
@@ -75,15 +55,5 @@ export function isCardPurchased(
   if (blueprintId != null && index.blueprintIds.has(blueprintId)) return true;
 
   const name = normalizePurchaseName(card.name);
-  if (!name) return false;
-  const set = normalizePurchaseName(card.setName ?? "");
-  if (blueprintId != null) {
-    if (!index.namesWithoutBlueprint.has(name)) return false;
-    return set
-      ? index.nameAndSetWithoutBlueprint.has(`${name}|${set}`) || index.namesWithoutSetOrBlueprint.has(name)
-      : true;
-  }
-  return set
-    ? index.nameAndSet.has(`${name}|${set}`) || index.namesWithoutSet.has(name)
-    : index.names.has(name);
+  return !!name && index.names.has(name);
 }

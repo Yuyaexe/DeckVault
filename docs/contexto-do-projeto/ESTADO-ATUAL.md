@@ -2,7 +2,7 @@
 
 ## Versão local
 
-- Versão: `0.2.11`.
+- Versão: `0.2.13`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
 - Armazenamento principal: local.
@@ -12,7 +12,7 @@
 
 - Build de produção concluído.
 - TypeScript concluído sem erros.
-- 24 testes de compras aprovados.
+- 25 testes de compras aprovados.
 - 7 testes de mesclagem anime aprovados.
 - 2 testes de exportação YDK/YDKE aprovados.
 - Auditoria das dependências de produção sem vulnerabilidades.
@@ -21,9 +21,9 @@
 
 ## Instalador
 
-O instalador mais recente fica em `releases/0.2.11/DeckVault-Setup-0.2.11.exe`.
+O instalador mais recente fica em `releases/0.2.13/DeckVault-Setup-0.2.13.exe`.
 
-SHA-256: `EEB2398F5A7BE32DB4ACC535F2155951108F23146A24228F4F4814F4470876F9`.
+SHA-256: `5A55F5F24025A226AC7EEF788BBFDF69A03B3D0D380439D84B9EDBFEEEADD6D6`.
 
 O instalador ainda não possui assinatura digital com certificado de publicação.
 
@@ -44,3 +44,5 @@ A versão 0.2.11 mantém a identidade com.deckvault.desktop e o executável Deck
 5. Atualize este arquivo quando versão, modo de uso ou validações mudarem.
 
 
+
+0.2.13: todos os indicadores de compra e a exportação consideram qualquer edição pelo nome normalizado; 25 testes de compras, 2 de exportação, build e lint aprovados. Instalador gerado localmente; ainda não instalado nem publicado.

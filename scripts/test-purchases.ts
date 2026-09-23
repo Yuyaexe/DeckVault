@@ -53,11 +53,20 @@ test("active and fulfilled purchases still cover cards", () => {
   }
 });
 
-test("a known different printing does not match by name alone", () => {
+test("export matches purchased names across editions, but keeps unpurchased cards", () => {
   const index = buildPurchasedCardIndex([purchase()]);
-  assert.equal(isCardPurchased({ name: "Test card", setName: "Set B", cardTraderBlueprintId: "54321" }, index), false);
+  assert.equal(isCardPurchased({ name: "TEST CARD", setName: "Set B", cardTraderBlueprintId: "54321" }, index), true);
+  assert.equal(isCardPurchased({ name: "Test card", setName: "Set B" }, index), true);
+  assert.equal(isCardPurchased({ name: "Another card" }, index), false);
+  const cancelled = buildPurchasedCardIndex([purchase({ status: "canceled" })]);
+  assert.equal(isCardPurchased({ name: "Test card" }, cancelled), false);
+});
+
+test("all purchase indicators match the same card regardless of printing", () => {
+  const index = buildPurchasedCardIndex([purchase()]);
+  assert.equal(isCardPurchased({ name: "Test card", setName: "Set B", cardTraderBlueprintId: "54321" }, index), true);
   assert.equal(isCardPurchased({ name: "Test card", setName: "Set A", cardTraderBlueprintId: "12345" }, index), true);
-  assert.equal(isCardPurchased({ name: "Test card", setName: "Set B" }, index), false);
+  assert.equal(isCardPurchased({ name: "Test card", setName: "Set B" }, index), true);
 });
 
 const order = (id: number, state = "paid") => ({

@@ -53,10 +53,5 @@ export interface PurchaseMatchInput {
 
 export interface PurchasedCardIndex {
   names: Set<string>;
-  namesWithoutSet: Set<string>;
-  namesWithoutSetOrBlueprint: Set<string>;
-  namesWithoutBlueprint: Set<string>;
   blueprintIds: Set<number>;
-  nameAndSet: Set<string>;
-  nameAndSetWithoutBlueprint: Set<string>;
 }

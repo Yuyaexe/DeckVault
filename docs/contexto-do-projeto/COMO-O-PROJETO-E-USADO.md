@@ -21,3 +21,7 @@ O usuário também abre o projeto no navegador local em alguns momentos, usando 
 - Sincronização entre vários usuários.
 
 Esses recursos continuam no código, mas não devem deslocar correções importantes do programa Windows e do modo local.
+
+## Identificação de cartas compradas
+
+O usuário considera uma carta comprada independentemente da edição. Todos os indicadores de compra e filtros de exportação devem reconhecer o nome normalizado, sem exigir a mesma expansão ou blueprint do CardTrader. Regra global confirmada pelo usuário em 22/09/2026.
