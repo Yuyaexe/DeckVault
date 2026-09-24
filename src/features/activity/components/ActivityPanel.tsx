@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { PageLoading } from "@/components/shared/PageLoading";
@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ResponsiveSelect } from "@/components/ui/responsive-select";
 import { useAppData } from "@/hooks/useAppData";
-import { useAppConfig } from "@/hooks/useAppConfig";
 import { useDemoStore } from "@/lib/demo/store";
 import {
   ALL_ACTIVITY_SCOPE_ID,
@@ -101,8 +100,6 @@ const ACTION_FILTERS: Array<ActivityAction | "all"> = [
   "card_deleted",
   "cards_bulk_deleted",
   "import",
-  "invite_sent",
-  "member_removed",
   "undo",
 ];
 
@@ -127,8 +124,6 @@ export function ActivityPanel() {
   const t = useT();
   const locale = useLocale();
   const searchParams = useSearchParams();
-  const queryClient = useQueryClient();
-  const { isSupabaseMode } = useAppConfig();
   const { collections, isLoading } = useAppData();
   const demoEvents = useDemoStore((s) => s.activityEvents);
 
@@ -162,48 +157,12 @@ export function ActivityPanel() {
     return map;
   }, [collections, t]);
 
-  const cloudScope =
-    scope === ANIME_ACTIVITY_COLLECTION_ID
-      ? null
-      : scope === ALL_ACTIVITY_SCOPE_ID
-        ? ALL_ACTIVITY_SCOPE_ID
-        : scope;
-
-  const cloudQuery = useQuery({
-    queryKey: ["activity", cloudScope, actorFilter, actionFilter, query],
-    enabled: isSupabaseMode && Boolean(cloudScope),
-    queryFn: async () => {
-      const params = new URLSearchParams({ collectionId: cloudScope! });
-      if (actorFilter !== "all") params.set("actor", actorFilter);
-      if (actionFilter !== "all") params.set("action", actionFilter);
-      if (query.trim()) params.set("q", query.trim());
-      const res = await fetch(`/api/app/activity?${params}`);
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error ?? "Failed to load activity");
-      return (json.events as ActivityEvent[]).map(toActivityEvent);
-    },
-  });
 
   const events = useMemo(() => {
     const localAll = (demoEvents ?? []).map(toActivityEvent);
     const localFiltered = localAll.filter((e) => matchesScope(e, scope, tcgIds));
 
-    let list: ActivityEvent[];
-    if (!isSupabaseMode) {
-      list = localFiltered;
-    } else if (scope === ANIME_ACTIVITY_COLLECTION_ID) {
-      list = localFiltered;
-    } else if (scope === ALL_ACTIVITY_SCOPE_ID) {
-      const cloud = cloudQuery.data ?? [];
-      const animeLocal = localAll.filter(
-        (e) => e.collectionId === ANIME_ACTIVITY_COLLECTION_ID
-      );
-      const byId = new Map<string, ActivityEvent>();
-      for (const e of [...cloud, ...animeLocal]) byId.set(e.id, e);
-      list = [...byId.values()];
-    } else {
-      list = cloudQuery.data ?? [];
-    }
+    let list: ActivityEvent[] = localFiltered;
 
     if (actorFilter !== "all") {
       list = list.filter((e) => e.actorUserId === actorFilter);
@@ -218,16 +177,7 @@ export function ActivityPanel() {
     return list.sort(
       (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
-  }, [
-    isSupabaseMode,
-    cloudQuery.data,
-    demoEvents,
-    scope,
-    tcgIds,
-    actorFilter,
-    actionFilter,
-    query,
-  ]);
+  }, [demoEvents, scope, tcgIds, actorFilter, actionFilter, query]);
 
   const actors = useMemo(() => {
     const map = new Map<string, string>();
@@ -250,35 +200,15 @@ export function ActivityPanel() {
 
   const undoMutation = useMutation({
     mutationFn: async (eventId: string) => {
-      if (!isSupabaseMode) {
-        const result = useDemoStore.getState().undoActivityEvent(eventId);
-        if ("error" in result) {
-          const err = new Error(result.error) as Error & { status?: number };
-          err.status = result.status;
-          throw err;
-        }
-        return;
-      }
-      const res = await fetch("/api/app/activity/undo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ eventId }),
-      });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        const err = new Error(json.error ?? "Undo failed") as Error & { status?: number };
-        err.status = res.status;
+      const result = useDemoStore.getState().undoActivityEvent(eventId);
+      if ("error" in result) {
+        const err = new Error(result.error) as Error & { status?: number };
+        err.status = result.status;
         throw err;
       }
     },
-    onSuccess: async () => {
+    onSuccess: () => {
       toast.success(t("activity.undoSuccess"));
-      if (isSupabaseMode) {
-        await Promise.all([
-          queryClient.invalidateQueries({ queryKey: ["activity"] }),
-          queryClient.invalidateQueries({ queryKey: ["app-state"] }),
-        ]);
-      }
     },
     onError: (err: Error & { status?: number }) => {
       if (err.status === 409) {
@@ -349,11 +279,7 @@ export function ActivityPanel() {
         </div>
       </div>
 
-      {isSupabaseMode && cloudQuery.isLoading && cloudScope ? (
-        <div className="mt-10">
-          <PageLoading />
-        </div>
-      ) : events.length === 0 ? (
+      {events.length === 0 ? (
         <div className="mt-10">
           <EmptyState
             icon={History}

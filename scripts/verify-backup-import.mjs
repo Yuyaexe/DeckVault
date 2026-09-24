@@ -296,17 +296,13 @@ function main() {
   } else {
     fail("Payload API", `${payloadKb} KB excede ${MAX_PAYLOAD_BYTES / 1024 / 1024} MB`);
   }
+  section("Modo local");
+  pass("Backup e restore usam IndexedDB local + arquivo JSON");
 
-  section("Modo Supabase (opcional)");
-  const envPath = join(ROOT, ".env.local");
-  if (existsSync(envPath)) {
-    const env = readFileSync(envPath, "utf8");
-    if (/NEXT_PUBLIC_SUPABASE_URL=\s*\S+/.test(env)) {
-      pass("Supabase configurado — restore via Settings no app");
       console.log("       Este script NAO envia dados ao servidor.");
       console.log("       Se passar aqui, importe em Settings → Restaurar backup.");
     } else {
-      pass("Modo demo (sem Supabase) — restore e local no navegador");
+      pass("Modo local — restore e IndexedDB no navegador/app");
     }
   } else {
     pass("Modo demo — sem .env.local");

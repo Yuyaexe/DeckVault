@@ -27,7 +27,7 @@ async function validateProject(source, currentVersion) {
 function buildEnvironment() {
   const env = { ...process.env };
   // The installed Next server sets these; they must not leak into a source build.
-  for (const key of ['NODE_PATH', 'NODE_ENV', 'PORT', 'HOSTNAME', 'ELECTRON_RUN_AS_NODE', 'DECKVAULT_DESKTOP', 'CARDTRADER_API_TOKEN', 'CARDTRADER_OWNER_USER_ID']) delete env[key];
+  for (const key of ['NODE_PATH', 'NODE_ENV', 'PORT', 'HOSTNAME', 'ELECTRON_RUN_AS_NODE', 'DECKVAULT_DESKTOP', 'CARDTRADER_API_TOKEN', 'DECKVAULT_ALLOW_CARDTRADER_PURCHASES']) delete env[key];
   return env;
 }
 

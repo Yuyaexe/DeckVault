@@ -8,7 +8,7 @@ O usuário também abre o projeto no navegador local em alguns momentos, usando 
 
 ## Dados
 
-- O fluxo atual é local e é a única fonte ativa de dados do aplicativo.
+- O fluxo é local-only.
 - Os dados importantes ficam no IndexedDB local do aplicativo ou navegador.
 - Backups JSON continuam essenciais para recuperar a coleção ou trocar de computador.
 - O aplicativo consulta serviços externos para catálogos, imagens e compras do CardTrader, quando configurado.
@@ -17,14 +17,12 @@ O usuário também abre o projeto no navegador local em alguns momentos, usando 
 ## Armazenamento local
 
 - Coleção TCG, Anime Collection, histórico, layouts, idioma e preferências persistidas usam IndexedDB.
-- Na primeira abertura desta versão, as chaves antigas do localStorage são copiadas para IndexedDB e só são removidas após a gravação ser confirmada.
+- Na primeira abertura após a migração, as chaves antigas do localStorage são copiadas para IndexedDB e só são removidas após a gravação ser confirmada.
 - O app aguarda a hidratação dos stores persistidos antes de liberar as telas, evitando salvar estado padrão por cima dos dados existentes.
 
-## Supabase e sincronização
+## Arquitetura removida
 
-Supabase, login, compartilhamento de coleções e sincronização entre PCs/usuários foram removidos do fluxo ativo do DeckVault.
-
-O código legado relacionado ainda pode existir no repositório enquanto a remoção física completa é feita em uma limpeza posterior, mas o aplicativo não entra em modo Supabase, não renova sessão, não monta a sincronização Anime e não oferece controles de compartilhamento na interface.
+Autenticação, Supabase, PostgreSQL/Drizzle, compartilhamento de coleções, membros e sincronização entre PCs/usuários não fazem parte do produto atual. As rotas e serviços ativos correspondentes foram removidos do código.
 
 ## Identificação de cartas compradas
 

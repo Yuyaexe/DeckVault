@@ -12,10 +12,7 @@ import {
   isExternalWishlistBackup,
   mergeDeckVaultCollectionsByTab,
 } from "@/features/import/services/external-wishlist-converter";
-import {
-  RestoreStepError,
-  type RestoreFailureResponse,
-} from "@/features/import/services/restore-debug";
+import { RestoreStepError } from "@/features/import/services/restore-debug";
 
 export type ParsedBackupFile =
   | { scope: "full"; backup: DeckVaultBackup }
@@ -98,32 +95,3 @@ export function defaultCollectionAfterRestore(backup: DeckVaultBackup): string |
   return col?.id ?? null;
 }
 
-export async function restoreBackupOnServer(backup: DeckVaultBackup) {
-  const res = await fetch("/api/app/backup/restore", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ backup }),
-  });
-
-  let json: RestoreFailureResponse & {
-    importedCards?: number;
-    collections?: number;
-  };
-  try {
-    json = await res.json();
-  } catch {
-    throw new RestoreStepError(
-      "api_request",
-      new Error(`Resposta inválida do servidor (HTTP ${res.status})`)
-    );
-  }
-
-  if (!res.ok) {
-    throw new RestoreStepError(
-      json.stage ?? "api_request",
-      json.detail ?? json.error ?? `HTTP ${res.status}`
-    );
-  }
-
-  return json as { importedCards: number; collections: number };
-}

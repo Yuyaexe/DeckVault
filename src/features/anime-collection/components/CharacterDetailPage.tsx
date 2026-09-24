@@ -22,7 +22,6 @@ import { ImportModal } from "@/features/import/components/ImportModal";
 import { CardInspectDialog } from "@/components/shared/CardInspectDialog";
 import { useAnimeCollection } from "@/features/anime-collection/hooks/useAnimeCollection";
 import { useAnimeCharacterUIStore } from "@/features/anime-collection/stores/anime-character-ui.store";
-import { useAnimeShareSyncStore } from "@/features/anime-collection/stores/anime-share-sync.store";
 import {
   animeCharacterCardToOwned,
   ownedUpdatesToAnimeCharacter,
@@ -82,8 +81,6 @@ export function CharacterDetailPage({
   const clearSelection = useAnimeCharacterUIStore((s) => s.clearSelection);
   const draggedCardIds = useAnimeCharacterUIStore((s) => s.draggedCardIds);
   const setDraggedCardIds = useAnimeCharacterUIStore((s) => s.setDraggedCardIds);
-  const triggerPriorityPush = useAnimeShareSyncStore((s) => s.triggerPriorityPush);
-  const isShared = useAnimeShareSyncStore((s) => s.isShared);
 
   const series = getSeriesBySlug(seriesSlug);
   const character = getCharacterById(characterId);
@@ -228,11 +225,10 @@ export function CharacterDetailPage({
     setSetAllToOneOpen(false);
     if (changed > 0) {
       toast.success(t("anime.setAllToOneDone", { count: changed }));
-      if (isShared) triggerPriorityPush();
     } else {
       toast.message(t("anime.setAllToOneNone"));
     }
-  }, [character, isShared, setAnimeCharacterCardsQuantityToOne, t, triggerPriorityPush]);
+  }, [character, setAnimeCharacterCardsQuantityToOne, t]);
 
   useEffect(() => {
     clearSelection();
@@ -361,7 +357,6 @@ export function CharacterDetailPage({
     deleteAnimeCharacter(character.id);
     setDeleteOpen(false);
     toast.success(t("anime.characterDeleted"));
-    if (isShared) triggerPriorityPush();
     router.push(`/anime-collection/${seriesSlug}`);
   };
 
@@ -386,13 +381,11 @@ export function CharacterDetailPage({
     removeAnimeCharacterCard(pendingDeleteCardId);
     toast.success(t("anime.cardRemoved"));
     if (inspectCardId === pendingDeleteCardId) setInspectCardId(null);
-    if (isShared) triggerPriorityPush();
     setPendingDeleteCardId(null);
   };
 
   const removeCardsAndSync = (ids: string[]) => {
     ids.forEach((id) => removeAnimeCharacterCard(id));
-    if (ids.length > 0 && isShared) triggerPriorityPush();
   };
 
   return (

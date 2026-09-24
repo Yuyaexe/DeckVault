@@ -7,16 +7,23 @@ alwaysApply: true
 
 Supported games: Yu-Gi-Oh, Pokemon, Digimon.
 
-Goals: track collection, import/export (including file backup), multi-collection, anime side collection, proxy print, optional cloud sync (own account), shared collections with activity log.
-
 ## Product scope (current)
 
-**In scope:** Auth (optional cloud), Collection views, Search/Quick Add, Import CSV/decklist, Export, Collection manager, Anime collection (local + **optional cloud share**), Proxy print, Settings + **JSON backup/restore**, **Share / collection invites** (editor/viewer, TCG + Anime), **Activity log + undo** (simple card actions).
+DeckVault is a local-only collection manager. The installed Windows app is the primary product; local browser use is secondary.
 
-**Out of scope (removed):** Deck builder, Wishlist, Folders, Tags, Price history, Trading, Notifications, Phase 4 community, **Live realtime presence**.
+**In scope:** collection views, Search/Quick Add, import CSV/decklist, export, collection manager, Anime Collection, proxy print, local activity + undo, CardTrader purchase indicators, IndexedDB persistence, JSON backup/restore and Windows updates.
 
-## Roadmap (slim)
+**Out of scope:** accounts/authentication, Supabase/cloud sync, collection sharing/collaboration, realtime presence, community features, price history, trading and notifications.
 
-**Now:** Backup-by-file, polish collection UX, API safety (caps + rate limit), collab + activity.
+## Data
 
-**Later (optional):** Stats summaries, bulk edit beyond delete, binder virtualization, anime cloud sync.
+- Collection data and persisted UI preferences live in IndexedDB.
+- JSON backup/restore is the supported way to move data between computers.
+- External network services are used only for catalogs, images and configured marketplace data.
+- Protect local data first when changing persistence, backup, restore or update flows.
+
+## Roadmap
+
+**Now:** data safety, backup/restore, collection UX, performance, purchase matching and Windows installer reliability.
+
+**Later:** stats summaries, broader bulk editing, binder virtualization and other local-first quality improvements.

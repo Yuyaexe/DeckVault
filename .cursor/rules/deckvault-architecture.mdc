@@ -14,11 +14,11 @@ Feature-based structure under `src/features/`:
 
 Shared: `src/components/shared/`, `src/hooks/`, `src/types/`, `src/lib/`
 
-## Data modes
+## Data mode
 
-- **Demo:** Zustand persist (`deckvault-demo`) — full TCG collection + anime collection + JSON backup/restore + local activity log
-- **Supabase:** React Query + `/api/app/*` for TCG; shared collections via `collection_members` / invites; **Anime** can be shared via `anime_workspaces` snapshot sync in cloud mode
-- **No Live:** realtime presence is out of product scope (poll/refetch after mutations)
+- **Local-only:** Zustand persisted in IndexedDB for collection, anime collection, activity and UI preferences.
+- JSON backup/restore is the supported way to move data between computers.
+- Card catalogs, images and CardTrader purchases may use external network services, but collection state is local.
 
 ## Before writing code
 

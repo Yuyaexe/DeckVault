@@ -15,12 +15,14 @@
 2. Organização interna do código e das dependências.
 3. Importação de formatos adicionais e impressão de proxies.
 4. Melhorias visuais que facilitem o uso diário.
+5. Diagnósticos de armazenamento, backup automático e proteção contra falhas de persistência.
 
-## Prioridade baixa no momento
+## Fora da arquitetura atual
 
-1. Supabase e políticas de acesso remoto.
-2. Vercel e implantação web pública.
-3. Compartilhamento de coleção.
-4. Sincronização colaborativa e conflitos entre usuários.
+- Supabase.
+- Autenticação/contas.
+- Vercel como fluxo principal.
+- Compartilhamento de coleção.
+- Sincronização colaborativa entre PCs/usuários.
 
-Reavalie esta ordem se o modo de uso mudar.
+Não reintroduza esses sistemas sem uma decisão explícita de produto.
