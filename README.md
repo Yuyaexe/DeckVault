@@ -23,7 +23,6 @@ Open [http://localhost:3000/collection](http://localhost:3000/collection)
 
 No account needed. Your data is stored locally in IndexedDB. Older DeckVault data in localStorage is migrated automatically on first launch.
 
-To show purchased CardTrader cards, set `CARDTRADER_API_TOKEN` in the server environment. The token is used only by the Next.js API route and is never sent to the browser.
 For local development, `CARDTRADER_API_TOKEN` can be set in the server environment. The installed Windows app stores the token from Settings outside the repository. A production web server must explicitly set `DECKVAULT_ALLOW_CARDTRADER_PURCHASES=1` before exposing purchase history.
 
 ## What you can do
