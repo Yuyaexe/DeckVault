@@ -4,8 +4,6 @@
 
 import { useState, useEffect, useRef } from "react";
 
-import { useTheme } from "next-themes";
-
 import { useQueryClient } from "@tanstack/react-query";
 
 import { HardDriveDownload, HardDriveUpload, Loader2, RefreshCw } from "lucide-react";
@@ -84,7 +82,8 @@ export default function SettingsPage() {
 
   const restoreInputRef = useRef<HTMLInputElement>(null);
 
-  const { theme, setTheme } = useTheme();
+  const theme = useDataUiStore((s) => s.theme);
+  const setTheme = useDataUiStore((s) => s.setTheme);
 
   const locale = useLocaleStore((s) => s.locale);
 
@@ -449,7 +448,7 @@ export default function SettingsPage() {
 
               <ResponsiveSelect
 
-                value={theme ?? "dark"}
+                value={theme}
 
                 onValueChange={setTheme}
 
