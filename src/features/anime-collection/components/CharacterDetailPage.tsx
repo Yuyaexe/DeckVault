@@ -37,6 +37,7 @@ import { BINDER_GRID_LAYOUTS } from "@/components/shared/binder/BinderChrome";
 import { useAppData } from "@/hooks/useAppData";
 import { useDemoStore } from "@/lib/demo/store";
 import { useT } from "@/lib/i18n/context";
+import { readStoredString } from "@/lib/storage/indexeddb-storage";
 import {
   cardMatchesDeckCategoryFilter,
   type YugiohDeckCategory,
@@ -152,8 +153,15 @@ export function CharacterDetailPage({
 
   const [binderLayoutId, setBinderLayoutId] = useState<"4x3" | "3x3">("4x3");
   useEffect(() => {
-    const stored = localStorage.getItem("deckvault-anime-character-binder-layout");
-    if (stored === "3x3" || stored === "4x3") setBinderLayoutId(stored);
+    let cancelled = false;
+    void readStoredString("deckvault-anime-character-binder-layout").then((stored) => {
+      if (!cancelled && (stored === "3x3" || stored === "4x3")) {
+        setBinderLayoutId(stored);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
   const { cols, rows } = BINDER_GRID_LAYOUTS[binderLayoutId];
   const spreadSize = cols * rows * 2;
