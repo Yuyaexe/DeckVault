@@ -4,7 +4,7 @@
 
 **Documentação e contexto do projeto:** [docs/INDEX.md](docs/INDEX.md)
 
-Manage your **Yu-Gi-Oh!**, **Pokémon**, and **Digimon** cards in one place — collection, imports/exports, anime side collection, proxy print, and optional cloud sync.
+Manage your **Yu-Gi-Oh!**, **Pokémon**, and **Digimon** cards in one place — collection, imports/exports, anime side collection, proxy print, and local backups.
 
 ## Get started (2 minutes)
 
@@ -21,7 +21,7 @@ npm run dev
 
 Open [http://localhost:3000/collection](http://localhost:3000/collection)
 
-No account needed. Your data stays in the browser until you set up cloud sync.
+No account needed. Your data is stored locally in IndexedDB. Older DeckVault data in localStorage is migrated automatically on first launch.
 
 To show purchased CardTrader cards, set `CARDTRADER_API_TOKEN` in the server environment. The token is used only by the Next.js API route and is never sent to the browser.
 In production, also set `CARDTRADER_OWNER_USER_ID` to the Supabase user ID allowed to view purchases from that token. Other accounts cannot access that purchase history.
@@ -32,7 +32,7 @@ In production, also set `CARDTRADER_OWNER_USER_ID` to the Supabase user ID allow
 - **Search & add** — Yu-Gi-Oh! cards from **YGOPRODeck** (names, images, sets, passcodes)
 - **Import** — decklists (text with `Monster` / `Spell` / `Trap` sections, YDKE, YDK), DigimonCard.io format, CSV
 - **Export** — TXT decklist, CSV, `.ydk` (EdoPro)
-- **Collections** — multiple collections (cloud optional); **share** with editors/viewers by email invite
+- **Collections** — multiple local collections, favorites, ordering and binder layouts
 - **Activity** — log of who changed which cards, with undo for simple edits
 - **Mercado** — external links per card (Yu-Gi-Oh!: TCGPlayer, Liga Yu-Gi-Oh!, MyP Cards, CardTrader)
 - **Anime collection** — optional side collection for character/series cards
@@ -55,14 +55,13 @@ CardTrader is **not** used for search or live prices — only product/search URL
 
 ## Advanced setup
 
-Everything below is optional — only needed for cloud sync or building a desktop app.
+Everything below is optional — mainly useful for building the desktop app or maintaining legacy cloud code.
 
 ### Demo vs Supabase
 
 | Mode | When to use |
 |------|-------------|
-| **Demo / Local** | Try locally, no setup. Data in browser (localStorage). |
-| **Supabase** | Login + cloud backup of your own collections. |
+| **Local** | Default and active mode. Data stored in browser/Electron IndexedDB. |
 
 ### Supabase + Vercel
 
