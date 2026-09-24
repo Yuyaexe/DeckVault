@@ -298,15 +298,8 @@ function main() {
   }
   section("Modo local");
   pass("Backup e restore usam IndexedDB local + arquivo JSON");
-
-      console.log("       Este script NAO envia dados ao servidor.");
-      console.log("       Se passar aqui, importe em Settings → Restaurar backup.");
-    } else {
-      pass("Modo local — restore e IndexedDB no navegador/app");
-    }
-  } else {
-    pass("Modo demo — sem .env.local");
-  }
+  console.log("       Este script NAO envia dados ao servidor.");
+  console.log("       Se passar aqui, importe em Settings → Restaurar backup.");
 
   section("Resumo");
   console.log(
