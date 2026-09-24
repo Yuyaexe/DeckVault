@@ -14,8 +14,8 @@ Antes de planejar ou alterar o projeto, leia:
 
 Use o programa Windows instalado como fluxo principal. O navegador local é o fluxo secundário.
 
-Priorize estabilidade local, proteção dos dados, backup e restauração, coleção, compras, exportação e instalador Windows.
+Priorize estabilidade local, proteção dos dados, IndexedDB, backup e restauração, coleção, compras, exportação e instalador Windows.
 
-Supabase, Vercel e compartilhamento de coleções não fazem parte do uso atual. Não dê prioridade a esses caminhos sem um pedido explícito ou sem um defeito que afete o modo local.
+Autenticação, Supabase, banco PostgreSQL, compartilhamento e sincronização entre PCs foram removidos do produto atual. Não reintroduza esses caminhos sem pedido explícito.
 
 Preserve alterações locais existentes. Antes de mover arquivos, confirme referências no código e nos scripts.
