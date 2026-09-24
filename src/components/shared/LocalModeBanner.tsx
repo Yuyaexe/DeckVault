@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Download, HardDrive, X } from "lucide-react";
 import { toast } from "sonner";
@@ -12,23 +12,31 @@ import {
   downloadBackup,
 } from "@/features/import/services/backup-export";
 import { useT } from "@/lib/i18n/context";
+import { readStoredString, writeStoredString } from "@/lib/storage/indexeddb-storage";
 
 const DISMISS_KEY = "deckvault-local-banner-dismissed";
 
 export function LocalModeBanner() {
   const t = useT();
   const { isSupabaseMode, configLoading } = useAppConfig();
-  const [dismissed, setDismissed] = useState(() => {
-    if (typeof window === "undefined") return true;
-    return localStorage.getItem(DISMISS_KEY) === "1";
-  });
+  const [dismissed, setDismissed] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    void readStoredString(DISMISS_KEY).then((value) => {
+      if (!cancelled) setDismissed(value === "1");
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const [backingUp, setBackingUp] = useState(false);
 
   if (configLoading || isSupabaseMode || dismissed) return null;
 
   const dismiss = () => {
-    localStorage.setItem(DISMISS_KEY, "1");
     setDismissed(true);
+    void writeStoredString(DISMISS_KEY, "1");
   };
 
   const handleDownload = () => {
