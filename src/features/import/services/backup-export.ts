@@ -115,19 +115,3 @@ export function downloadBackup(backup: DeckVaultBackup) {
   downloadJson(`deckvault_backup_${date}.json`, backup);
 }
 
-export async function fetchBackupFromServer(): Promise<DeckVaultBackup> {
-  const res = await fetch("/api/app/state");
-  if (!res.ok) {
-    throw new Error("Could not load collection data for backup");
-  }
-  const state = await res.json();
-  return buildBackupPayload({
-    profile: state.profile,
-    collections: state.collections,
-    ownedCards: state.ownedCards,
-    tags: state.tags ?? [],
-    animeSeries: state.animeSeries ?? [],
-    animeCharacters: state.animeCharacters ?? [],
-    animeCharacterCards: state.animeCharacterCards ?? [],
-  });
-}
