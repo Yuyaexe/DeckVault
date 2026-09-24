@@ -102,14 +102,13 @@ export function CollectionTopBar() {
             <div className="flex min-w-0 items-center gap-2">
               {sortedCollections.length > 0 && collectionSelectValue ? (
                 <ResponsiveSelect
-                  preferNative
                   value={collectionSelectValue}
                   onValueChange={(id) => {
                     setQtyBannerDismissed(false);
                     setActiveCollection(id);
                   }}
                   options={sortedCollections.map((c) => ({ value: c.id, label: c.name }))}
-                  triggerClassName="h-9 max-w-[min(100%,12rem)] border-0 bg-transparent text-base font-semibold shadow-none focus:ring-0 sm:max-w-none sm:text-lg"
+                  triggerClassName="h-9 w-[min(12rem,56vw)] border-border/70 bg-card/80 px-3 text-sm font-semibold shadow-sm hover:bg-accent/50 focus:ring-primary/40 sm:w-52"
                 />
               ) : (
                 <span className="text-lg font-semibold text-muted-foreground">{t("common.loading")}</span>
