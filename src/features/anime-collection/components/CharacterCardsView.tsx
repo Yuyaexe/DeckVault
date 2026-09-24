@@ -31,6 +31,7 @@ import {
 } from "@/lib/collections/binder-layout";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n/context";
+import { readStoredString, writeStoredString } from "@/lib/storage/indexeddb-storage";
 import {
   useDragReorder,
   emptySlotDragProps,
@@ -49,13 +50,18 @@ function usePersistedViewMode(): [CharacterCardsViewMode, (mode: CharacterCardsV
   const [mode, setMode] = useState<CharacterCardsViewMode>("grid");
 
   useEffect(() => {
-    const stored = localStorage.getItem(VIEW_STORAGE_KEY);
-    if (stored === "grid" || stored === "binder") setMode(stored);
+    let cancelled = false;
+    void readStoredString(VIEW_STORAGE_KEY).then((stored) => {
+      if (!cancelled && (stored === "grid" || stored === "binder")) setMode(stored);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const update = (next: CharacterCardsViewMode) => {
     setMode(next);
-    localStorage.setItem(VIEW_STORAGE_KEY, next);
+    void writeStoredString(VIEW_STORAGE_KEY, next);
   };
 
   return [mode, update];
@@ -65,13 +71,18 @@ function usePersistedBinderLayout(): [BinderLayout, (layout: BinderLayout) => vo
   const [layout, setLayout] = useState<BinderLayout>("4x3");
 
   useEffect(() => {
-    const stored = localStorage.getItem(BINDER_LAYOUT_KEY);
-    if (stored === "4x3" || stored === "3x3") setLayout(stored);
+    let cancelled = false;
+    void readStoredString(BINDER_LAYOUT_KEY).then((stored) => {
+      if (!cancelled && (stored === "4x3" || stored === "3x3")) setLayout(stored);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const update = (next: BinderLayout) => {
     setLayout(next);
-    localStorage.setItem(BINDER_LAYOUT_KEY, next);
+    void writeStoredString(BINDER_LAYOUT_KEY, next);
   };
 
   return [layout, update];

@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronLeft, ChevronRight, LogOut, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { useSignOut } from "@/features/auth/hooks/useSignOut";
 import { useAppProfile } from "@/hooks/useAppProfile";
 import { appNavItems } from "@/lib/navigation";
 import { useT } from "@/lib/i18n/context";
@@ -19,8 +18,7 @@ interface SidebarProps {
 
 export function Sidebar({ collapsed, onToggle }: SidebarProps) {
   const pathname = usePathname();
-  const { profile, isSupabaseMode } = useAppProfile();
-  const { signOut, loading: signingOut } = useSignOut();
+  const { profile } = useAppProfile();
   const t = useT();
 
   return (
@@ -77,7 +75,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         })}
       </nav>
 
-      <div className="space-y-1 border-t border-border p-3">
+      <div className="border-t border-border p-3">
         <div className={cn("flex items-center gap-3 rounded-lg px-2 py-2", collapsed && "justify-center")}>
           <Avatar className="h-8 w-8">
             <AvatarFallback className="bg-primary/20 text-xs text-primary">
@@ -87,43 +85,10 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
           {!collapsed && (
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-medium">{profile.displayName}</p>
-              <p className="truncate text-xs text-muted-foreground">
-                {isSupabaseMode ? t("sidebar.supabaseLive") : t("sidebar.collector")}
-              </p>
+              <p className="truncate text-xs text-muted-foreground">{t("sidebar.collector")}</p>
             </div>
           )}
         </div>
-        {isSupabaseMode ? (
-          collapsed ? (
-            <Tooltip delayDuration={0}>
-              <TooltipTrigger asChild>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="mx-auto flex h-9 w-9 text-muted-foreground hover:text-foreground"
-                  onClick={() => void signOut()}
-                  disabled={signingOut}
-                  aria-label={t("auth.logout")}
-                >
-                  <LogOut className="h-4 w-4" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="right">{t("auth.logout")}</TooltipContent>
-            </Tooltip>
-          ) : (
-            <Button
-              type="button"
-              variant="ghost"
-              className="w-full justify-start gap-3 px-3 text-muted-foreground hover:text-foreground"
-              onClick={() => void signOut()}
-              disabled={signingOut}
-            >
-              <LogOut className="h-4 w-4 shrink-0" />
-              <span>{signingOut ? t("common.loading") : t("auth.logout")}</span>
-            </Button>
-          )
-        ) : null}
       </div>
     </aside>
   );

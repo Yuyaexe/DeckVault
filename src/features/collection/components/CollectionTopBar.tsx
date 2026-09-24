@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Plus, Upload, Download, LayoutGrid, X, History, Share2 } from "lucide-react";
+import { Plus, Upload, Download, LayoutGrid, X, History } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/shared/Modal";
 import { SearchBar } from "@/components/shared/SearchBar";
@@ -24,16 +24,9 @@ const ExportDeckModal = dynamic(
   { ssr: false }
 );
 
-const ShareHubModal = dynamic(
-  () =>
-    import("@/features/collection/components/ShareHubModal").then((m) => m.ShareHubModal),
-  { ssr: false }
-);
-
 export function CollectionTopBar() {
   const t = useT();
   const [exportOpen, setExportOpen] = useState(false);
-  const [shareOpen, setShareOpen] = useState(false);
   const [qtyBannerDismissed, setQtyBannerDismissed] = useState(false);
   const [qtyFixing, setQtyFixing] = useState(false);
   const [qtyFixConfirm, setQtyFixConfirm] = useState<"halve" | "one" | null>(null);
@@ -125,16 +118,6 @@ export function CollectionTopBar() {
                 <Link href="/collections" aria-label={t("collection.manageCollections")}>
                   <LayoutGrid className="h-4 w-4" />
                 </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 shrink-0"
-                onClick={() => setShareOpen(true)}
-                aria-label={t("share.hubTitle")}
-                title={t("share.hubTitle")}
-              >
-                <Share2 className="h-4 w-4" />
               </Button>
               <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0" asChild>
                 <Link href="/activity?scope=all" aria-label={t("activity.openLog")}>
@@ -250,12 +233,6 @@ export function CollectionTopBar() {
         onOpenChange={setExportOpen}
         cards={collectionCards}
         collectionName={activeCollection?.name ?? "collection"}
-      />
-
-      <ShareHubModal
-        open={shareOpen}
-        onOpenChange={setShareOpen}
-        preselectedCollectionId={activeCollectionId}
       />
 
       <Modal

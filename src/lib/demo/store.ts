@@ -1,55 +1,6 @@
 import { create } from "zustand";
-import { createJSONStorage, persist, type StateStorage } from "zustand/middleware";
-
-/** Avoid main-thread stalls: large collections stringify slowly on every edit. */
-function createDebouncedLocalStorage(delayMs = 400): StateStorage {
-  const timers = new Map<string, ReturnType<typeof setTimeout>>();
-  const pending = new Map<string, string>();
-  let unloadBound = false;
-
-  const flushPending = () => {
-    for (const [name, value] of pending) {
-      localStorage.setItem(name, value);
-    }
-    pending.clear();
-  };
-
-  const bindUnload = () => {
-    if (unloadBound || typeof window === "undefined") return;
-    unloadBound = true;
-    window.addEventListener("beforeunload", flushPending);
-  };
-
-  return {
-    getItem: (name) => {
-      if (typeof localStorage === "undefined") return null;
-      return localStorage.getItem(name);
-    },
-    setItem: (name, value) => {
-      if (typeof localStorage === "undefined") return;
-      bindUnload();
-      pending.set(name, value);
-      const prev = timers.get(name);
-      if (prev) clearTimeout(prev);
-      timers.set(
-        name,
-        setTimeout(() => {
-          timers.delete(name);
-          pending.delete(name);
-          localStorage.setItem(name, value);
-        }, delayMs)
-      );
-    },
-    removeItem: (name) => {
-      if (typeof localStorage === "undefined") return;
-      const prev = timers.get(name);
-      if (prev) clearTimeout(prev);
-      timers.delete(name);
-      pending.delete(name);
-      localStorage.removeItem(name);
-    },
-  };
-}
+import { createJSONStorage, persist } from "zustand/middleware";
+import { indexedDbStateStorage } from "@/lib/storage/indexeddb-storage";
 import {
   createInitialDemoState,
   DEFAULT_COLLECTION_ID,
@@ -294,7 +245,7 @@ interface DemoStore extends DemoState {
   deleteCollection: (id: string) => void;
   toggleCollectionFavorite: (id: string) => void;
   restoreFromBackup: (backup: DeckVaultBackup) => void;
-  /** Anime Collection lives in localStorage even in Supabase mode. */
+  /** Anime Collection is persisted locally in IndexedDB. */
   restoreAnimeCollectionFromBackup: (
     backup: Pick<
       DeckVaultBackup,
@@ -1867,7 +1818,7 @@ export const useDemoStore = create<DemoStore>()(
     {
       name: "deckvault-demo",
       version: 14,
-      storage: createJSONStorage(() => createDebouncedLocalStorage()),
+      storage: createJSONStorage(() => indexedDbStateStorage),
       migrate: (persisted, version) => {
         let state = persisted as DemoState;
         if (version < 2 && state.ownedCards) {

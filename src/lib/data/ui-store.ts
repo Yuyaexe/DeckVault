@@ -1,7 +1,8 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { reorderIds, reorderIdsToIndex } from "@/lib/collections/card-order";
 import { compactBinderLayout, moveCardToBinderSlot } from "@/lib/collections/binder-layout";
+import { indexedDbStateStorage } from "@/lib/storage/indexeddb-storage";
 
 interface DataUiStore {
   activeCollectionId: string | null;
@@ -11,10 +12,12 @@ interface DataUiStore {
   purchasedOverlayEnabled: boolean;
   purchasedOverlayColor: string;
   purchasedOverlayOpacity: number;
+  theme: "dark" | "light";
   setActiveCollectionId: (id: string) => void;
   setPurchasedOverlayEnabled: (enabled: boolean) => void;
   setPurchasedOverlayColor: (color: string) => void;
   setPurchasedOverlayOpacity: (opacity: number) => void;
+  setTheme: (theme: "dark" | "light") => void;
   setCollectionOrder: (order: string[]) => void;
   setCardOrder: (collectionId: string, order: string[]) => void;
   setBinderLayout: (collectionId: string, layout: (string | null)[]) => void;
@@ -37,11 +40,13 @@ export const useDataUiStore = create<DataUiStore>()(
       purchasedOverlayEnabled: true,
       purchasedOverlayColor: "#22c55e",
       purchasedOverlayOpacity: 0.32,
+      theme: "dark",
       setActiveCollectionId: (id) => set({ activeCollectionId: id }),
       setPurchasedOverlayEnabled: (enabled) => set({ purchasedOverlayEnabled: enabled }),
       setPurchasedOverlayColor: (color) => set({ purchasedOverlayColor: color }),
       setPurchasedOverlayOpacity: (opacity) =>
         set({ purchasedOverlayOpacity: Math.min(0.7, Math.max(0.1, opacity)) }),
+      setTheme: (theme) => set({ theme }),
       setCollectionOrder: (order) => set({ collectionOrder: order }),
       setCardOrder: (collectionId, order) =>
         set((s) => ({
@@ -97,6 +102,6 @@ export const useDataUiStore = create<DataUiStore>()(
         }));
       },
     }),
-    { name: "deckvault-ui" }
+    { name: "deckvault-ui", storage: createJSONStorage(() => indexedDbStateStorage) }
   )
 );

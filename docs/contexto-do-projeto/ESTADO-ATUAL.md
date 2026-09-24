@@ -5,8 +5,29 @@
 - Versão: `0.2.15`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
-- Armazenamento principal: local.
-- Supabase, Vercel e compartilhamento: não usados atualmente.
+- Armazenamento principal: IndexedDB local.
+- O fluxo ativo do aplicativo é local-only.
+- Supabase, login, compartilhamento e sincronização entre PCs foram removidos do fluxo ativo.
+
+## Migração para IndexedDB em revisão
+
+- O store principal `deckvault-demo`, o store de UI `deckvault-ui` e o idioma `deckvault-locale` usam IndexedDB.
+- Preferências soltas de busca, binder/grid e banner também usam IndexedDB.
+- O tema deixou de depender do armazenamento interno do `next-themes` e agora fica no store de UI.
+- Há migração automática das chaves antigas de `localStorage`; a cópia antiga só é apagada após persistência bem-sucedida no IndexedDB.
+- Um gate de hidratação impede que estados padrão sejam usados antes de o banco terminar de carregar.
+- O hook legado de sincronização Anime foi removido.
+
+## Mudança local-only em revisão
+
+- `useAppConfig()` passa a retornar sempre modo local.
+- O perfil do shell usa diretamente o estado local.
+- O middleware/proxy de renovação de sessão Supabase foi removido.
+- O Dashboard não monta mais `useAnimeCloudShareSync()`.
+- Botões e modais de compartilhar coleção, gerenciar membros e compartilhar Anime Collection foram removidos da interface.
+- Configurações usa apenas backup e restauração locais.
+- Código legado Supabase ainda permanece no repositório, mas não participa do fluxo normal do app.
+- Alteração preparada na branch `remove-supabase-flow` / PR #3.
 
 ## Última validação registrada
 
@@ -19,6 +40,7 @@
 - Build concluído sem baixar fontes externas e sem aviso da convenção `middleware`.
 - Lint concluído sem erros ou avisos.
 - 0.2.15: 12 testes desktop (8 de atualização local), 25 de compras, 7 de mesclagem anime e 2 de exportação aprovados. TypeScript, lint e build aprovados. O instalador foi gerado pelo mesmo fluxo de compilação do novo botão.
+- A alteração local-only desta branch ainda precisa ser validada com TypeScript/lint/build no workspace Windows antes de entrar em `main`.
 
 ## Instalador
 
@@ -47,7 +69,5 @@ A versão 0.2.11 mantém a identidade com.deckvault.desktop e o executável Deck
 3. Determine se o pedido afeta o programa Windows, o navegador local ou ambos.
 4. Teste primeiro o fluxo local correspondente.
 5. Atualize este arquivo quando versão, modo de uso ou validações mudarem.
-
-
 
 0.2.13: todos os indicadores de compra e a exportação consideram qualquer edição pelo nome normalizado; 25 testes de compras, 2 de exportação, build e lint aprovados. Instalador gerado localmente; ainda não instalado nem publicado.
