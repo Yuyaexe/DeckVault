@@ -5,7 +5,7 @@
 - O instalador Windows não possui assinatura digital. O Windows pode mostrar um aviso ao abrir.
 - O programa depende de internet para buscar catálogos, imagens e compras externas.
 - Os dados locais do programa instalado e do navegador podem ficar em armazenamentos diferentes. Faça backup antes de alternar ou reinstalar.
-- No Windows, configure o token em Configurações → CardTrader (desde 0.2.10). O token fica em `AppData/Roaming/deckvault/cardtrader.json`, fora do repositório. Na implantação web, continuam necessários `CARDTRADER_API_TOKEN` e `CARDTRADER_OWNER_USER_ID`.
+- No Windows, configure o token em Configurações → CardTrader (desde 0.2.10). O token fica em `AppData/Roaming/deckvault/cardtrader.json`, fora do repositório. Em servidor web de produção, o histórico do CardTrader só é liberado quando `DECKVAULT_ALLOW_CARDTRADER_PURCHASES=1` estiver definido explicitamente.
 
 ## Técnicos
 
