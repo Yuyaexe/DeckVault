@@ -302,7 +302,7 @@ function main() {
       console.log("       Este script NAO envia dados ao servidor.");
       console.log("       Se passar aqui, importe em Settings → Restaurar backup.");
     } else {
-      pass("Modo demo (sem Supabase) — restore e local no navegador");
+      pass("Modo local — restore e IndexedDB no navegador/app");
     }
   } else {
     pass("Modo demo — sem .env.local");
