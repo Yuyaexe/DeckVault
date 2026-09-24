@@ -62,15 +62,17 @@ async function readIndexedDbValue(key: string): Promise<string | null> {
   }
 }
 
-async function writeIndexedDbValue(key: string, value: string): Promise<void> {
+async function writeIndexedDbValue(key: string, value: string): Promise<boolean> {
   try {
     const db = await openDb();
     const tx = db.transaction(STORE_NAME, "readwrite");
     tx.objectStore(STORE_NAME).put(value, key);
     await transactionDone(tx);
     memoryFallback.delete(key);
+    return true;
   } catch {
     memoryFallback.set(key, value);
+    return false;
   }
 }
 
@@ -112,8 +114,8 @@ async function readWithLegacyMigration(key: string): Promise<string | null> {
   const legacy = readLegacyLocalStorage(key);
   if (legacy == null) return null;
 
-  await writeIndexedDbValue(key, legacy);
-  removeLegacyLocalStorage(key);
+  const persisted = await writeIndexedDbValue(key, legacy);
+  if (persisted) removeLegacyLocalStorage(key);
   return legacy;
 }
 
@@ -124,7 +126,9 @@ async function readWithLegacyMigration(key: string): Promise<string | null> {
  */
 export const indexedDbStateStorage: StateStorage = {
   getItem: readWithLegacyMigration,
-  setItem: writeIndexedDbValue,
+  setItem: async (key, value) => {
+    await writeIndexedDbValue(key, value);
+  },
   removeItem: async (key) => {
     await removeIndexedDbValue(key);
     removeLegacyLocalStorage(key);
@@ -136,8 +140,8 @@ export async function readStoredString(key: string): Promise<string | null> {
 }
 
 export async function writeStoredString(key: string, value: string): Promise<void> {
-  await writeIndexedDbValue(key, value);
-  removeLegacyLocalStorage(key);
+  const persisted = await writeIndexedDbValue(key, value);
+  if (persisted) removeLegacyLocalStorage(key);
 }
 
 export async function removeStoredString(key: string): Promise<void> {
