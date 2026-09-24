@@ -1,15 +1,12 @@
 import { NextResponse } from "next/server";
-import { getDataContext } from "@/lib/data/server/data-context";
-
 import { createPurchaseLoader } from "@/lib/purchases/cardtrader";
 import { canAccessCardTraderPurchases } from "@/lib/purchases/access";
 
 const loadPurchases = createPurchaseLoader();
 
 export async function GET() {
-  const context = await getDataContext();
-  if (!canAccessCardTraderPurchases(context.userId)) {
-    return NextResponse.json({ error: "CardTrader purchases are unavailable for this account" }, { status: 403 });
+  if (!canAccessCardTraderPurchases()) {
+    return NextResponse.json({ error: "CardTrader purchases are unavailable in this server mode" }, { status: 403 });
   }
 
   const token = process.env.CARDTRADER_API_TOKEN;
