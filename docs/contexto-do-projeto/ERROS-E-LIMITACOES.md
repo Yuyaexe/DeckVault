@@ -16,7 +16,7 @@
 - O build não baixa mais as fontes Geist. O aplicativo usa as fontes do Windows com alternativas do sistema.
 - A convenção do Next.js foi migrada de `middleware` para `proxy`.
 - O lint ignora artefatos compilados em `releases/` e conclui sem erros ou avisos.
-- A atualização automática e o remote Git apontam para `Yuyaexe/CollecitonMYPICA`.
+- A atualização automática e o remote Git foram alinhados ao repositório atual `Yuyaexe/DeckVault` na versão 0.2.16.
 
 ## Corrigidos em 0.2.9
 
@@ -29,11 +29,6 @@
 - O aviso de fechamento também aparece após várias falhas de desinstalação. O código 2 é uma saída do desinstalador; não comprova arquivo ausente ou processo aberto.
 - O instalador limpa somente o cache de imagens antes da desinstalação antiga. A configuração `images.maximumDiskCacheSize: 0` impede novas gravações desse cache no build instalado. Cache HTTP/do navegador permanece disponível.
 - A identidade de instalação da 0.2.9 foi mantida. Não criar outra identidade para contornar erros futuros.
-
-## Recursos remotos fora do fluxo atual
-
-- A migration `0015_collection_owner_immutable.sql` precisa ser aplicada antes de considerar essa proteção ativa em um Supabase.
-- A sincronização anime concorrente ainda precisa de validação contra um banco de teste real.
 
 Consulte `docs/historico/REVISAO-2026-09-21.md` para o relatório técnico completo. Alguns itens antigos já foram corrigidos e devem ser conferidos contra o registro de manutenção mais recente.
 

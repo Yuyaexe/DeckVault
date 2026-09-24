@@ -2,12 +2,12 @@
 
 ## Versão local
 
-- Versão: `0.2.15`.
+- Versão: `0.2.16`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
 - Armazenamento principal: IndexedDB local.
 - O produto atual é local-only.
-- O PR #3 com a migração para IndexedDB e remoção do fluxo Supabase já foi integrado à `main`.
+- Electron atualizado para `44.4.5`, com `npm audit` sem vulnerabilidades conhecidas.
 
 ## IndexedDB
 
@@ -16,20 +16,13 @@
 - Dados antigos do `localStorage` são migrados automaticamente e só são removidos depois de uma gravação bem-sucedida no IndexedDB.
 - Um gate de hidratação impede que o estado padrão sobrescreva dados persistidos durante a abertura.
 
-## Limpeza cloud em revisão
+## Arquitetura local atual
 
-Na branch `remove-supabase-legacy`:
-
-- páginas de login/signup/reset foram removidas;
-- todas as rotas `/api/app/*` de dados cloud foram removidas;
-- clientes e middleware Supabase foram removidos;
-- serviços de colaboração, membros, invites e sync foram removidos;
-- migrations/schema PostgreSQL e scripts Drizzle foram removidos;
-- dependências Supabase, Drizzle, PostgreSQL e `next-themes` foram removidas;
-- CardTrader continua ativo sem depender de usuário Supabase;
-- `useAppData`, mutações e Activity foram simplificados para local-only.
-
-Essa limpeza ainda deve passar por lint, TypeScript, build e teste desktop antes de entrar na `main`.
+- Login/signup/reset e todas as rotas cloud `/api/app/*` foram removidos.
+- Supabase, PostgreSQL/Drizzle, compartilhamento, membros, invites e sync foram removidos.
+- CardTrader continua ativo sem depender de usuário Supabase.
+- `useAppData`, mutações, Activity, backup e Anime Collection operam localmente.
+- O fluxo atual foi validado com lint, TypeScript, build, Electron desktop e teste manual.
 
 ## Última validação registrada da main
 
@@ -38,13 +31,15 @@ Essa limpeza ainda deve passar por lint, TypeScript, build e teste desktop antes
 - `npm run lint` — aprovado.
 - `npx tsc --noEmit` — aprovado.
 - `npm run build` — aprovado.
-- `npm run desktop:dev` — aprovado após reinstalar o pacote Electron local.
+- `npm run desktop:dev` — aprovado com Electron 44.4.5.
+- `npm audit` — 0 vulnerabilidades.
+- Aplicativo instalado atualizado para 0.2.16 preservando o mesmo perfil de dados.
 
 ## Instalador
 
-O instalador mais recente fica em `releases/0.2.15/DeckVault-Setup-0.2.15.exe`.
+O instalador mais recente fica em `releases/0.2.16/DeckVault-Setup-0.2.16.exe`.
 
-SHA-256: `2EAC54B3297C6EC85A9CAB593A5C2A0DB8DD9D447CB07D0CCBC81B4287E85E85`.
+SHA-256: `0FF52CD4401FBC9AB634C014388D0C6833A12B76F40B12BF2DC63BBB6DBBFD62`.
 
 O instalador ainda não possui assinatura digital com certificado de publicação.
 
