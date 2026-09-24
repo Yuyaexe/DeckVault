@@ -450,7 +450,7 @@ export default function SettingsPage() {
 
                 value={theme}
 
-                onValueChange={setTheme}
+                onValueChange={(value) => setTheme(value as "dark" | "light")}
 
                 options={[
 
