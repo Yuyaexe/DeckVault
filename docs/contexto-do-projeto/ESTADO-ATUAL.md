@@ -2,7 +2,7 @@
 
 ## Versão local
 
-- Versão: `0.2.13`.
+- Versão: `0.2.15`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
 - Armazenamento principal: local.
@@ -18,12 +18,13 @@
 - Auditoria das dependências de produção sem vulnerabilidades.
 - Build concluído sem baixar fontes externas e sem aviso da convenção `middleware`.
 - Lint concluído sem erros ou avisos.
+- 0.2.15: 12 testes desktop (8 de atualização local), 25 de compras, 7 de mesclagem anime e 2 de exportação aprovados. TypeScript, lint e build aprovados. O instalador foi gerado pelo mesmo fluxo de compilação do novo botão.
 
 ## Instalador
 
-O instalador mais recente fica em `releases/0.2.13/DeckVault-Setup-0.2.13.exe`.
+O instalador mais recente fica em `releases/0.2.15/DeckVault-Setup-0.2.15.exe`.
 
-SHA-256: `5A55F5F24025A226AC7EEF788BBFDF69A03B3D0D380439D84B9EDBFEEEADD6D6`.
+SHA-256: `2EAC54B3297C6EC85A9CAB593A5C2A0DB8DD9D447CB07D0CCBC81B4287E85E85`.
 
 O instalador ainda não possui assinatura digital com certificado de publicação.
 
@@ -36,6 +37,10 @@ A versão 0.2.11 mantém a identidade com.deckvault.desktop e o executável Deck
 - Resta `release-0.2.7/win-unpacked.tmp/resources/default_app.asar`, bloqueado por um processo do Windows. Tentar remover após reiniciar; não encerrar processos indiscriminadamente.
 
 ## Antes de começar uma nova alteração
+
+0.2.15: Configurações oferece atualização pela pasta local do projeto. A pasta é lembrada; o fluxo compila, gera o instalador, fecha o aplicativo, faz backup completo verificado por hash, instala e reabre. Uma falha de compilação mantém o aplicativo aberto. O assistente exige confirmação interna de entrega antes de instalar, impedindo instalação tardia após falha. Consulte `ATUALIZACAO-LOCAL.md` para requisitos e uso. Instalador gerado, ainda não instalado nem publicado. O assistente foi testado com executável Windows de teste; a instalação NSIS real e o clique no aplicativo instalado ainda não foram validados nesta versão.
+
+0.2.14: imagem da carta maior na janela de inspeção e ampliação ao clicar. TypeScript, lint, build e os 2 testes de configuração do instalador aprovados. Instalador NSIS gerado localmente; ainda não instalado nem publicado. A interação visual ainda não foi validada no aplicativo instalado.
 
 1. Leia os quatro arquivos desta pasta.
 2. Confira `git status` e preserve alterações existentes.

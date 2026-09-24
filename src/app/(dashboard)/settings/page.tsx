@@ -12,6 +12,7 @@ import { HardDriveDownload, HardDriveUpload, Loader2, LogOut, RefreshCw } from "
 import { useSignOut } from "@/features/auth/hooks/useSignOut";
 
 import { PageHeader } from "@/components/shared/PageHeader";
+import { LocalUpdateSettings } from "@/components/shared/LocalUpdateSettings";
 import { PurchasedOverlaySettings } from "@/components/shared/PurchasedOverlaySettings";
 
 import { LoadingOverlay } from "@/components/shared/LoadingOverlay";
@@ -613,6 +614,7 @@ export default function SettingsPage() {
 
           <section className="space-y-3 border-t border-border pt-6 sm:pt-8">
             <h2 className="text-base font-semibold sm:text-lg">Atualizações</h2>
+            <LocalUpdateSettings disabled={isBusy || checkingForUpdates} />
             <p className="text-sm text-muted-foreground">
               Verifique no GitHub se existe uma versão mais recente do DeckVault.
             </p>

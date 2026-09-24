@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, ipcMain } = require("electron");
+const { app, BrowserWindow, dialog, ipcMain, shell } = require("electron");
 let autoUpdater = null;
 try {
   ({ autoUpdater } = require("electron-updater"));
@@ -9,6 +9,8 @@ const Module = require("node:module");
 const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
+const { registerLocalUpdates } = require("./local-update-ipc.cjs");
+const localUpdates = registerLocalUpdates({ app, ipcMain, dialog, BrowserWindow, shell, autoUpdater });
 const {
   loadCardTraderToken,
   saveCardTraderToken,
@@ -120,7 +122,7 @@ async function createWindow() {
 }
 
 function checkForUpdates() {
-  if (!app.isPackaged || !autoUpdater) return;
+  if (!app.isPackaged || !autoUpdater || localUpdates.isBusy()) return;
 
   registerUpdateEvents();
   autoUpdater.autoDownload = true;
@@ -172,6 +174,7 @@ function registerUpdateEvents() {
     sendUpdateStatus({ status: "current" });
   });
   autoUpdater.on("update-downloaded", async () => {
+    if (localUpdates.isBusy()) return;
     sendUpdateStatus({ status: "downloaded", percent: 100 });
     const updateWindow = BrowserWindow.getAllWindows()[0];
     const result = await dialog.showMessageBox(updateWindow, {
@@ -184,13 +187,14 @@ function registerUpdateEvents() {
       detail: "Reinicie agora para aplicar a atualização. Seus dados ficam preservados.",
     });
 
-    if (result.response === 0) {
+    if (result.response === 0 && !localUpdates.isBusy()) {
       autoUpdater.quitAndInstall(true, true);
     }
   });
 }
 
 ipcMain.handle("check-for-updates", async () => {
+  if (localUpdates.isBusy()) throw new Error("Aguarde a atualização local terminar.");
   if (!app.isPackaged) return { status: "development" };
   if (!autoUpdater) throw new Error("O atualizador não está disponível nesta instalação.");
 

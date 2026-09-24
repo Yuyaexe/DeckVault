@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { ExternalLink, Loader2 } from "lucide-react";
+import { ExternalLink, Loader2, ZoomIn } from "lucide-react";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Modal } from "@/components/shared/Modal";
 import { Button } from "@/components/ui/button";
@@ -221,9 +222,16 @@ export function CardInspectDialog({
         <DialogTitle className="sr-only">{card.card.name}</DialogTitle>
 
         <div className="flex min-w-0 max-w-full flex-col md:max-h-[85dvh] md:flex-row md:overflow-hidden">
-          <section className="w-full min-w-0 max-w-full shrink-0 border-b border-border/60 bg-muted/20 md:w-[220px] md:border-b-0 md:border-r">
+          <section className="w-full min-w-0 max-w-full shrink-0 border-b border-border/60 bg-muted/20 md:w-[328px] md:overflow-y-auto md:border-b-0 md:border-r">
             <div className="flex flex-col items-center gap-3 px-4 py-4 md:items-stretch md:p-6">
-              <div className="relative h-[168px] w-[120px] shrink-0 overflow-hidden rounded-lg bg-muted/40 shadow-lg ring-1 ring-border/40 md:h-[224px] md:w-[160px]">
+              <Dialog key={card.id}>
+              <DialogTrigger asChild>
+              <button
+                type="button"
+                disabled={ygoImageLoading || !displayImage}
+                aria-label={t("inspect.enlargeImage")}
+                className="group relative h-[280px] w-[200px] max-w-full shrink-0 cursor-zoom-in overflow-hidden rounded-lg bg-muted/40 shadow-lg ring-1 ring-border/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-default md:h-[392px] md:w-[280px]"
+              >
                 {ygoImageLoading ? (
                   <div className="flex h-full w-full items-center justify-center">
                     <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
@@ -233,14 +241,35 @@ export function CardInspectDialog({
                     src={displayImage}
                     alt={card.card.name}
                     fill
-                    sizes="(max-width: 768px) 120px, 160px"
+                    sizes="(max-width: 767px) 200px, 280px"
                     fallbackSrc={ygoImageFallback}
                     useLocalCache
                     className="object-contain p-0.5"
                   />
                 )}
                 <PurchasedCardOverlay card={card.card} />
-              </div>
+                <span className="absolute bottom-2 right-2 rounded-full bg-black/75 p-2 text-white" aria-hidden="true">
+                  <ZoomIn className="h-4 w-4" />
+                </span>
+              </button>
+              </DialogTrigger>
+              <DialogContent
+                aria-describedby={undefined}
+                className="gap-0 p-3 pt-12 sm:w-[min(95vw,720px)] sm:max-w-none"
+              >
+                <DialogTitle className="sr-only">{card.card.name}</DialogTitle>
+                <div className="relative h-[calc(90dvh-4rem)] w-full">
+                  <CardImage
+                    src={displayImage}
+                    alt={card.card.name}
+                    fill
+                    sizes="(max-width: 767px) 95vw, 696px"
+                    fallbackSrc={ygoImageFallback}
+                    className="object-contain"
+                  />
+                </div>
+              </DialogContent>
+              </Dialog>
               <div className="w-full min-w-0 text-center md:text-left">
                 <h2 className="text-base font-semibold leading-snug break-words md:text-lg">
                   {card.card.name}
