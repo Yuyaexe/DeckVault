@@ -24,7 +24,7 @@ Open [http://localhost:3000/collection](http://localhost:3000/collection)
 No account needed. Your data is stored locally in IndexedDB. Older DeckVault data in localStorage is migrated automatically on first launch.
 
 To show purchased CardTrader cards, set `CARDTRADER_API_TOKEN` in the server environment. The token is used only by the Next.js API route and is never sent to the browser.
-In production, also set `CARDTRADER_OWNER_USER_ID` to the Supabase user ID allowed to view purchases from that token. Other accounts cannot access that purchase history.
+For local development, `CARDTRADER_API_TOKEN` can be set in the server environment. The installed Windows app stores the token from Settings outside the repository. A production web server must explicitly set `DECKVAULT_ALLOW_CARDTRADER_PURCHASES=1` before exposing purchase history.
 
 ## What you can do
 
@@ -53,47 +53,7 @@ CardTrader is **not** used for search or live prices — only product/search URL
 
 ---
 
-## Advanced setup
-
-Everything below is optional — mainly useful for building the desktop app or maintaining legacy cloud code.
-
-### Demo vs Supabase
-
-| Mode | When to use |
-|------|-------------|
-| **Local** | Default and active mode. Data stored in browser/Electron IndexedDB. |
-
-### Supabase + Vercel
-
-1. Create a project at [supabase.com](https://supabase.com)
-2. Copy env vars into `.env.local` (Supabase URL, anon key, `DATABASE_URL`)
-3. Run migrations in the SQL Editor — files `0001` through `0015` in `src/lib/db/migrations/`, in order
-4. Deploy to [Vercel](https://vercel.com)
-5. Supabase → **Authentication → URL Configuration** — set Site URL to your Vercel domain
-
-### Migrations
-
-Run in SQL Editor, in order:
-
-1. `0001_seed_and_indexes.sql`
-2. `0002_rls_policies.sql`
-3. `0003_collaboration.sql` (legacy; tables dropped in `0011`)
-4. `0004_create_collection_rpc.sql`
-5. `0005_rls_phase3_tables.sql` (legacy; tables dropped in `0010`)
-6. `0006_security_hardening.sql`
-7. `0007_rls_missing_policies.sql`
-8. `0008_private_rls_helpers.sql`
-9. `0009_cards_catalog_immutable.sql` (if present)
-10. `0010_drop_unused_phase_tables.sql`
-11. `0011_drop_collaboration.sql`
-12. `0012_collaboration_and_activity.sql` (reintroduces members/invites + activity log)
-13. `0013_anime_workspace_share.sql` (shareable Anime Collection workspace)
-14. `0014_anime_invite_email_fallback.sql` (anime invite accept email fallback)
-15. `0015_collection_owner_immutable.sql` (prevents changing a collection owner)
-
-**Auth tip:** enable **Leaked password protection** under Authentication → Providers → Email.
-
-### Backup details
+## Backup details
 
 - **Download** — profile, collections, and cards as DeckVault JSON
 - **Restore** — merges into existing collections (same collection name = same collection)
@@ -136,4 +96,4 @@ npm run lint         # ESLint
 
 ## Out of scope
 
-Deck builder, wishlist, price graphs, trading, notifications, community features, and **Live realtime presence** are **not** part of the current product. Share/collab and Activity log **are** supported in cloud mode.
+Cloud accounts, Supabase sync, collection sharing/collaboration, realtime presence, community features, price graphs, trading and notifications are not part of the current local-only product.
