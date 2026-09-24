@@ -138,9 +138,14 @@ export function QuickAddModal({
   );
 
   useEffect(() => {
-    if (open) {
-      setSearchLocale(readSearchLocale(profile.currency));
-    }
+    if (!open) return;
+    let cancelled = false;
+    void readSearchLocale(profile.currency).then((locale) => {
+      if (!cancelled) setSearchLocale(locale);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [open, profile.currency]);
 
   useEffect(() => {
@@ -550,7 +555,7 @@ export function QuickAddModal({
                 onValueChange={(value) => {
                   const locale = value as CatalogSearchLocale;
                   setSearchLocale(locale);
-                  writeSearchLocale(locale);
+                  void writeSearchLocale(locale);
                 }}
                 options={SEARCH_LOCALE_OPTIONS}
                 triggerClassName="h-10 w-full sm:w-[88px]"
@@ -793,7 +798,7 @@ export function QuickAddModal({
                     onValueChange={(value) => {
                       const locale = value as CatalogSearchLocale;
                       setSearchLocale(locale);
-                      writeSearchLocale(locale);
+                      void writeSearchLocale(locale);
                     }}
                     options={SEARCH_LOCALE_OPTIONS}
                     triggerClassName="h-10 w-full sm:w-[100px]"
