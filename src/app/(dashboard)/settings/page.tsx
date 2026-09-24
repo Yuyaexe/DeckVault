@@ -199,29 +199,19 @@ export default function SettingsPage() {
 
 
 
-      const backup = isSupabaseMode
+      const backup = buildBackupPayload({
 
-        ? {
+        profile,
 
-            ...(await fetchBackupFromServer()),
+        collections,
 
-            ...animeFields,
+        ownedCards,
 
-          }
+        tags,
 
-        : buildBackupPayload({
+        ...animeFields,
 
-            profile,
-
-            collections,
-
-            ownedCards,
-
-            tags,
-
-            ...animeFields,
-
-          });
+      });
 
       downloadBackup(backup);
 
@@ -735,11 +725,7 @@ export default function SettingsPage() {
 
         title={t("settings.restoreTitle")}
 
-        description={t(
-          isSupabaseMode
-            ? "settings.restoreDescriptionCloud"
-            : "settings.restoreDescriptionLocal"
-        )}
+        description={t("settings.restoreDescriptionLocal")}
 
         footer={
 
