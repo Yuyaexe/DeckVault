@@ -9,10 +9,16 @@ O usuário também abre o projeto no navegador local em alguns momentos, usando 
 ## Dados
 
 - O fluxo atual é local e é a única fonte ativa de dados do aplicativo.
-- Os dados importantes ficam no armazenamento local do aplicativo ou navegador.
-- Backups JSON são essenciais para recuperar a coleção ou trocar de computador.
+- Os dados importantes ficam no IndexedDB local do aplicativo ou navegador.
+- Backups JSON continuam essenciais para recuperar a coleção ou trocar de computador.
 - O aplicativo consulta serviços externos para catálogos, imagens e compras do CardTrader, quando configurado.
 - Para usar os mesmos dados em outro PC, exporte um backup JSON e restaure-o no outro computador.
+
+## Armazenamento local
+
+- Coleção TCG, Anime Collection, histórico, layouts, idioma e preferências persistidas usam IndexedDB.
+- Na primeira abertura desta versão, as chaves antigas do localStorage são copiadas para IndexedDB e só são removidas após a gravação ser confirmada.
+- O app aguarda a hidratação dos stores persistidos antes de liberar as telas, evitando salvar estado padrão por cima dos dados existentes.
 
 ## Supabase e sincronização
 
