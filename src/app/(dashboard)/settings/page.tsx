@@ -8,8 +8,7 @@ import { useTheme } from "next-themes";
 
 import { useQueryClient } from "@tanstack/react-query";
 
-import { HardDriveDownload, HardDriveUpload, Loader2, LogOut, RefreshCw } from "lucide-react";
-import { useSignOut } from "@/features/auth/hooks/useSignOut";
+import { HardDriveDownload, HardDriveUpload, Loader2, RefreshCw } from "lucide-react";
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import { LocalUpdateSettings } from "@/components/shared/LocalUpdateSettings";
@@ -35,9 +34,7 @@ import {
 
   buildBackupPayload,
 
-  downloadBackup,
-
-  fetchBackupFromServer,
+  downloadBackup
 
 } from "@/features/import/services/backup-export";
 
@@ -45,9 +42,7 @@ import {
 
   defaultCollectionAfterRestore,
 
-  readBackupFile,
-
-  restoreBackupOnServer,
+  readBackupFile
 
 } from "@/features/import/services/backup-import";
 
@@ -83,12 +78,9 @@ export default function SettingsPage() {
 
     updateProfile,
 
-    isSupabaseMode,
-
   } = useAppData();
 
   const queryClient = useQueryClient();
-  const { signOut, loading: signingOut } = useSignOut();
 
   const restoreInputRef = useRef<HTMLInputElement>(null);
 
@@ -189,7 +181,7 @@ export default function SettingsPage() {
 
     setBackingUp(true);
 
-    setBusyLabel(isSupabaseMode ? t("settings.downloading") : t("settings.busyWait"));
+    setBusyLabel(t("settings.busyWait"));
 
     try {
 
@@ -295,49 +287,14 @@ export default function SettingsPage() {
 
       }
 
-      if (isSupabaseMode) {
-
-        setBusyLabel(t("settings.restoring"));
-
-        const result = await restoreBackupOnServer(backup);
-
-        useDemoStore.getState().restoreAnimeCollectionFromBackup(backup);
-
-        await queryClient.invalidateQueries({ queryKey: ["app-state"] });
-
-        toast.success(
-
-          t("settings.restoreSuccessCloud", {
-
-            cards: result.importedCards,
-
-            collections: result.collections,
-
-            anime: backup.animeCharacterCards.length,
-
-          })
-
-        );
-
-      } else {
-
-        useDemoStore.getState().restoreFromBackup(backup);
-
-        toast.success(
-
-          t("settings.restoreSuccessLocal", {
-
-            cards: backup.ownedCards.length,
-
-            collections: backup.collections.length,
-
-            anime: backup.animeCharacterCards.length,
-
-          })
-
-        );
-
-      }
+      useDemoStore.getState().restoreFromBackup(backup);
+      toast.success(
+        t("settings.restoreSuccessLocal", {
+          cards: backup.ownedCards.length,
+          collections: backup.collections.length,
+          anime: backup.animeCharacterCards.length,
+        })
+      );
 
     } catch (err) {
 
@@ -600,17 +557,7 @@ export default function SettingsPage() {
 
 
 
-          {isSupabaseMode && (
-
-            <p className="text-sm text-muted-foreground">{t("settings.cloudSync")}</p>
-
-          )}
-
-          {!isSupabaseMode && (
-
-            <p className="text-sm text-muted-foreground">{t("settings.offlineMode")}</p>
-
-          )}
+          <p className="text-sm text-muted-foreground">{t("settings.offlineMode")}</p>
 
           <section className="space-y-3 border-t border-border pt-6 sm:pt-8">
             <h2 className="text-base font-semibold sm:text-lg">Atualizações</h2>
@@ -651,31 +598,6 @@ export default function SettingsPage() {
             </Button>
           </section>
 
-          {isSupabaseMode && (
-            <section className="space-y-3 border-t border-border pt-6 sm:pt-8">
-              <h2 className="text-base font-semibold sm:text-lg">{t("auth.logout.account")}</h2>
-              <p className="text-sm text-muted-foreground">{t("auth.logout.hint")}</p>
-              <Button
-                type="button"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={() => void signOut()}
-                disabled={signingOut || isBusy}
-              >
-                {signingOut ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    {t("common.loading")}
-                  </>
-                ) : (
-                  <>
-                    <LogOut className="h-4 w-4" />
-                    {t("auth.logout")}
-                  </>
-                )}
-              </Button>
-            </section>
-          )}
 
           <section className="space-y-4 border-t border-border pt-6 sm:pt-8">
 
