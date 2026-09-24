@@ -8,14 +8,14 @@ import { fetchPurchasedCards } from "../src/lib/purchases/fetch";
 import { groupPurchases, searchPurchaseGroups } from "../src/lib/purchases/presentation";
 import { canAccessCardTraderPurchases } from "../src/lib/purchases/access";
 
-test("desktop mode can load purchases without a Supabase user", () => {
+test("desktop mode can load purchases without cloud authentication", () => {
   const mutableEnv = process.env as Record<string, string | undefined>;
   const previousDesktop = process.env.DECKVAULT_DESKTOP;
   const previousNodeEnv = process.env.NODE_ENV;
   mutableEnv.DECKVAULT_DESKTOP = "1";
   mutableEnv.NODE_ENV = "production";
   try {
-    assert.equal(canAccessCardTraderPurchases(null), true);
+    assert.equal(canAccessCardTraderPurchases(), true);
   } finally {
     if (previousDesktop === undefined) delete mutableEnv.DECKVAULT_DESKTOP;
     else mutableEnv.DECKVAULT_DESKTOP = previousDesktop;
