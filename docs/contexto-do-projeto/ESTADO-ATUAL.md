@@ -5,9 +5,18 @@
 - Versão: `0.2.15`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
-- Armazenamento principal: local.
+- Armazenamento principal: IndexedDB local.
 - O fluxo ativo do aplicativo é local-only.
 - Supabase, login, compartilhamento e sincronização entre PCs foram removidos do fluxo ativo.
+
+## Migração para IndexedDB em revisão
+
+- O store principal `deckvault-demo`, o store de UI `deckvault-ui` e o idioma `deckvault-locale` usam IndexedDB.
+- Preferências soltas de busca, binder/grid e banner também usam IndexedDB.
+- O tema deixou de depender do armazenamento interno do `next-themes` e agora fica no store de UI.
+- Há migração automática das chaves antigas de `localStorage`; a cópia antiga só é apagada após persistência bem-sucedida no IndexedDB.
+- Um gate de hidratação impede que estados padrão sejam usados antes de o banco terminar de carregar.
+- O hook legado de sincronização Anime foi removido.
 
 ## Mudança local-only em revisão
 
