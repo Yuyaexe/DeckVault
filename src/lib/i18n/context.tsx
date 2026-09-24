@@ -24,7 +24,7 @@ export function LocaleSync() {
 
   useEffect(() => {
     document.documentElement.lang = locale === "pt-BR" ? "pt-BR" : "en";
-    writeSearchLocale(locale === "pt-BR" ? "pt" : "en");
+    void writeSearchLocale(locale === "pt-BR" ? "pt" : "en");
   }, [locale]);
 
   return null;
