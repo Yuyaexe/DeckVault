@@ -381,11 +381,7 @@ async function main() {
     } else {
       warn("CARDTRADER_API_TOKEN empty", "CardTrader search/pricing disabled");
     }
-    if (/NEXT_PUBLIC_SUPABASE_URL=\s*\S+/.test(env)) {
-      pass("Supabase URL configured");
-    } else {
-      pass("Supabase not configured (demo mode OK)");
-    }
+    pass("Local-only mode (IndexedDB)");
   }
 
   section("Node.js & dependencies");
