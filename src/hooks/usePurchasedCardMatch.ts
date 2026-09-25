@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useDataUiStore } from "@/lib/data/ui-store";
 import { fetchPurchasedCards } from "@/lib/purchases/fetch";
 import {
-  buildPurchasedCardIndex,
+  getPurchasedCardIndex,
   EMPTY_PURCHASED_INDEX,
   isCardPurchased,
 } from "@/lib/purchases/match";
@@ -23,7 +23,7 @@ export function usePurchasedCardIndex() {
   });
 
   return useMemo(
-    () => (data?.cards ? buildPurchasedCardIndex(data.cards) : EMPTY_PURCHASED_INDEX),
+    () => (data?.cards ? getPurchasedCardIndex(data.cards) : EMPTY_PURCHASED_INDEX),
     [data?.cards]
   );
 }

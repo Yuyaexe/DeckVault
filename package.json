@@ -1,6 +1,6 @@
 {
   "name": "deckvault",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,6 +13,9 @@
     "test:purchases": "node --import tsx --test scripts/test-purchases.ts",
     "test:decklist-export": "node --import tsx --test scripts/test-decklist-export.ts",
     "test:ygo-images": "node scripts/test-yugioh-passcodes.mjs",
+    "test:performance-optimizations": "node --import tsx --test scripts/test-performance-optimizations.ts",
+    "benchmark:performance": "tsx scripts/benchmark-performance.ts",
+    "benchmark:idb": "electron scripts/benchmark-idb-electron.cjs",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
