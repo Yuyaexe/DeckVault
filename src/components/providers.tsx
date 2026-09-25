@@ -27,6 +27,8 @@ function PersistentStateGate({ children }: { children: React.ReactNode }) {
         return;
       }
 
+      useDemoStore.getState().pruneActivityHistory();
+
       const legacyTheme = takeLegacyLocalStorageValue("theme");
       if (legacyTheme === "dark" || legacyTheme === "light") {
         useDataUiStore.getState().setTheme(legacyTheme);
@@ -60,6 +62,18 @@ function PersistentStateGate({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+function ActivityRetentionSync() {
+  useEffect(() => {
+    const prune = () => useDemoStore.getState().pruneActivityHistory();
+    prune();
+
+    const intervalId = window.setInterval(prune, 60 * 60 * 1000);
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  return null;
+}
+
 function ThemeSync() {
   const theme = useDataUiStore((s) => s.theme);
 
@@ -78,6 +92,7 @@ function AppProviders({ children }: { children: React.ReactNode }) {
 
   return (
     <TooltipProvider delayDuration={200}>
+      <ActivityRetentionSync />
       <ThemeSync />
       <LocaleSync />
       {children}
