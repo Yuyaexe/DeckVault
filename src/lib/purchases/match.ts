@@ -14,20 +14,31 @@ export function normalizePurchaseName(value: string): string {
     .trim();
 }
 
+const purchasedCardIndexCache = new WeakMap<PurchasedCard[], PurchasedCardIndex>();
+
 export function buildPurchasedCardIndex(cards: PurchasedCard[]): PurchasedCardIndex {
   const names = new Set<string>();
   const blueprintIds = new Set<number>();
 
   for (const card of cards) {
-    const validStates = card.source === "order"
-      ? ["paid", "sent", "arrived", "done", "hub_pending", "presale"]
-      : ["pending", "ok", "arrived"];
+    const validStates =
+      card.source === "order"
+        ? ["paid", "sent", "arrived", "done", "hub_pending", "presale"]
+        : ["pending", "ok", "arrived"];
     const quantity = card.validQuantity ?? card.quantity;
-    if (!validStates.includes(card.status.toLowerCase()) ||
-        !Number.isFinite(card.quantity) || card.quantity <= 0 ||
-        !Number.isFinite(quantity) || quantity <= 0) continue;
+    if (
+      !validStates.includes(card.status.toLowerCase()) ||
+      !Number.isFinite(card.quantity) ||
+      card.quantity <= 0 ||
+      !Number.isFinite(quantity) ||
+      quantity <= 0
+    ) {
+      continue;
+    }
+
     const name = normalizePurchaseName(card.name);
     if (name) names.add(name);
+
     const hasBlueprint = card.blueprintId != null && card.blueprintId > 0;
     if (hasBlueprint && card.blueprintId != null) {
       blueprintIds.add(card.blueprintId);
@@ -35,6 +46,15 @@ export function buildPurchasedCardIndex(cards: PurchasedCard[]): PurchasedCardIn
   }
 
   return { names, blueprintIds };
+}
+
+export function getPurchasedCardIndex(cards: PurchasedCard[]): PurchasedCardIndex {
+  const cached = purchasedCardIndexCache.get(cards);
+  if (cached) return cached;
+
+  const index = buildPurchasedCardIndex(cards);
+  purchasedCardIndexCache.set(cards, index);
+  return index;
 }
 
 export const EMPTY_PURCHASED_INDEX: PurchasedCardIndex = {

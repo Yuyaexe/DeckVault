@@ -1,4 +1,9 @@
-import { PASSCODE_CACHE_TTL_MS } from "@/lib/cache/constants";
+import {
+  IMAGE_PRUNE_WRITE_INTERVAL,
+  IMAGE_TOUCH_BATCH_SIZE,
+  IMAGE_TOUCH_FLUSH_MS,
+  PASSCODE_CACHE_TTL_MS,
+} from "@/lib/cache/constants";
 
 const DB_NAME = "deckvault-cache";
 const DB_VERSION = 2;
@@ -105,20 +110,67 @@ export async function writePasscodeEntries(
 }
 
 const MAX_IMAGE_ENTRIES = 400;
+const pendingImageTouches = new Set<string>();
+let imageTouchTimer: ReturnType<typeof setTimeout> | null = null;
+let imageWritesSincePrune = 0;
+let imagePrunePromise: Promise<void> | null = null;
+let imagePrunePending = false;
+let imagePrunedThisSession = false;
+
+function queueImageTouch(url: string): void {
+  pendingImageTouches.add(url);
+  if (pendingImageTouches.size >= IMAGE_TOUCH_BATCH_SIZE) {
+    void flushImageTouches();
+    return;
+  }
+  if (imageTouchTimer == null) {
+    imageTouchTimer = setTimeout(() => {
+      imageTouchTimer = null;
+      void flushImageTouches();
+    }, IMAGE_TOUCH_FLUSH_MS);
+  }
+}
+
+async function flushImageTouches(): Promise<void> {
+  if (pendingImageTouches.size === 0) return;
+  const urls = [...pendingImageTouches];
+  pendingImageTouches.clear();
+  if (imageTouchTimer != null) {
+    clearTimeout(imageTouchTimer);
+    imageTouchTimer = null;
+  }
+
+  try {
+    const db = await openDb();
+    const tx = db.transaction(IMAGE_STORE, "readwrite");
+    const store = tx.objectStore(IMAGE_STORE);
+    const now = Date.now();
+    const entries = await Promise.all(
+      urls.map(async (url) => [url, await idbRequest(store.get(url))] as const)
+    );
+    for (const [url, raw] of entries) {
+      const entry = raw as ImageCacheEntry | undefined;
+      if (entry?.blob) {
+        store.put({ blob: entry.blob, updatedAt: now } satisfies ImageCacheEntry, url);
+      }
+    }
+    await idbTxDone(tx);
+  } catch {
+    // Recency updates are best-effort.
+  }
+}
 
 export async function readImageBlob(url: string): Promise<Blob | null> {
   if (!url || typeof indexedDB === "undefined") return null;
   try {
     const db = await openDb();
-    const tx = db.transaction(IMAGE_STORE, "readwrite");
+    const tx = db.transaction(IMAGE_STORE, "readonly");
     const store = tx.objectStore(IMAGE_STORE);
     const entry = (await idbRequest(store.get(url))) as ImageCacheEntry | undefined;
-    if (!entry?.blob) {
-      await idbTxDone(tx);
-      return null;
-    }
-    store.put({ blob: entry.blob, updatedAt: Date.now() }, url);
     await idbTxDone(tx);
+    if (!entry?.blob) return null;
+
+    queueImageTouch(url);
     return entry.blob;
   } catch {
     return null;
@@ -133,9 +185,37 @@ export async function writeImageBlob(url: string, blob: Blob): Promise<void> {
     const store = tx.objectStore(IMAGE_STORE);
     store.put({ blob, updatedAt: Date.now() } satisfies ImageCacheEntry, url);
     await idbTxDone(tx);
-    await pruneImageStore();
+    scheduleImagePrune();
   } catch {
     // Cache is best-effort
+  }
+}
+
+function requestImagePrune(): void {
+  imageWritesSincePrune = 0;
+  if (imagePrunePromise != null) {
+    imagePrunePending = true;
+    return;
+  }
+
+  imagePrunePromise = pruneImageStore().finally(() => {
+    imagePrunePromise = null;
+    if (imagePrunePending) {
+      imagePrunePending = false;
+      requestImagePrune();
+    }
+  });
+}
+
+function scheduleImagePrune(): void {
+  imageWritesSincePrune++;
+  if (!imagePrunedThisSession) {
+    imagePrunedThisSession = true;
+    requestImagePrune();
+    return;
+  }
+  if (imageWritesSincePrune >= IMAGE_PRUNE_WRITE_INTERVAL) {
+    requestImagePrune();
   }
 }
 

@@ -2,7 +2,7 @@
 
 ## Versão local
 
-- Versão: `0.2.17`.
+- Versão: `0.2.18`.
 - Uso principal: programa Windows.
 - Uso secundário: navegador local.
 - Armazenamento principal: IndexedDB local.
@@ -24,6 +24,8 @@
 - CardTrader continua ativo sem depender de usuário Supabase.
 - `useAppData`, mutações, Activity, backup e Anime Collection operam localmente.
 - O antigo `src/lib/demo/store.ts` monolítico foi dividido em módulos de Activity, coleção, Anime, helpers, tipos e migrações; o arquivo principal agora só monta o store.
+- O índice de cartas compradas é reutilizado entre overlays da mesma resposta, evitando reconstrução repetida.
+- O cache de imagens usa leituras `readonly`, agrupa atualizações de recência e reduz a frequência de prune; resoluções simultâneas do mesmo passcode são deduplicadas.
 - O fluxo atual foi validado com lint, TypeScript, build, Electron desktop e teste manual.
 
 ## Última validação registrada da main
@@ -35,13 +37,13 @@
 - `npm run build` — aprovado.
 - `npm run desktop:dev` — aprovado com Electron 44.4.5.
 - `npm audit` — 0 vulnerabilidades.
-- Aplicativo instalado atualizado para 0.2.17 preservando o mesmo perfil de dados.
+- Aplicativo instalado atualizado para 0.2.18 preservando o mesmo perfil de dados.
 
 ## Instalador
 
-O instalador mais recente fica em `releases/0.2.17/DeckVault-Setup-0.2.17.exe`.
+O instalador mais recente fica em `releases/0.2.18/DeckVault-Setup-0.2.18.exe`.
 
-SHA-256: `9EEA56E0DA63A5A76FBE5420880623736B0CE2A3E8501BC6C577F36A38B28C72`.
+SHA-256: `857CF57C6C608AFBEF8BDB74E74A19BA7002B01AC326DE94AFE0A238951B45B3`.
 
 O instalador ainda não possui assinatura digital com certificado de publicação.
 

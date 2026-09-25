@@ -1,4 +1,5 @@
 import { yugiohAdapter } from "@/features/catalog/services/card-api/yugioh.adapter";
+import { createAsyncKeyedDeduper } from "@/lib/cache/async-dedupe";
 import {
   yugiohCardNamesMatch,
   yugiohSetNumberRef,
@@ -9,6 +10,7 @@ export type { YugiohPasscodeKeyInput as YugiohPasscodeInput } from "@/lib/yugioh
 export { yugiohPasscodeCacheKey };
 
 const passcodeCache = new Map<string, string | null>();
+const dedupePasscodeResolution = createAsyncKeyedDeduper<string, string | null>();
 
 import type { YugiohPasscodeKeyInput } from "@/lib/yugioh/passcode-key";
 
@@ -42,9 +44,14 @@ export async function resolveYugiohPasscodeForCard(
     return passcodeCache.get(key) ?? null;
   }
 
-  const result = await resolveYugiohPasscodeUncached(card);
-  passcodeCache.set(key, result);
-  return result;
+  return dedupePasscodeResolution(key, async () => {
+    const cached = passcodeCache.get(key);
+    if (cached !== undefined || passcodeCache.has(key)) return cached ?? null;
+
+    const result = await resolveYugiohPasscodeUncached(card);
+    passcodeCache.set(key, result);
+    return result;
+  });
 }
 
 export async function resolveYugiohPasscodesConcurrent(
