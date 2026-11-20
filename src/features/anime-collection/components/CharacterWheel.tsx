@@ -33,28 +33,114 @@ export function CharacterWheel({
   const t = useT();
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const activeRef = useRef<HTMLDivElement>(null);
+  const rowRef = useRef<HTMLDivElement>(null);
   const [hoverTargetId, setHoverTargetId] = useState<string | null>(null);
 
   const isDragging = draggedCardIds.length > 0;
 
   useLayoutEffect(() => {
     const scroller = scrollRef.current;
-    const active = activeRef.current;
-    if (!scroller || !active) return;
+    if (!scroller) return;
+
+    let allowAutoCenter = true;
+    let ignoreProgrammaticScroll = false;
+    let scrollFrame = 0;
+    let stabilizationFrame = 0;
+    let releaseProgrammaticScrollFrame = 0;
+
+    const updateEdgePadding = () => {
+      const row = rowRef.current;
+      if (!row) return;
+      const items = row.querySelectorAll<HTMLElement>('[role="listitem"]');
+      const first = items.item(0);
+      const last = items.item(items.length - 1);
+      if (!first || !last) return;
+
+      row.style.paddingLeft = `${Math.max(0, scroller.clientWidth / 2 - first.offsetWidth / 2)}px`;
+      row.style.paddingRight = `${Math.max(0, scroller.clientWidth / 2 - last.offsetWidth / 2)}px`;
+    };
 
     const centerActive = () => {
-      const left =
-        active.offsetLeft - (scroller.clientWidth - active.offsetWidth) / 2;
-      scroller.scrollTo({ left: Math.max(0, left), behavior: "auto" });
+      if (!allowAutoCenter) return;
+      const active = scroller
+        .querySelector<HTMLElement>('[aria-current="true"]')
+        ?.closest<HTMLElement>('[role="listitem"]');
+      if (!active) return;
+      const scrollerRect = scroller.getBoundingClientRect();
+      const activeRect = active.getBoundingClientRect();
+      const activeCenterInContent =
+        scroller.scrollLeft +
+        (activeRect.left - scrollerRect.left) +
+        activeRect.width / 2;
+      const left = activeCenterInContent - scroller.clientWidth / 2;
+      const maxScrollLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      const nextLeft = Math.min(maxScrollLeft, Math.max(0, left));
+
+      if (Math.abs(scroller.scrollLeft - nextLeft) < 0.5) return;
+
+      ignoreProgrammaticScroll = true;
+      scroller.scrollTo({
+        left: nextLeft,
+        behavior: "auto",
+      });
+      cancelAnimationFrame(releaseProgrammaticScrollFrame);
+      releaseProgrammaticScrollFrame = requestAnimationFrame(() => {
+        ignoreProgrammaticScroll = false;
+      });
     };
 
-    const frame = requestAnimationFrame(centerActive);
+    const stopAutoCenter = () => {
+      allowAutoCenter = false;
+      cancelAnimationFrame(scrollFrame);
+      cancelAnimationFrame(stabilizationFrame);
+    };
+
+    const handleScroll = () => {
+      if (!allowAutoCenter || ignoreProgrammaticScroll) return;
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(centerActive);
+    };
+
+    const stabilizationStartedAt = performance.now();
+    const stabilize = () => {
+      if (!allowAutoCenter) return;
+      updateEdgePadding();
+      centerActive();
+      if (performance.now() - stabilizationStartedAt < 1_200) {
+        stabilizationFrame = requestAnimationFrame(stabilize);
+      }
+    };
+    updateEdgePadding();
+    stabilizationFrame = requestAnimationFrame(stabilize);
+    const resizeObserver = new ResizeObserver(() => {
+      updateEdgePadding();
+      centerActive();
+    });
+    resizeObserver.observe(scroller);
+    const edgeItems = rowRef.current?.querySelectorAll<HTMLElement>('[role="listitem"]');
+    const firstItem = edgeItems?.item(0);
+    const lastItem = edgeItems?.item((edgeItems?.length ?? 1) - 1);
+    if (firstItem) resizeObserver.observe(firstItem);
+    if (lastItem && lastItem !== firstItem) resizeObserver.observe(lastItem);
+
+    scroller.addEventListener("scroll", handleScroll, { passive: true });
+    scroller.addEventListener("wheel", stopAutoCenter, { passive: true });
+    scroller.addEventListener("pointerdown", stopAutoCenter, { passive: true });
+    scroller.addEventListener("touchstart", stopAutoCenter, { passive: true });
+    scroller.addEventListener("keydown", stopAutoCenter);
 
     return () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(releaseProgrammaticScrollFrame);
+      cancelAnimationFrame(scrollFrame);
+      cancelAnimationFrame(stabilizationFrame);
+      resizeObserver.disconnect();
+      scroller.removeEventListener("scroll", handleScroll);
+      scroller.removeEventListener("wheel", stopAutoCenter);
+      scroller.removeEventListener("pointerdown", stopAutoCenter);
+      scroller.removeEventListener("touchstart", stopAutoCenter);
+      scroller.removeEventListener("keydown", stopAutoCenter);
     };
-  }, [activeCharacterId]);
+  }, [activeCharacterId, characters.length]);
 
   useEffect(() => {
     if (!isDragging) setHoverTargetId(null);
@@ -67,9 +153,9 @@ export function CharacterWheel({
       ref={scrollRef}
       role="list"
       aria-label={t("anime.switchCharacter")}
-      className="mx-auto mb-6 w-full max-w-5xl overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:thin]"
+      className="character-wheel-scroll mx-auto mb-6 w-full max-w-5xl overflow-x-auto pb-2"
     >
-      <div className="flex w-max min-w-full items-end justify-start gap-4 px-[50%]">
+      <div ref={rowRef} className="flex w-max min-w-full items-end justify-start gap-4">
         {characters.map((character, index) => {
           const selected = character.id === activeCharacterId;
           const canDrop =
@@ -81,7 +167,6 @@ export function CharacterWheel({
           return (
             <div
               key={character.id}
-              ref={selected ? activeRef : undefined}
               role="listitem"
               className={cn(
                 "shrink-0 rounded-full transition-all",

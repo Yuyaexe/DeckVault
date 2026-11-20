@@ -2,14 +2,16 @@ import type { CardApiAdapter } from "./types";
 import { yugiohAdapter } from "./yugioh.adapter";
 import { pokemonAdapter } from "./pokemon.adapter";
 import { digimonAdapter } from "./digimon.adapter";
+import { riftboundAdapter } from "./riftbound.adapter";
 
 const adapters: Record<string, CardApiAdapter> = {
   yugioh: yugiohAdapter,
   pokemon: pokemonAdapter,
   digimon: digimonAdapter,
+  riftbound: riftboundAdapter,
 };
 
-const SUPPORTED_GAMES = ["yugioh", "pokemon", "digimon"] as const;
+const SUPPORTED_GAMES = ["yugioh", "pokemon", "digimon", "riftbound"] as const;
 
 export function getCardAdapter(gameSlug: string): CardApiAdapter | null {
   return adapters[gameSlug] ?? null;

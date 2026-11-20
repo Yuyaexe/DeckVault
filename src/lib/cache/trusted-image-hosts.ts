@@ -21,6 +21,7 @@ export const TRUSTED_IMAGE_HOST_SUFFIXES = [
   "wikia.nocookie.net",
   "wikimedia.org",
   "upload.wikimedia.org",
+  "images.rifthunt.com",
 ] as const;
 
 /** Hostnames for Next.js `images.remotePatterns` (derived from suffix list). */
@@ -37,6 +38,7 @@ export const TRUSTED_IMAGE_REMOTE_HOSTNAMES = [
   "tcgplayer.com",
   "static.wikia.nocookie.net",
   "upload.wikimedia.org",
+  "images.rifthunt.com",
 ] as const;
 
 export function isTrustedImageHost(hostname: string): boolean {

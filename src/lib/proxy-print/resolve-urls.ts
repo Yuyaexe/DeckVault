@@ -1,7 +1,8 @@
 import { searchPokemonPage } from "@/features/catalog/services/card-api/pokemon.adapter";
 import { pokemonPrintImage } from "@/features/catalog/services/pokemon-search";
 import type { DeckEntry, ProxyGame } from "@/lib/proxy-print/types";
-import { uniqueKeysPreserveOrder } from "@/lib/proxy-print/parse-deck";
+import { deckEntryResolveKey, uniqueKeysPreserveOrder } from "@/lib/proxy-print/parse-deck";
+import { resolveRiftboundEntriesBulk } from "@/lib/proxy-print/riftbound-resolve";
 
 const USER_AGENT = "DeckVault/1.0 (proxy-print; local deck export)";
 const YGO_CARDINFO = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
@@ -241,6 +242,15 @@ export async function resolveProxyImageUrls(
   if (game === "digimon") return resolveDigimon(entries);
   if (game === "pokemon") return resolvePokemon(entries);
   if (game === "dragonball") return resolveDragonball(entries);
+  if (game === "riftbound") {
+    const resolved = await resolveRiftboundEntriesBulk(entries);
+    const keyToUrl: Record<string, string> = {};
+    for (const entry of entries) {
+      const card = resolved.get(deckEntryResolveKey(entry));
+      if (card?.variants[0]?.imageUrl) keyToUrl[entry.key] = card.variants[0].imageUrl;
+    }
+    return keyToUrl;
+  }
   return {};
 }
 

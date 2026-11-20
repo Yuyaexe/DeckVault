@@ -1,6 +1,6 @@
 import type { CardSearchResult } from "@/features/catalog/services/card-api/types";
 
-const NESTED_PRINT_KEYS = ["digimonPrints", "cardtraderPrints"] as const;
+const NESTED_PRINT_KEYS = ["digimonPrints", "riftboundPrints", "cardtraderPrints"] as const;
 
 /** Strip nested print arrays from metadata to avoid circular JSON (primary is prints[0]). */
 export function stripNestedPrintMetadata(
@@ -40,6 +40,7 @@ export const CATALOG_SOURCE_LABELS: Record<string, string> = {
   yugioh: "YGOPRODeck",
   pokemon: "Pokemon TCG API",
   digimon: "digimoncard.io",
+  riftbound: "RiftHunt",
 };
 
 export function catalogSourceLabel(gameSlug: string): string {

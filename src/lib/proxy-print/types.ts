@@ -3,7 +3,8 @@ export type ProxyGame =
   | "pokemon"
   | "digimon"
   | "onepiece"
-  | "dragonball";
+  | "dragonball"
+  | "riftbound";
 
 export type CardSizePreset = "yugioh" | "bandai";
 
@@ -61,6 +62,7 @@ export const PROXY_GAMES: ProxyGame[] = [
   "digimon",
   "onepiece",
   "dragonball",
+  "riftbound",
 ];
 
 export const GAME_LABELS: Record<ProxyGame, string> = {
@@ -69,6 +71,7 @@ export const GAME_LABELS: Record<ProxyGame, string> = {
   digimon: "Digimon",
   onepiece: "One Piece",
   dragonball: "Dragon Ball",
+  riftbound: "Riftbound",
 };
 
 export const CARD_SIZE_PRESETS: Record<CardSizePreset, { w: number; h: number }> = {
@@ -83,6 +86,7 @@ export const DEFAULT_CARD_SIZE_FOR_GAME: Record<ProxyGame, CardSizePreset> = {
   digimon: "bandai",
   onepiece: "bandai",
   dragonball: "bandai",
+  riftbound: "bandai",
 };
 
 export const DEFAULT_PDF_DPI = 300;

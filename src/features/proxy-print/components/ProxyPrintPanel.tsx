@@ -166,6 +166,11 @@ export function ProxyPrintPanel() {
         return;
       }
 
+      if (update.selectedVariantKey?.startsWith("riftbound:")) {
+        setDeckText((text) => deckLineWithVariantImage(text, sourceQuery, update.imageUrl));
+        return;
+      }
+
       // Only persist true uploads in the deck list. Writing catalog print URLs
       // collapses the slot to a single "custom" variant on the next resolve.
       if (update.selectedVariantKey === "custom" || isUserUploadedCustomImage(update.imageUrl)) {
@@ -435,7 +440,7 @@ export function ProxyPrintPanel() {
       result: import("@/features/catalog/services/card-api/types").CardSearchResult,
       game: { slug: string }
     ) => {
-      if (game.slug !== "yugioh" && game.slug !== "pokemon" && game.slug !== "digimon") {
+      if (game.slug !== "yugioh" && game.slug !== "pokemon" && game.slug !== "digimon" && game.slug !== "riftbound") {
         toast.error("This game is not supported by Proxy Print.");
         return;
       }
@@ -446,13 +451,18 @@ export function ProxyPrintPanel() {
           ? (/^\d{7,10}$/.test(result.externalId) ? result.externalId : result.name)
           : proxyGame === "digimon"
             ? result.collectorNumber ?? result.externalId ?? result.name
+            : proxyGame === "riftbound"
+              ? result.externalId
             : result.name;
 
       const pokemonImage =
         proxyGame === "pokemon" ? pokemonPrintImage(result) : null;
+      const riftboundImage = proxyGame === "riftbound" ? result.imageUrl : null;
       const nextLine =
         proxyGame === "pokemon" && pokemonImage
           ? `#${proxyGame}\n1 ${cardRef} | ${pokemonImage}`
+          : riftboundImage
+            ? `#${proxyGame}\n1 ${cardRef} | ${riftboundImage}`
           : `#${proxyGame}\n1 ${cardRef}`;
       setDeckText((current) => {
         const trimmed = current.trimEnd();

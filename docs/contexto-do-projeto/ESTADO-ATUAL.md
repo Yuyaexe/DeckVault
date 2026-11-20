@@ -44,7 +44,7 @@
 
 O último instalador gerado fica em `releases/build/DeckVault-Setup-0.2.19.exe`.
 
-SHA-256: `170911E6C7659A4091091F74EAA6490B54298BFA2DF676B1E06489A929DAE727`.
+SHA-256: `A25DE74CF77366A2E636CB75C5B134A43C61A0952588F2598E80B39789F7FD2D`.
 
 O instalador ainda não possui assinatura digital com certificado de publicação.
 

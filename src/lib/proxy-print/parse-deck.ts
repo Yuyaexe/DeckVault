@@ -7,9 +7,10 @@ const DIGIMON_CODE =
   /^(?:P-\d{3}|LM-\d{3}|[A-Z]{1,3}\d{1,2}-\d{2,3})(?:_P(\d+))?$/i;
 const DIGIMON_ID_TAIL =
   /\b((?:P-\d{3}|LM-\d{3}|[A-Z]{1,3}\d{1,2}-\d{2,3})(?:_P\d+)?)\s*$/i;
-const GAME_SECTION = /^#(yugioh|pokemon|digimon|onepiece|dragonball|dbs)\b/i;
-const GAME_BRACKET = /^\[(yugioh|pokemon|digimon|onepiece|dragonball|dbs)\]\s*/i;
-const GAME_PREFIX = /^(yugioh|pokemon|digimon|onepiece|dragonball|dbs):\s*/i;
+const RIFTBOUND_CARD_ID = /\b([A-Z]{3,4}-\d{3}(?:[/-]\d{3})?)\b/i;
+const GAME_SECTION = /^#(yugioh|pokemon|digimon|onepiece|dragonball|riftbound|dbs)\b/i;
+const GAME_BRACKET = /^\[(yugioh|pokemon|digimon|onepiece|dragonball|riftbound|dbs)\]\s*/i;
+const GAME_PREFIX = /^(yugioh|pokemon|digimon|onepiece|dragonball|riftbound|dbs):\s*/i;
 const ART_HINT_TOKENS = new Set([
   "fa",
   "aa",
@@ -107,6 +108,10 @@ function entryKeyForGame(game: ProxyGame, body: string): { key: string; artHint:
     }
     const tail = body.match(DIGIMON_ID_TAIL);
     if (tail) return { key: tail[1].toUpperCase(), artHint: null };
+  }
+  if (game === "riftbound") {
+    const match = body.match(RIFTBOUND_CARD_ID);
+    if (match) return { key: match[1].toLowerCase(), artHint: null };
   }
   return { key: body.trim(), artHint: null };
 }

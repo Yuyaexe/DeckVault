@@ -46,7 +46,11 @@ export function ExportDeckModal({
   const purchases = useQuery({
     queryKey: PURCHASED_CARDS_QUERY_KEY,
     queryFn: fetchPurchasedCards,
-    staleTime: 5 * 60_000,
+    // The "unpurchased only" export must reflect the latest CardTrader state.
+    // Keeping this observer immediately stale forces a fresh fetch whenever
+    // the checkbox enables the query, instead of reusing up to 5 minutes of
+    // cached purchase data.
+    staleTime: 0,
     enabled: open && unpurchasedOnly,
   });
   const exportCards = useMemo(() => {

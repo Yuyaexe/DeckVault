@@ -5,6 +5,7 @@ import {
   pickDragonballVariant,
   resolveDragonballEntriesBulk,
 } from "@/lib/proxy-print/dragonball-resolve";
+import { resolveRiftboundEntriesBulk } from "@/lib/proxy-print/riftbound-resolve";
 import { deckEntryResolveKey, uniqueEntriesPreserveOrder } from "@/lib/proxy-print/parse-deck";
 import { isUserUploadedCustomImage } from "@/lib/proxy-print/preview-image";
 import { resolveProxyImageUrls } from "@/lib/proxy-print/resolve-urls";
@@ -294,6 +295,7 @@ async function resolveEntriesByGame(
   if (game === "yugioh") return resolveYgoEntriesBulk(entries);
   if (game === "digimon") return resolveDigimonEntriesBulk(entries);
   if (game === "dragonball") return resolveDragonballEntriesBulk(entries);
+  if (game === "riftbound") return resolveRiftboundEntriesBulk(entries);
   return resolveSimpleGameEntriesBulk(game, entries);
 }
 

@@ -74,6 +74,21 @@ function digimonPrintToVariant(print: CardSearchResult): CardPrintVariant {
   };
 }
 
+function riftboundPrintToVariant(print: CardSearchResult): CardPrintVariant {
+  return {
+    key: `riftbound:${print.externalId}`,
+    setCode: print.setCode,
+    setName: print.setName,
+    collectorNumber: print.collectorNumber,
+    rarity: print.rarity,
+    variantLabel: print.edition,
+    price: print.price,
+    externalId: print.externalId,
+    imageUrl: print.imageUrl,
+    ygoProDeckUrl: "#",
+  };
+}
+
 export function getSearchResultVariants(
   result: CardSearchResult,
   gameSlug: string,
@@ -84,6 +99,12 @@ export function getSearchResultVariants(
     if (prints.length > 1) {
       return prints.map(digimonPrintToVariant);
     }
+  }
+
+  if (gameSlug === "riftbound") {
+    const prints = result.metadata?.riftboundPrints as CardSearchResult[] | undefined;
+    if (prints?.length) return prints.map(riftboundPrintToVariant);
+    return [riftboundPrintToVariant(result)];
   }
 
   if (gameSlug === "yugioh") {

@@ -12,6 +12,7 @@ const DIGIMON_SET_ID = /\b(?:BT|EX|LM)\d{1,2}-\d{2,3}(?:_P\d+)?\b/i;
 const DIGIMON_CODE_TOKEN =
   /^(?:P-\d{3}|LM-\d{3}|[A-Z]{1,3}\d{1,2}-\d{2,3})(?:_P(\d+))?$/i;
 const DRAGONBALL_SET_ID = /\b(?:FB|FS|SB|FP)\d{2}-\d{2,3}\b/i;
+const RIFTBOUND_CARD_ID = /\b[A-Z]{3,4}-\d{3}(?:[/-]\d{3})\b/i;
 
 function normalizePaste(text: string): string {
   return text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
@@ -37,6 +38,7 @@ export function detectGameFromText(text: string): ProxyGame | null {
     return "yugioh";
   }
   if (PTCGL_SECTION.test(normalized)) return "pokemon";
+  if (/^#riftbound\b/im.test(normalized) || RIFTBOUND_CARD_ID.test(normalized)) return "riftbound";
 
   const scores: Record<ProxyGame, number> = {
     yugioh: 0,
@@ -44,6 +46,7 @@ export function detectGameFromText(text: string): ProxyGame | null {
     digimon: 0,
     onepiece: 0,
     dragonball: 0,
+    riftbound: 0,
   };
   let cardLines = 0;
   let genericNameLines = 0;
@@ -72,6 +75,10 @@ export function detectGameFromText(text: string): ProxyGame | null {
     }
     if (DRAGONBALL_SET_ID.test(line)) {
       scores.dragonball += 5;
+      continue;
+    }
+    if (RIFTBOUND_CARD_ID.test(line)) {
+      scores.riftbound += 4;
       continue;
     }
     if (DIGIMON_SET_ID.test(line)) {

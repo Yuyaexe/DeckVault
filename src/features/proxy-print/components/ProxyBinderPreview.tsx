@@ -83,7 +83,7 @@ function proxySlotToOwnedCard(slot: ProxyPrintSlot): DemoOwnedCard {
   const externalId =
     yugiohPasscode ??
     pokemonExternalId ??
-    (slot.game === "digimon" || slot.game === "onepiece" || slot.game === "dragonball"
+    (slot.game === "digimon" || slot.game === "onepiece" || slot.game === "dragonball" || slot.game === "riftbound"
       ? slot.entryKey
       : null);
   const game = DEMO_GAMES.find((item) => item.slug === slot.game);
